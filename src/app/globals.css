@@ -1,0 +1,246 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-poppins);
+  --font-mono: var(--font-mono);
+  --color-sidebar-ring: var(--sidebar-ring);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar: var(--sidebar);
+  --color-chart-5: var(--chart-5);
+  --color-chart-4: var(--chart-4);
+  --color-chart-3: var(--chart-3);
+  --color-chart-2: var(--chart-2);
+  --color-chart-1: var(--chart-1);
+  --color-ring: var(--ring);
+  --color-input: var(--input);
+  --color-border: var(--border);
+  --color-destructive: var(--destructive);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-accent: var(--accent);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-muted: var(--muted);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-secondary: var(--secondary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-primary: var(--primary);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-popover: var(--popover);
+  --color-card-foreground: var(--card-foreground);
+  --color-card: var(--card);
+  --color-brand: var(--brand);
+  --color-brand-foreground: var(--brand-foreground);
+  --color-brand-soft: var(--brand-soft);
+  --color-severity-info: var(--severity-info);
+  --color-severity-notice: var(--severity-notice);
+  --color-severity-warning: var(--severity-warning);
+  --color-confidence-high: var(--confidence-high);
+  --color-confidence-medium: var(--confidence-medium);
+  --color-confidence-low: var(--confidence-low);
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+}
+
+/* Doclyze Design System
+ * Base palette: near-black on near-white with a confident signal amber accent.
+ * OKLCH color space for perceptually uniform theming.
+ */
+:root {
+  --radius: 0.5rem;
+
+  /* Base surfaces — near-white / near-black */
+  --background: oklch(0.99 0.002 80);
+  --foreground: oklch(0.18 0.008 80);
+  --card: oklch(1 0 0);
+  --card-foreground: oklch(0.18 0.008 80);
+  --popover: oklch(1 0 0);
+  --popover-foreground: oklch(0.18 0.008 80);
+
+  /* Brand: signal amber — warm, confident, not generic SaaS blue */
+  --brand: oklch(0.72 0.17 60);
+  --brand-foreground: oklch(0.16 0.02 60);
+  --brand-soft: oklch(0.96 0.04 70);
+
+  /* Primary = near-black */
+  --primary: oklch(0.18 0.008 80);
+  --primary-foreground: oklch(0.99 0 0);
+  --secondary: oklch(0.96 0.004 80);
+  --secondary-foreground: oklch(0.22 0.008 80);
+  --muted: oklch(0.96 0.004 80);
+  --muted-foreground: oklch(0.5 0.008 80);
+  --accent: oklch(0.96 0.04 70);
+  --accent-foreground: oklch(0.22 0.02 60);
+  --destructive: oklch(0.6 0.22 27);
+  --border: oklch(0.92 0.004 80);
+  --input: oklch(0.92 0.004 80);
+  --ring: oklch(0.72 0.17 60);
+
+  /* Severity colors for insight badges — legible in both themes */
+  /* Light-mode values darkened (L 0.4–0.5) for WCAG AA contrast on near-white */
+  --severity-info: oklch(0.45 0.15 230);
+  --severity-notice: oklch(0.55 0.16 75);
+  --severity-warning: oklch(0.5 0.2 30);
+
+  /* Confidence dots — same treatment for light mode */
+  --confidence-high: oklch(0.5 0.16 145);
+  --confidence-medium: oklch(0.55 0.15 75);
+  --confidence-low: oklch(0.5 0.2 30);
+
+  --chart-1: oklch(0.72 0.17 60);
+  --chart-2: oklch(0.6 0.13 184);
+  --chart-3: oklch(0.55 0.13 230);
+  --chart-4: oklch(0.65 0.16 145);
+  --chart-5: oklch(0.7 0.15 75);
+
+  --sidebar: oklch(0.985 0.002 80);
+  --sidebar-foreground: oklch(0.18 0.008 80);
+  --sidebar-primary: oklch(0.18 0.008 80);
+  --sidebar-primary-foreground: oklch(0.99 0 0);
+  --sidebar-accent: oklch(0.96 0.04 70);
+  --sidebar-accent-foreground: oklch(0.22 0.02 60);
+  --sidebar-border: oklch(0.92 0.004 80);
+  --sidebar-ring: oklch(0.72 0.17 60);
+}
+
+.dark {
+  --background: oklch(0.15 0.005 80);
+  --foreground: oklch(0.97 0.003 80);
+  --card: oklch(0.19 0.006 80);
+  --card-foreground: oklch(0.97 0.003 80);
+  --popover: oklch(0.19 0.006 80);
+  --popover-foreground: oklch(0.97 0.003 80);
+
+  --brand: oklch(0.78 0.16 65);
+  --brand-foreground: oklch(0.16 0.02 60);
+  --brand-soft: oklch(0.28 0.06 60);
+
+  --primary: oklch(0.97 0.003 80);
+  --primary-foreground: oklch(0.18 0.008 80);
+  --secondary: oklch(0.24 0.006 80);
+  --secondary-foreground: oklch(0.97 0.003 80);
+  --muted: oklch(0.24 0.006 80);
+  --muted-foreground: oklch(0.68 0.008 80);
+  --accent: oklch(0.28 0.06 60);
+  --accent-foreground: oklch(0.95 0.04 70);
+  --destructive: oklch(0.7 0.19 22);
+  --border: oklch(1 0 0 / 8%);
+  --input: oklch(1 0 0 / 12%);
+  --ring: oklch(0.78 0.16 65);
+
+  --severity-info: oklch(0.7 0.13 230);
+  --severity-notice: oklch(0.78 0.14 75);
+  --severity-warning: oklch(0.72 0.19 30);
+
+  --confidence-high: oklch(0.72 0.16 145);
+  --confidence-medium: oklch(0.78 0.14 75);
+  --confidence-low: oklch(0.72 0.19 30);
+
+  --chart-1: oklch(0.78 0.16 65);
+  --chart-2: oklch(0.7 0.13 184);
+  --chart-3: oklch(0.7 0.13 230);
+  --chart-4: oklch(0.72 0.16 145);
+  --chart-5: oklch(0.78 0.14 75);
+
+  --sidebar: oklch(0.18 0.006 80);
+  --sidebar-foreground: oklch(0.97 0.003 80);
+  --sidebar-primary: oklch(0.97 0.003 80);
+  --sidebar-primary-foreground: oklch(0.18 0.008 80);
+  --sidebar-accent: oklch(0.24 0.01 80);
+  --sidebar-accent-foreground: oklch(0.97 0.003 80);
+  --sidebar-border: oklch(1 0 0 / 8%);
+  --sidebar-ring: oklch(0.78 0.16 65);
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  html {
+    scroll-behavior: smooth;
+  }
+  body {
+    @apply bg-background text-foreground antialiased;
+    font-feature-settings: "ss01", "cv11";
+  }
+  ::selection {
+    background-color: var(--brand);
+    color: var(--brand-foreground);
+  }
+  /* Custom focus ring — designed, not browser default */
+  :focus-visible {
+    outline: 2px solid var(--ring);
+    outline-offset: 2px;
+    border-radius: 4px;
+  }
+  /* Refined scrollbars */
+  ::-webkit-scrollbar {
+    width: 10px;
+    height: 10px;
+  }
+  ::-webkit-scrollbar-track {
+    background: transparent;
+  }
+  ::-webkit-scrollbar-thumb {
+    background: var(--border);
+    border-radius: 6px;
+    border: 2px solid var(--background);
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background: var(--muted-foreground);
+  }
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+  .text-pretty {
+    text-wrap: pretty;
+  }
+  /* Grid background for hero sections */
+  .bg-grid {
+    background-image:
+      linear-gradient(to right, var(--border) 1px, transparent 1px),
+      linear-gradient(to bottom, var(--border) 1px, transparent 1px);
+    background-size: 56px 56px;
+  }
+  .bg-grid-fade {
+    -webkit-mask-image: radial-gradient(ellipse at center, black 30%, transparent 75%);
+    mask-image: radial-gradient(ellipse at center, black 30%, transparent 75%);
+  }
+  /* Spreadsheet-style header sticky offset */
+  .sheet-header-shadow {
+    box-shadow: inset 0 -1px 0 var(--border), 0 1px 0 rgba(0,0,0,0.02);
+  }
+  /* Theme-change transitions: scoped to surface-level layout elements only. */
+  /* Uses a data attribute set by next-themes ThemeProvider to avoid applying
+     transitions on every theme-agnostic hover/focus interaction.
+     The `disableTransitionOnChange` prop on ThemeProvider prevents flash,
+     so this rule is primarily for smooth manual theme switches. */
+  [data-transitioning] body,
+  [data-transitioning] aside,
+  [data-transitioning] header,
+  [data-transitioning] main,
+  [data-transitioning] nav,
+  [data-transitioning] section,
+  [data-transitioning] footer,
+  [data-transitioning] .card,
+  [data-transitioning] [role="dialog"] {
+    transition: background-color 200ms ease, border-color 200ms ease, color 200ms ease;
+  }
+  /* Prevent layout shift on scrollbar appearance */
+  html {
+    overflow-y: scroll;
+  }
+}

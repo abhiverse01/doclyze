@@ -1,0 +1,33 @@
+John Marcus Rivera
+john.rivera@email.com
+(555) 987-6543
+linkedin.com/in/johnrivera
+Portland, OR
+
+PROFESSIONAL SUMMARY
+Creative software developer specializing in frontend development and user interface design. Passionate about building accessible, performant web applications.
+
+WORK EXPERIENCE
+
+Frontend Developer
+Brightwave Technologies
+• Developed component library used across 12 product teams
+• Implemented design system with React and Storybook
+• Improved page load performance by 35% through code splitting
+• Led weekly frontend guild meetings and knowledge sharing sessions
+
+Software Developer
+Digital Solutions Group
+• Built customer-facing dashboard applications
+• Integrated third-party APIs for payment and analytics
+• Participated in agile sprints and sprint retrospectives
+• Wrote comprehensive documentation for internal tools
+
+EDUCATION
+
+Bachelor of Arts in Computer Science
+State University
+
+SKILLS
+
+JavaScript, TypeScript, React, Vue.js, CSS, HTML, GraphQL, Figma

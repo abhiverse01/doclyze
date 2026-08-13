@@ -1,0 +1,29 @@
+ACME SOLUTIONS INC.
+456 Tech Boulevard, Suite 200
+San Francisco, CA 94105
+contact@acmesolutions.com
+
+INVOICE
+
+Invoice No: INV-2024-001
+Date: January 15, 2024
+Due Date: February 14, 2024
+
+Bill To:
+Beta Corp
+789 Business Park Drive
+New York, NY 10001
+billing@betacorp.com
+
+Description                  Qty    Unit Price    Amount
+Consulting Services         10     $150.00       $1,500.00
+Software Development        5      $200.00       $1,000.00
+Project Management          3      $175.00       $525.00
+Quality Assurance Testing    2      $120.00       $240.00
+
+Subtotal: $3,265.00
+Tax (8.5%): $505.75
+Total: $3,770.75
+
+Payment Terms: Net 30
+Thank you for your business!

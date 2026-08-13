@@ -1,0 +1,28 @@
+ENTERPRISE SERVICES LLC
+1000 Corporate Plaza
+New York, NY 10020
+finance@enterpriseservices.com
+
+INVOICE
+
+Invoice No: INV-2024-BIG
+Date: April 10, 2024
+Due Date: May 10, 2024
+
+Bill To:
+Mega Corp International
+2000 Global Trade Center
+London, EC2A 1NT
+invoices@megacorp.com
+
+Description                  Qty    Unit Price         Amount
+Enterprise License          1      $12,999.00         $12,999.00
+Consulting Package          10     $5,000.00          $50,000.00
+Premium Support            1      $1,234,567.89      $1,234,567.89
+Training Sessions          5      $3,500.00           $17,500.00
+
+Subtotal: $1,315,066.89
+Tax (7%): $92,054.68
+Total: $1,407,121.57
+
+Payment Terms: Net 45

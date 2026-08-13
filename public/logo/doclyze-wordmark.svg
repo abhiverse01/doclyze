@@ -1,0 +1,6 @@
+<svg width="260" height="40" viewBox="0 0 260 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <text x="0" y="28" font-family="Poppins, sans-serif" font-size="28" font-weight="800" letter-spacing="-1.12" fill="#1a1a1a">Doc</text>
+  <text x="63" y="28" font-family="Poppins, sans-serif" font-size="28" font-weight="400" letter-spacing="-0.56" fill="#1a1a1a">lyze</text>
+  <line x1="118" y1="34" x2="220" y2="34" stroke="#d97706" stroke-width="2.5" stroke-linecap="round"/>
+  <circle cx="226" cy="34" r="3.2" fill="#d97706"/>
+</svg>

@@ -1,0 +1,28 @@
+QUICK SERVICE CO.
+45 Main Street
+Smalltown, OH 44444
+billing@quickservice.com
+
+INVOICE
+
+Invoice No: QS-2024-55
+Date: 05/20/2024
+Due Date: 06/19/2024
+
+Bill To:
+Smith Enterprises
+777 Oak Avenue
+Columbus, OH 43215
+ap@smithent.com
+
+Description                  Qty    Unit Price    Amount
+Web Design                  1      $2,000.00     $2,000.00
+SEO Optimization           1      $800.00      $800.00
+Content Writing           5      $200.00      $1,000.00
+
+Subtotal: $3,800.00
+Tax (6%): $228.00
+Total: $9,500.00
+
+Payment Terms: Net 30
+Note: Includes additional services from previous month.

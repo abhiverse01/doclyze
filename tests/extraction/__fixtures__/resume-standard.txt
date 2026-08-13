@@ -1,0 +1,49 @@
+Jane Elizabeth Thompson
+jane.thompson@email.com
+(555) 123-4567
+linkedin.com/in/janethompson
+github.com/jthompson
+San Francisco, CA
+
+PROFESSIONAL SUMMARY
+Experienced full-stack software engineer with 8 years of expertise in building scalable web applications using React, Node.js, and cloud technologies. Proven track record of leading cross-functional teams and delivering high-impact products.
+
+WORK EXPERIENCE
+
+Senior Software Engineer
+Google — Jan 2021 – Present
+• Led development of internal dashboard serving 10,000+ daily users
+• Architected microservices migration reducing latency by 40%
+• Mentored 5 junior engineers through structured onboarding program
+• Implemented CI/CD pipelines using GitHub Actions and Docker
+
+Software Engineer
+Stripe — Jun 2018 – Dec 2020
+• Built payment processing components handling $2B+ in transactions
+• Developed REST APIs with Node.js and PostgreSQL
+• Reduced API response times by 60% through query optimization
+• Contributed to open-source libraries used by 500+ developers
+
+Junior Developer
+TechStart Inc — May 2016 – May 2018
+• Developed responsive web applications using React and TypeScript
+• Wrote unit and integration tests achieving 95% code coverage
+• Collaborated with design team on user experience improvements
+
+EDUCATION
+
+Bachelor of Science in Computer Science
+University of California, Berkeley — 2012 – 2016
+GPA: 3.8/4.0
+
+SKILLS
+
+Languages: JavaScript, TypeScript, Python, Go, SQL
+Frameworks: React, Next.js, Node.js, Express, Django
+Tools: Docker, Kubernetes, AWS, Git, PostgreSQL, Redis
+Certifications: AWS Solutions Architect, Google Cloud Professional
+
+CERTIFICATIONS
+
+AWS Solutions Architect – Associate (2022)
+Google Cloud Professional Developer (2021)

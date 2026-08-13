@@ -1,0 +1,26 @@
+Alice Marie Chen
+alice.chen@techcorp.io
++1 (415) 555-7890
+San Jose, CA
+
+PROFESSIONAL SUMMARY
+Data scientist and machine learning engineer with expertise in NLP and computer vision.
+
+WORK EXPERIENCE
+
+Senior Data Scientist
+TechCorp AI — 2022 – Present
+• Built NLP pipeline processing 1M+ documents daily
+• Deployed ML models serving real-time predictions
+
+Data Scientist
+Analytics Co — 2019 – 2022
+• Developed recommendation engine increasing engagement by 25%
+
+EDUCATION
+
+Master of Science in Data Science
+Stanford University — 2017 – 2019
+
+SKILLS
+Python, TensorFlow, PyTorch, SQL, Pandas, Spark

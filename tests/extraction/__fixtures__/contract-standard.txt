@@ -1,0 +1,62 @@
+MASTER SERVICES AGREEMENT
+
+This Master Services Agreement (the "Agreement") is entered into as of January 1, 2024 (the "Effective Date") by and between Acme Corporation, a Delaware corporation with its principal place of business at 100 Corporate Drive, New York, NY ("Client"), and Beta Consulting Group, LLC, a California limited liability company with its principal place of business at 500 Market Street, San Francisco, CA ("Provider").
+
+WHEREAS, Client desires to engage Provider to provide certain consulting and technology services;
+
+WHEREAS, Provider is willing to provide such services on the terms and conditions set forth herein;
+
+NOW, THEREFORE, in consideration of the mutual covenants and agreements contained herein, the parties agree as follows:
+
+1. SCOPE OF SERVICES
+Provider shall provide technology consulting, software development, and project management services as described in individual Statements of Work ("SOW") executed under this Agreement. Each SOW shall specify the scope, deliverables, timeline, and fees for the applicable engagement.
+
+2. TERM AND TERMINATION
+2.1 Term. This Agreement shall commence on the Effective Date and continue for a period of two (2) years unless earlier terminated in accordance with this Section.
+2.2 Termination for Convenience. Either party may terminate this Agreement for any reason upon sixty (60) days written notice to the other party.
+2.3 Termination for Cause. Either party may terminate this Agreement immediately upon written notice if the other party materially breaches this Agreement and fails to cure such breach within thirty (30) days.
+
+3. FEES AND PAYMENT
+Client shall pay Provider the fees set forth in each applicable SOW. Payment is due within thirty (30) days of receipt of an invoice. Late payments shall bear interest at the rate of 1.5% per month.
+
+4. CONFIDENTIAL INFORMATION
+Each party agrees to maintain the confidentiality of all proprietary and confidential information disclosed by the other party. "Confidential Information" means any information designated as confidential or that reasonably should be understood to be confidential given the nature of the information.
+
+5. INDEMNIFICATION
+Provider shall indemnify, defend, and hold harmless Client from and against any third-party claims arising from Provider's breach of this Agreement or gross negligence in the performance of services.
+
+6. LIMITATION OF LIABILITY
+IN NO EVENT SHALL EITHER PARTY'S AGGREGATE LIABILITY ARISING OUT OF OR RELATED TO THIS AGREEMENT EXCEED THE TOTAL FEES PAID BY CLIENT TO PROVIDER IN THE TWELVE (12) MONTHS PRECEDING THE CLAIM.
+
+7. INTELLECTUAL PROPERTY
+All work product created by Provider in the performance of services shall be considered work made for hire. Provider hereby assigns all right, title, and interest in such work product to Client.
+
+8. DATA PROTECTION
+Provider shall comply with all applicable data protection laws, including GDPR and CCPA, when processing personal data on behalf of Client. Provider shall act as a data processor as defined under applicable law.
+
+9. NON-COMPETE
+During the term of this Agreement and for twelve (12) months thereafter, Provider shall not directly or indirectly engage in business activities that compete with Client's primary business within the United States.
+
+10. FORCE MAJEURE
+Neither party shall be liable for any failure to perform its obligations under this Agreement if such failure results from acts of God, war, terrorism, government action, or other circumstances beyond the reasonable control of the affected party.
+
+11. GOVERNING LAW
+This Agreement shall be governed by and construed in accordance with the laws of the State of New York, without regard to conflicts of law principles. The parties hereby submit to the exclusive jurisdiction of the state and federal courts located in New York, New York.
+
+12. GENERAL PROVISIONS
+12.1 Severability. If any provision of this Agreement is held invalid, the remaining provisions shall remain in full force and effect.
+12.2 Entire Agreement. This Agreement constitutes the entire agreement between the parties and supersedes all prior negotiations and agreements.
+
+IN WITNESS WHEREOF, the parties have executed this Agreement as of the Effective Date.
+
+ACME CORPORATION
+
+By: _______________________
+Name: John Smith
+Title: Chief Executive Officer
+
+BETA CONSULTING GROUP, LLC
+
+By: _______________________
+Name: Sarah Johnson
+Title: Managing Partner
