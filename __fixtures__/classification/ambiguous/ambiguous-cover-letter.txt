@@ -1,0 +1,18 @@
+Dear Ms. Harrington,
+
+I am writing to express my enthusiastic interest in the Senior Product Manager position at Meridian Analytics, as advertised on your careers page. With over seven years of experience leading cross-functional product teams at fast-growing B2B SaaS companies, I am confident that my background in data-intensive product development and go-to-market strategy aligns closely with the challenges and opportunities described in your job posting.
+
+In my current role as Senior Product Manager at Datavault Systems, I own the product roadmap for our enterprise analytics platform, which serves over 400 customers and generates $28M in ARR. Over the past two years, I led the end-to-end development and launch of three major feature releases, including a real-time data collaboration workspace that became the primary growth driver, contributing $6.2M in net new ARR within its first two quarters. I worked directly with engineering teams of 15-20 developers, data scientists, and designers, using a combination of agile sprints and quarterly OKR planning to maintain a consistent two-week release cadence.
+
+Prior to Datavault, I spent four years at ClearPoint Technologies, where I progressed from Associate Product Manager to Product Manager. Key accomplishments included leading the redesign of our customer onboarding workflow—which reduced time-to-first-value by 35% and improved trial-to-paid conversion from 18% to 27%—and managing the integration of an acquired startup's product into our core platform, completing the technical and UX consolidation within six months ahead of schedule.
+
+What draws me most to Meridian Analytics is your mission to make advanced statistical modeling accessible to non-technical business users. I have a deep personal interest in the democratization of data tools, stemming from my undergraduate degree in Mathematics and Economics from the University of Michigan. I have also completed executive education coursework in machine learning at Stanford and regularly contribute to the product management community through conference talks at ProductCon and MTP Con.
+
+I am particularly excited about the challenges of building intuitive interfaces for complex statistical workflows. At Datavault, I championed a "progressive disclosure" UX philosophy that hid advanced configuration behind smart defaults, reducing the average time to build a dashboard from 47 minutes to 12 minutes while increasing user satisfaction scores by 22 points.
+
+I would welcome the opportunity to discuss how my experience and product philosophy can contribute to Meridian Analytics' continued growth. I am available for an interview at your convenience and can be reached at (415) 555-0183 or jennifer.morales@email.com.
+
+Thank you for considering my application.
+
+Warm regards,
+Jennifer Morales

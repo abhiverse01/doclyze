@@ -1,0 +1,59 @@
+REQUEST FOR PROPOSAL
+
+RFP Number: CITY-2025-IT-0042
+Issuing Authority: City of Riverside, Department of Information Technology
+Issue Date: February 1, 2025
+Closing Date: March 15, 2025, 2:00 PM PST
+Contact: procurement@riversideca.gov
+
+1. Purpose and Background
+The City of Riverside (population 330,000) seeks proposals from qualified vendors to replace its legacy 311 citizen service management system. The current system, implemented in 2014, has reached end-of-life and can no longer support the City's service delivery requirements. The new system must support multi-channel intake (phone, web, mobile app, social media), intelligent case routing, real-time dashboards, and integration with the City's existing GIS platform, CRM (Salesforce), and ERP (SAP S/4HANA).
+
+2. Scope of Services
+The selected vendor shall provide:
+- A cloud-hosted, SaaS-based citizen service management platform
+- Configuration and workflow design aligned with the City's 23 service categories
+- Data migration from the legacy system (approximately 2.1M historical service requests)
+- Integration with existing City systems (GIS, CRM, ERP, and the public-facing website)
+- Mobile application for both iOS and Android
+- Administrator and staff training for approximately 150 users across 8 departments
+- A minimum of 5 years of post-go-live maintenance and support
+- 99.9% uptime SLA with documented incident response procedures
+
+3. Evaluation Criteria
+Proposals will be evaluated on the following weighted criteria:
+Technical Approach and Solution Fit: 35%
+Vendor Experience and Qualifications: 25%
+Total Cost of Ownership (5-year): 25%
+Implementation Timeline and Project Plan: 15%
+
+4. Budget
+The City has allocated a total budget of $1,800,000 for this procurement, inclusive of software licensing, implementation, data migration, training, and five years of maintenance. Proposals exceeding this amount will not be considered unless they demonstrate exceptional value that justifies a budget amendment.
+
+5. Required Vendor Qualifications
+- Minimum 5 years in business providing citizen service or CRM solutions to government entities
+- At least 3 implementations with municipalities of 200,000+ population
+- SOC 2 Type II certification
+- FedRAMP Moderate authorization (or commitment to obtain within 12 months)
+- Demonstrated experience with GIS integration
+
+6. Proposal Requirements
+Respondents must submit the following:
+A. Technical Proposal (maximum 30 pages) including system architecture, feature mapping to requirements, integration approach, and implementation methodology
+B. Cost Proposal (separate sealed document) with detailed pricing for all line items over the 5-year contract term
+C. Three (3) references from comparable government implementations
+D. Organizational chart and key personnel resumes
+E. Proof of required certifications
+
+7. Timeline
+RFP Issued: February 1, 2025
+Vendor Questions Due: February 14, 2025
+Responses to Questions Posted: February 21, 2025
+Proposal Submission Deadline: March 15, 2025
+Vendor Presentations/Demos: March 31 – April 11, 2025
+Selection Announcement: April 25, 2025
+Contract Execution: May 15, 2025
+Go-Live Target: November 2025
+
+8. Terms and Conditions
+The City of Riverside is a public agency subject to applicable procurement laws. The selected vendor will be required to execute a Master Services Agreement with standard City terms, including indemnification, insurance requirements (minimum $5M general liability, $5M professional liability), and compliance with all applicable privacy regulations including CCPA. The City reserves the right to reject any or all proposals and to waive informalities in the procurement process.

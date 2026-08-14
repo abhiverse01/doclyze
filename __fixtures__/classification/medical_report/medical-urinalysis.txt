@@ -1,0 +1,77 @@
+QUEST DIAGNOSTICS
+URINALYSIS, COMPLETE WITH MICROSCOPIC
+
+Patient Name: Williams, DeShawn A.
+Patient ID: DW-20230487210
+DOB: August 15, 1995 | Age: 28 | Sex: Male
+Ordering Physician: Dr. Karen Mitchell, MD, Family Medicine
+Order Date: March 20, 2024
+Collection Date: March 20, 2024
+Collection Time: 10:30 AM
+Specimen Type: Urine, midstream clean-catch
+Accession #: QD-2024-7748291
+
+---
+
+MACROSCOPIC EXAMINATION
+
+Color:                              Amber
+Appearance:                          Slightly Cloudy
+Clarity:                            Slightly Turbid
+Specific Gravity:                    1.025          (1.005-1.030)
+pH:                                 6.0            (4.5-8.0)
+
+---
+
+CHEMICAL EXAMINATION (Dipstick)
+
+Test                    Result       Reference Range    Flag
+Leukocyte Esterase       Positive      Negative           *
+Nitrite                 Negative      Negative
+Urobilinogen            0.2 mg/dL    <1.0 mg/dL
+Protein                 Trace        Negative
+Blood                   Negative      Negative
+Ketones                 Negative      Negative
+Glucose                 Negative      Negative
+Bilirubin               Negative      Negative
+
+---
+
+MICROSCOPIC EXAMINATION
+
+WBC:                    12-18/HPF     0-5/HPF           *
+RBC:                    0-2/HPF       0-3/HPF
+Epithelial Cells:       2-4/HPF       0-5/HPF
+Bacteria:               Moderate      None/Rare         *
+Casts:                  None seen     0-5/LPF
+Crystals:               Amorphous phosphates (few)
+Mucus:                  Rare
+
+---
+
+CULTURE RESULTS (if reflex):
+Urine culture was reflexively ordered based on positive leukocyte esterase and pyuria.
+
+Organism: Escherichia coli
+Quantity: >100,000 CFU/mL
+Susceptibility (Kirby-Bauer):
+  Ampicillin:                Resistant
+  Amoxicillin/Clavulanate:   Susceptible
+  Ceftriaxone:               Susceptible
+  Ciprofloxacin:             Susceptible
+  Levofloxacin:              Susceptible
+  Nitrofurantoin:            Susceptible
+  Trimethoprim/Sulfamethoxazole: Susceptible
+
+---
+
+INTERPRETATION
+Positive urinalysis with pyuria and bacteriuria. Culture confirms E. coli urinary tract infection at >100,000 CFU/mL. Susceptible to multiple oral antibiotics.
+
+This report is intended for the ordering physician.
+
+Electronically signed:
+Clinical Laboratory Scientist: M. Rodriguez, CLS
+Reviewing Pathologist: J. Chen, MD
+Quest Diagnostics Incorporated
+Report Date: March 21, 2024

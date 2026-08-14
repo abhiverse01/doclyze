@@ -1,0 +1,57 @@
+CREDIT NOTE
+
+Credit Note Number: CN-2024-00089
+Date of Issue: March 28, 2024
+Original Invoice: INV-2024-00734 (dated February 5, 2024)
+
+From:
+Precision Electronics Manufacturing Inc.
+9100 Technology Drive
+San Jose, CA 95134
+
+Issued To:
+NovaTech Solutions Inc.
+1500 Page Mill Road
+Palo Alto, CA 94304
+Attn: Accounts Payable Department
+
+---
+
+REASON FOR CREDIT
+Defective components. Upon quality inspection at our receiving dock, 45 units of PCB Assembly Part# PEA-7700 (Batch: B2024-0219) were found to have solder joint defects on the U12 and U15 IC pads. These units fail IPC-A-610 Class 3 inspection criteria and cannot be reworked cost-effectively. This credit note covers the return and replacement of the defective units.
+
+---
+
+CREDIT DETAILS
+
+1. PCB Assembly PEA-7700
+   Original Quantity Billed: 500 units @ $34.50 = $17,250.00
+   Quantity Credited (defective): 45 units @ $34.50 = $1,552.50
+
+2. Restocking Processing Fee (deducted from credit):
+   Inspection and restocking: -$75.00
+
+3. Original Shipping Charge (credited in full):
+   FedEx Ground, 12 boxes: $284.00
+
+---
+
+CREDIT SUMMARY
+
+Gross Credit: $1,552.50
+Less: Restocking Fee: ($75.00)
+Less: Original Shipping Credit: ($284.00)
+
+NET CREDIT AMOUNT: $1,761.50
+
+---
+
+This credit has been applied to your account and will be deducted from your next payment. Alternatively, you may request a refund check by contacting our accounts receivable department within 30 days.
+
+Replacement Units: 45 units of PEA-7700 from a new production batch (B2024-0237) will be shipped at no additional charge via FedEx 2-Day. Tracking number will be provided separately.
+
+Contact for questions:
+Precision Electronics Manufacturing Inc.
+Accounts Receivable: (408) 555-0199 | ar@precisionelec.com
+
+This credit note is non-negotiable and may only be applied to the account of the original invoice holder.

@@ -1,0 +1,88 @@
+PROMETHEUS AI INC.
+PROFIT & LOSS STATEMENT (Unaudited)
+For the Nine Months Ended September 30, 2024
+(In USD, unless otherwise stated)
+
+---
+
+REVENUE
+
+  Subscription Revenue:
+    Monthly plans                                $1,245,000
+    Annual plans (ratable)                       $3,890,000
+  Usage-based Revenue:
+    API calls (per 1K tokens)                      $892,000
+    Model fine-tuning services                     $234,000
+  Professional Services:
+    Implementation & onboarding                     $456,000
+    Training & enablement                          $178,000
+---
+  TOTAL REVENUE                               $6,895,000
+
+COST OF REVENUE
+
+  Cloud Infrastructure (AWS/GCP):                ($2,180,000)
+  Third-party model API costs:                    ($890,000)
+  Customer support (4 FTEs):                       ($320,000)
+  Data labeling & annotation:                      ($145,000)
+---
+  TOTAL COST OF REVENUE                       ($3,535,000)
+
+---
+  GROSS PROFIT                                $3,360,000
+  Gross Margin: 48.7%
+
+OPERATING EXPENSES
+
+  Research & Development:
+    Salaries & benefits (22 FTEs)              ($2,640,000)
+    GPU compute (training)                     ($1,200,000)
+    Cloud services & tools                       ($89,000)
+    Recruiting costs                            ($120,000)
+    R&D Subtotal:                               ($4,049,000)
+
+  Sales & Marketing:
+    Salaries & benefits (8 FTEs)               ($960,000)
+    Digital advertising (Google, LinkedIn)       ($420,000)
+    Conference sponsorships & events             ($180,000)
+    Content marketing & PR                        ($65,000)
+    S&M Subtotal:                               ($1,625,000)
+
+  General & Administrative:
+    Salaries & benefits (5 FTEs)               ($625,000)
+    Legal & accounting                           ($285,000)
+    Insurance                                     ($92,000)
+    Office & equipment                            ($48,000)
+    Software subscriptions                        ($36,000)
+    G&A Subtotal:                               ($1,086,000)
+
+---
+  TOTAL OPERATING EXPENSES                    ($6,760,000)
+
+---
+  OPERATING LOSS                             ($3,400,000)
+  Operating Margin: -49.3%
+
+OTHER INCOME/EXPENSE
+  Interest income on cash reserves                  $42,000
+  Interest expense on venture debt                  ($48,000)
+  Foreign exchange (gain)/loss                        ($8,000)
+---
+  Net Other Expense                               ($14,000)
+
+---
+  NET LOSS                                  ($3,414,000)
+
+---
+  Net Loss Per Share (Basic):                 ($0.57)
+  Shares Outstanding (Basic):                  6,000,000
+
+---
+  Cash Used in Operations:                  ($3,200,000)
+  Cash Balance (End of Period):              $18,400,000
+
+Notes:
+- Company has raised $28M in venture funding to date (Seed: $4M, Series A: $24M)
+- Venture debt outstanding: $2.4M (Silicon Valley Bank, 7.5% interest)
+- No revenue recognition issues noted
+- This is an unaudited internal management report

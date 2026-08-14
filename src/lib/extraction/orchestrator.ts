@@ -74,12 +74,25 @@ const TYPE_IMPORTANT_FIELDS: Record<string, string[]> = {
 
 export async function runExtractionPipeline(
   file: File,
-  onProgress?: (update: ProgressUpdate) => void
+  onProgress?: (update: ProgressUpdate) => void,
+  /** v5: Force a specific document type, skipping classification. */
+  forceType?: DocType,
 ): Promise<DoclyzeExtractionResult> {
   const emit = (stage: ProgressStage, progress: number) =>
     onProgress?.({ stage, progress, label: STAGE_LABELS[stage] });
 
   emit("reading_file", 0.05);
+
+  // v5: Reject empty files early
+  if (file.size === 0) {
+    throw new Error("The file is empty (0 bytes). Please upload a non-empty file.");
+  }
+
+  // v5: Warn on suspiciously small files
+  if (file.size < 10) {
+    throw new Error(`The file is too small (${file.size} bytes) to contain meaningful content.`);
+  }
+
   const mimeType = file.type || "application/octet-stream";
   let parsed: ParseOutput;
   try {
@@ -89,12 +102,14 @@ export async function runExtractionPipeline(
     throw err;
   }
 
-  emit("classifying_document", 0.75);
-  const classification = classifyDocument({
-    text: parsed.text,
-    filename: file.name,
-    tabular: !!parsed.tabular,
-  });
+  // v5: Allow forced classification (for manual reclassification)
+  const classification = forceType
+    ? { type: forceType, confidence: 100, signals: [`Manually reclassified as ${labelForType(forceType)}`] }
+    : classifyDocument({
+        text: parsed.text,
+        filename: file.name,
+        tabular: !!parsed.tabular,
+      });
 
   // ─── Language detection ────────────────────────────────────────────────────
   const langResult = detectLanguage(parsed.text);
@@ -266,11 +281,13 @@ export async function runExtractionPipeline(
   }
 
   // ─── Insert classification as the first insight ──────────────────────────
+  // v5: Use numeric confidence from rebuilt classifier
+  const confLabel = classification.confidence >= 70 ? "high" : classification.confidence >= 40 ? "medium" : "low";
   const classificationInsight: Insight = {
     id: "classification",
-    title: `Classified as: ${labelForType(classification.type)} (confidence: ${classification.confidence})`,
+    title: `Classified as: ${labelForType(classification.type)} (confidence: ${classification.confidence}/100 — ${confLabel})`,
     body: classification.signals.join(" · "),
-    severity: "info",
+    severity: confLabel === "high" ? "info" : confLabel === "medium" ? "notice" : "warning",
     category: "Classification",
   };
 
@@ -292,6 +309,7 @@ export async function runExtractionPipeline(
     fileType: mimeType,
     fileSizeBytes: file.size,
     detectedType: classification.type,
+    classificationConfidence: classification.confidence,
     extractedAt: new Date().toISOString(),
     ocrUsed: parsed.ocrUsed,
     fieldGroups,

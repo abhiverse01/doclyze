@@ -1,0 +1,68 @@
+KAISER PERMANENTE
+LABORATORY REPORT - COMPREHENSIVE METABOLIC PANEL (CMP)
+
+Patient Name: Martinez, Isabella S.
+Patient ID: KP-IM-20239384
+DOB: July 22, 2003 | Age: 20 | Sex: Female
+Ordering Physician: Dr. Jennifer Lee, MD
+Order Date: April 2, 2024
+Collection Date: April 3, 2024
+Collection Time: 07:30 AM
+Fasting Status: Fasting (10+ hours)
+Specimen: Serum (Chemistry), EDTA Plasma (Glucose)
+Accession #: KP-LAB-2024-4482910
+
+---
+
+COMPREHENSIVE METABOLIC PANEL
+
+Test                    Result       Reference Range    Flag
+Glucose (fasting)         82 mg/dL      70-100 mg/dL
+BUN                      14 mg/dL      7-20 mg/dL
+Creatinine                0.78 mg/dL    0.59-1.04 mg/dL
+eGFR                    >90 mL/min/1.73m2 (>60)
+BUN/Creatinine Ratio    17.9          10:1-20:1
+Sodium                   139 mmol/L    136-145 mmol/L
+Potassium                4.0 mmol/L    3.5-5.0 mmol/L
+Chloride                  101 mmol/L    98-107 mmol/L
+CO2 (Bicarbonate)        25 mmol/L     22-30 mmol/L
+Anion Gap                13 mmol/L     3-11 mmol/L       *
+Calcium (total)           9.6 mg/dL     8.5-10.5 mg/dL
+Calcium (corrected, Alb)  9.7 mg/dL     8.5-10.2 mg/dL
+Protein, Total            7.4 g/dL      6.0-8.3 g/dL
+Albumin                   4.8 g/dL      3.5-5.0 g/dL
+Globulin                  2.6 g/dL      2.0-3.5 g/dL
+A/G Ratio                 1.85          1.0-2.5
+Bilirubin, Total          0.7 mg/dL     0.2-1.2 mg/dL
+Bilirubin, Direct         0.2 mg/dL     0.0-0.3 mg/dL
+Bilirubin, Indirect       0.5 mg/dL     0.1-1.0 mg/dL
+Alkaline Phosphatase       68 U/L        44-147 U/L
+AST (SGOT)                22 U/L        10-40 U/L
+ALT (SGPT)                18 U/L        7-56 U/L
+
+---
+
+HEPATIC FUNCTION PANEL (added per physician order)
+
+Test                    Result       Reference Range    Flag
+GGT                       18 U/L        5-36 U/L
+LDH                      162 U/L        122-222 U/L
+Total Protein             7.4 g/dL      6.0-8.3 g/dL
+Albumin                   4.8 g/dL      3.5-5.0 g/dL
+Prothrombin Time (PT)     11.2 sec      10.0-13.0 sec
+INR                       1.02          0.80-1.20
+
+---
+
+INTERPRETATION
+
+All CMP values are within normal limits. The anion gap of 13 is minimally elevated but likely reflects the albumin-corrected calculation and is not clinically significant in an asymptomatic patient. Liver function tests are normal. Renal function is normal.
+
+No critical values identified.
+
+Electronically signed:
+Laboratory Director: Dr. Sunita Patel, MD
+Kaiser Permanente Regional Laboratory
+Report Date: April 3, 2024 14:15 PST
+
+This report is intended for the ordering physician only.

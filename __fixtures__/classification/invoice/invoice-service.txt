@@ -1,0 +1,53 @@
+INVOICE
+
+Invoice Number: INV-2024-00847
+Date of Issue: March 12, 2024
+Due Date: April 11, 2024
+
+From:
+Clearview Web Solutions LLC
+4820 Oak Street, Suite 200
+Austin, TX 78756
+EIN: 82-3947561
+Phone: (512) 555-0144
+
+Bill To:
+Morrison & Associates CPA
+1200 Main Street, Floor 8
+Houston, TX 77002
+Attn: David Morrison, Managing Partner
+
+---
+
+Service Details:
+
+1. Website Redesign — Phase 1: Discovery & Wireframes
+   Description: Stakeholder interviews (4 sessions), competitive analysis, sitemap creation, and low-fidelity wireframes for 12 page templates.
+   Hours: 32.0 @ $175.00/hr = $5,600.00
+
+2. Website Redesign — Phase 2: Visual Design
+   Description: High-fidelity mockups, responsive layouts (desktop, tablet, mobile), design system documentation, and two rounds of revisions.
+   Hours: 48.0 @ $175.00/hr = $8,400.00
+
+3. Frontend Development
+   Description: Responsive website built in Next.js with WordPress headless CMS integration. Includes contact form, blog section, and client portal.
+   Hours: 64.0 @ $175.00/hr = $11,200.00
+
+4. Quality Assurance & Launch Support
+   Description: Cross-browser testing (Chrome, Safari, Firefox, Edge), performance optimization, DNS migration support, and 30-day post-launch bug fixes.
+   Hours: 16.0 @ $175.00/hr = $2,800.00
+
+---
+
+Subtotal: $28,000.00
+Tax (Texas Sales Tax, 8.25%): $2,310.00
+Total Due: $30,310.00
+
+Payment Terms: Net 30. A late fee of 1.5% per month will be applied to overdue balances.
+
+Please remit payment via:
+- ACH Transfer: Routing 111022014, Acct 4928371056
+- Check: Mailed to the address above
+
+Thank you for your business.
+Clearview Web Solutions LLC

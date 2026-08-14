@@ -285,6 +285,8 @@ export interface DoclyzeExtractionResult {
   fileType: string; // MIME type
   fileSizeBytes: number;
   detectedType: DocType;
+  /** v5: Numeric classification confidence 0-100. */
+  classificationConfidence: number;
   extractedAt: string; // ISO timestamp
   /** True when OCR was used to obtain text (image PDF / image file). */
   ocrUsed: boolean;

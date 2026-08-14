@@ -1,0 +1,52 @@
+PERFORMANCE REVIEW — CONFIDENTIAL
+
+Employee: Marcus Thornburg
+Employee ID: EMP-2019047
+Review Period: January 2023 – December 2023
+Department: Engineering — Payments Infrastructure
+Reviewer: Lisa Huang, Director of Engineering
+Review Date: January 25, 2024
+
+OVERALL RATING: Exceeds Expectations (4.5 / 5.0)
+
+---
+
+PERFORMANCE SUMMARY
+
+Marcus had an outstanding year in 2023. He consistently delivered high-quality work, took on significant leadership responsibilities, and made substantial contributions to both our technical architecture and our team culture. His impact on the payment processing pipeline redesign was transformative, and his willingness to mentor junior engineers has elevated the entire team.
+
+AREAS OF STRENGTH
+
+Technical Excellence (5/5):
+Marcus demonstrated exceptional technical depth throughout the year. The payment processing pipeline he architected in Go has been running in production for 8 months with 99.997% uptime, handling peak loads of 2.4M transactions per hour. His migration of legacy Java microservices to Rust reduced p99 latency from 450ms to 38ms — a remarkable engineering achievement that directly improved customer experience and reduced infrastructure costs by 18%. Marcus's understanding of distributed systems, particularly around consensus and fault tolerance, is among the best on the team.
+
+Leadership & Mentorship (4.5/5):
+Although not formally a manager, Marcus has emerged as a technical leader on the team. He led the technical design for three major projects, facilitated architecture review meetings, and took on de facto tech lead responsibilities during the Q2 sprint when the engineering manager was on leave. He mentored four engineers: two were promoted to mid-level within 18 months, and the other two received "exceeds expectations" ratings. Feedback from mentees consistently highlights Marcus's patience, clarity, and ability to break down complex problems.
+
+Initiative & Impact (4.5/5):
+Marcus proactively identified and solved the real-time fraud detection problem, building a prototype using Kafka Streams that caught a pattern of fraudulent transactions our existing system had missed. He presented this to the CTO, received funding for a full buildout, and the resulting system has decreased fraudulent transactions by 23%. This was not in his original project scope — it was entirely self-driven.
+
+AREAS FOR DEVELOPMENT
+
+Communication with Non-Technical Stakeholders (3.5/5):
+While Marcus communicates clearly with fellow engineers, he occasionally struggles to translate technical concepts for product managers and business stakeholders. During the Q3 roadmap presentation, several PMs noted that Marcus's explanation of the migration plan was overly technical. Recommendation: Practice structuring presentations for mixed audiences. Consider joining the internal Toastmasters group.
+
+Delegation (3.5/5):
+Marcus tends to take on too much himself rather than distributing work. This has led to occasional burnout signals (declining PTO usage in Q2 and Q4). He should practice identifying tasks that can be delegated to more junior engineers, even if it takes longer initially.
+
+GOALS FOR 2024
+1. Complete the Rust migration (remaining 30% of services) by Q3
+2. Serve as technical mentor for at least 3 engineers
+3. Present at one external conference (SREcon, KubeCon, or similar)
+4. Complete a leadership development course (recommend: "Engineering Leadership" by Stanford online)
+5. Take a minimum of 15 days of PTO
+
+PROMOTION CONSIDERATION
+Based on this review, Marcus is recommended for promotion to Staff Engineer. This will be discussed in the March calibration session.
+
+---
+
+Employee Comments:
+Thank you for the thoughtful feedback. I agree with the development areas, particularly around delegation — I'm working on it. I'm excited about the Staff Engineer track and would welcome the opportunity to take on more cross-team technical leadership.
+
+— Marcus Thornburg, January 30, 2024

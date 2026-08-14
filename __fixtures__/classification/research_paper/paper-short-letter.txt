@@ -1,0 +1,20 @@
+Is the Carbon Footprint of Large Language Models Overstated?
+
+To the Editor,
+
+We read with great interest the recent Perspective by Luccioni et al. ("The Carbon Footprint of Generative AI," Nature Climate Change, 2024) highlighting the environmental costs of training large language models (LLMs). While we share the authors' concern about the sustainability of AI development, we believe their estimates may significantly overstate the carbon impact for three reasons.
+
+First, the authors compute carbon emissions using a fixed average carbon intensity for the electrical grid (428 gCO2/kWh, based on the U.S. average). However, the largest LLM training runs (GPT-4, Gemini, Claude) are conducted in data centers that have substantially lower carbon intensity. Google's data centers operate at approximately 166 gCO2/kWh (Google Environmental Report, 2023), and Microsoft has committed to 100% renewable energy by 2025. Using grid-average figures for facilities that purchase renewable energy credits or operate their own solar and wind installations inflates estimated emissions by 2-3x.
+
+Second, the analysis attributes the full capital embodied carbon of GPU manufacturing to training runs. An H100 GPU has an estimated embodied carbon of approximately 250 kgCO2e and a useful lifespan of 3-5 years. Distributing this across the total compute performed over a GPU's lifetime (roughly 50,000 GPU-hours at 70% utilization) yields an embodied carbon allocation of approximately 5 gCO2e per GPU-hour. The Perspective's allocation method, which amortizes over a single training run, overstates this by an order of magnitude.
+
+Third, the paper does not account for the displacement effect. LLMs are increasingly used to accelerate scientific research, optimize energy grids, and improve the efficiency of industrial processes. A single LLM-assisted materials science discovery that shortens experimental cycles by months could offset thousands of training runs in avoided experimental carbon emissions. While quantifying displacement is methodologically challenging, ignoring it entirely presents an incomplete picture.
+
+We do not argue that the environmental impact of AI is negligible—it is real and must be addressed through transparency, efficiency improvements, and renewable energy procurement. However, accurate estimation is essential for evidence-based policy. We urge the research community to adopt standardized carbon accounting protocols specific to AI workloads, and we recommend the Green Software Foundation's Software Carbon Intensity (SCI) specification as a starting point.
+
+Yours sincerely,
+Dr. Wei Zhang, Dr. Priya Nair, Dr. Thomas Eriksson
+Department of Computer Science, University of Toronto
+Toronto, ON M5S 3G4, Canada
+
+Competing interests: The authors have received research funding from Microsoft Research and Google DeepMind.

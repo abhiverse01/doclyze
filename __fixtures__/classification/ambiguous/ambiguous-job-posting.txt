@@ -1,0 +1,49 @@
+SENIOR SOFTWARE ENGINEER — PLATFORM INFRASTRUCTURE
+
+About the Role
+
+We're looking for a Senior Software Engineer to join our Platform Infrastructure team. You'll design and build the systems that power our real-time collaboration features used by millions of professionals worldwide. This is a high-impact role reporting directly to the VP of Engineering.
+
+What You'll Do
+
+- Architect and implement scalable microservices in Go and Rust that handle 500K+ concurrent WebSocket connections
+- Lead technical design reviews and mentor junior and mid-level engineers
+- Design and optimize our event-driven architecture using Apache Kafka and Redis Streams
+- Build and operate observability infrastructure (metrics, logging, tracing) using Prometheus, Grafana, and OpenTelemetry
+- Collaborate with product managers and designers to translate requirements into technical solutions
+- Participate in on-call rotation and incident response
+
+What We're Looking For
+
+- 5+ years of professional experience in backend systems engineering
+- Strong proficiency in Go, Rust, Python, or Java
+- Experience with distributed systems, including consensus protocols, partitioning, and replication
+- Deep understanding of networking (TCP/IP, HTTP/2, WebSockets)
+- Experience with Kubernetes, Docker, and cloud infrastructure (AWS or GCP preferred)
+- Excellent communication skills and the ability to explain complex technical concepts
+
+Bonus Points
+
+- Experience building real-time collaboration systems (CRDTs, OT)
+- Contributions to open-source projects
+- Experience with eBPF and kernel-level performance optimization
+- Previous experience at a high-growth startup
+
+What We Offer
+
+- Competitive salary: $200,000 – $280,000 base + equity
+- Comprehensive benefits: medical, dental, vision, 401(k) with 4% match
+- Unlimited PTO (with a 3-week minimum)
+- $5,000 annual learning and development budget
+- Home office stipend of $2,000
+- Relocation assistance available
+
+About Us
+
+Collabora is a Series D startup backed by Sequoia Capital and Andreessen Horowitz. We build the collaboration platform that creative teams love — used by design teams at Spotify, Netflix, and Airbnb. We're 180 people across San Francisco, London, and Berlin, and we're profitable.
+
+To Apply
+
+Send your resume and a brief note about why you're interested to careers@collabora.io. We respond to every application within 5 business days.
+
+Collabora is an equal opportunity employer. We celebrate diversity and are committed to creating an inclusive environment for all employees.

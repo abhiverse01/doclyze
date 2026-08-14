@@ -1,0 +1,56 @@
+MUTUAL NON-DISCLOSURE AGREEMENT
+
+This Mutual Non-Disclosure Agreement (the "Agreement") is entered into as of April 15, 2024 (the "Effective Date"), by and between:
+
+Disclosing Party: VantagePoint Analytics Inc., a Delaware corporation with its principal place of business at 500 Boylston Street, Suite 2100, Boston, MA 02116 ("VantagePoint")
+
+Disclosing Party: Meridian Health Technologies LLC, a California limited liability company with its principal place of business at 100 California Street, Suite 800, San Francisco, CA 94111 ("Meridian")
+
+VantagePoint and Meridian may be referred to individually as a "Party" and collectively as the "Parties."
+
+1. PURPOSE
+The Parties wish to explore a potential business relationship involving the integration of VantagePoint's data analytics platform with Meridian's electronic health record (EHR) system. In connection with these discussions, each Party may disclose certain confidential and proprietary information to the other Party.
+
+2. DEFINITION OF CONFIDENTIAL INFORMATION
+"Confidential Information" means any and all non-public information, whether in oral, written, electronic, or other form, disclosed by one Party (the "Disclosing Party") to the other Party (the "Receiving Party"), including but not limited to: (a) trade secrets, proprietary algorithms, software source code, database schemas, and technical documentation; (b) business plans, financial projections, pricing strategies, customer lists, and marketing plans; (c) patient data, clinical workflows, and healthcare compliance procedures; (d) the existence and terms of this Agreement and any discussions regarding a potential business relationship.
+
+Confidential Information does not include information that: (i) is or becomes publicly available through no fault of the Receiving Party; (ii) was known to the Receiving Party prior to disclosure, as evidenced by written records; (iii) is independently developed by the Receiving Party without use of or reference to the Confidential Information; or (iv) is rightfully obtained from a third party without restriction on disclosure.
+
+3. OBLIGATIONS OF RECEIVING PARTY
+The Receiving Party shall: (a) hold all Confidential Information in strict confidence and take all reasonable precautions to protect such information (including, without limitation, all precautions the Receiving Party employs with respect to its own confidential materials of like kind); (b) not disclose any Confidential Information to any third party without the prior written consent of the Disclosing Party; (c) not use any Confidential Information for any purpose other than evaluating the potential business relationship described in Section 1; (d) limit access to Confidential Information to those employees and advisors who need to know such information for the purpose described in Section 1 and who are bound by confidentiality obligations no less restrictive than those contained herein.
+
+4. REQUIRED DISCLOSURES
+If the Receiving Party is required by law, regulation, or court order to disclose any Confidential Information, the Receiving Party shall provide the Disclosing Party with prompt written notice of such requirement (to the extent legally permitted) and shall cooperate with the Disclosing Party in seeking a protective order or other appropriate remedy.
+
+5. TERM
+This Agreement shall remain in effect for a period of two (2) years from the Effective Date. The confidentiality obligations with respect to Confidential Information disclosed during the term shall survive for a period of five (5) years from the date of disclosure.
+
+6. RETURN OR DESTRUCTION
+Upon the written request of the Disclosing Party, or upon termination of discussions between the Parties, the Receiving Party shall promptly return or destroy all copies of Confidential Information in its possession and certify in writing that it has done so.
+
+7. NO LICENSE
+Nothing in this Agreement grants the Receiving Party any license, right, or interest in or to any Confidential Information or any intellectual property of the Disclosing Party.
+
+8. REMEDIES
+The Parties acknowledge that any breach of this Agreement may cause irreparable harm for which monetary damages would be inadequate. Accordingly, the Disclosing Party shall be entitled to seek injunctive relief in addition to any other remedies available at law or in equity.
+
+9. GOVERNING LAW
+This Agreement shall be governed by and construed in accordance with the laws of the Commonwealth of Massachusetts, without regard to conflicts of law principles.
+
+10. COUNTERPARTS
+This Agreement may be executed in counterparts, each of which shall be deemed an original.
+
+
+IN WITNESS WHEREOF, the Parties have executed this Agreement as of the Effective Date.
+
+VANTAGEPOINT ANALYTICS INC.
+By: _______________________________
+Name: Jennifer Walsh
+Title: Chief Business Officer
+Date: April 15, 2024
+
+MERIDIAN HEALTH TECHNOLOGIES LLC
+By: _______________________________
+Name: Dr. Raymond Cho
+Title: CEO
+Date: April 15, 2024

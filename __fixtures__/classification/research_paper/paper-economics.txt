@@ -1,0 +1,31 @@
+The Remote Work Revolution and Urban Housing Markets: Evidence from Post-Pandemic Rent Gradients in U.S. Metropolitan Areas
+
+Abstract
+This paper examines the causal effect of remote work prevalence on housing rent gradients in 50 major U.S. metropolitan statistical areas (MSAs) from 2019 to 2023. Using instrumented measures of remote work adoption derived from industry-level exposure to Zoom's growth (Bartik-style instrument) and variation in state-level stay-at-home order stringency, we estimate that a 10 percentage point increase in remote work prevalence flattens the urban rent gradient by 2.3% to 3.1%, equivalent to moving the city center premium outward by approximately 1.2 miles. The effect is driven primarily by the suburbs (3-15 miles from the CBD) rather than exurban areas, consistent with a model in which remote work expands the feasible commuting radius by allowing workers to accept longer commute frequencies. We also find that the flattening effect is concentrated in MSAs with higher pre-pandemic transit ridership and higher baseline housing costs, suggesting that remote work substitutes for transit accessibility. These findings have implications for urban planning, transit investment, and housing affordability policy.
+
+1. Introduction
+The COVID-19 pandemic triggered an unprecedented shift toward remote work. By mid-2022, approximately 30% of U.S. working days were performed from home (Barrero, Bloom, and Davis, 2023), compared to approximately 5% pre-pandemic. This structural shift in work arrangements has profound implications for urban geography: if workers need not commute daily to city centers, the relative attractiveness of central locations diminishes, and housing demand should shift outward.
+
+Several papers have documented the empirical relationship between remote work and urban housing markets. Ramani and Bloom (2021) found that ZIP codes with higher work-from-home rates experienced larger rent decreases in 2020. Ar onFailure et al. (2022) documented a "donut effect" in which city centers lost population while suburbs gained. However, existing studies face identification challenges: remote work adoption is endogenous to local economic conditions, and pandemic-era migration patterns may reflect temporary disruptions rather than structural shifts.
+
+2. Data
+We assemble a panel dataset covering 50 MSAs from Q1 2019 to Q4 2023. Rent data comes from Zillow's Observed Rent Index (ZORI) at the ZIP code level, providing over 12,000 ZIP code-quarter observations. Remote work prevalence is measured using three complementary sources: the Survey of Working Arrangements and Attitudes (Bloom et al.), LinkedIn Workforce Report data on remote job postings, and cell phone mobility data from SafeGraph.
+
+3. Empirical Strategy
+Our baseline specification is:
+
+log(Rent_{zmt}) = α + β(Remote_{mt} × Distance_z) + γ Remote_{mt} + δ_z + θ_t + ε_{zmt}
+
+where Remote_{mt} is the remote work prevalence in MSA m at time t, Distance_z is the distance of ZIP code z from the central business district, and the coefficient of interest β captures how remote work changes the slope of the rent gradient. We instrument Remote_{mt} using the share of employment in industries with high Zoom adoption potential (Bartik, 1991) interacted with national Zoom daily active user growth.
+
+4. Results
+Our IV estimates yield β = -0.023 (SE = 0.007), indicating that a 10 pp increase in remote work prevalence reduces the rent gradient slope by 2.3 percentage points. This implies that a household 5 miles from the CBD experiences a 1.15% rent reduction relative to the CBD for every 10 pp increase in remote work.
+
+5. Policy Implications
+Our findings suggest that cities relying on tax revenue from central commercial districts may face long-term fiscal pressure. Transit agencies should reconsider peak-capacity investments and explore flexible service models.
+
+References
+Barrero, J.M., Bloom, N., & Davis, S.J. (2023). "The Evolution of Work from Home." Journal of Economic Perspectives, 37(4), 23-49.
+Ramani, A. & Bloom, N. (2021). "The Donut Effect of COVID-19 on Cities." NBER Working Paper 30431.
+ArFailure, S. et al. (2022). "Work from Home and the Geography of Cities." Working Paper.
+Bartik, T.J. (1991). "Who Benefits from State and Local Economic Development Policies?" Upjohn Institute.

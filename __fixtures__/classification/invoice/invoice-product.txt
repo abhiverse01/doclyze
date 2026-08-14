@@ -1,0 +1,57 @@
+INVOICE
+
+Invoice No: WH-2024-01923
+Date: February 28, 2024
+Payment Due: March 30, 2024
+
+Sold To:
+Bright Horizons Daycare Center
+775 Elm Street
+Portland, OR 97214
+Contact: Jennifer Park, Director
+PO Reference: BH-PO-2024-0112
+
+Ship To:
+Same as billing address
+
+---
+
+PRODUCT INVOICE
+
+Item | Product Code | Description | Qty | Unit Price | Amount
+--- | --- | --- | --- | --- | ---
+1 | CRB-5501 | ColorRug Premium Play Mat - 8x10ft, Blue | 4 | $129.99 | $519.96
+2 | CRB-5502 | ColorRug Premium Play Mat - 8x10ft, Green | 4 | $129.99 | $519.96
+3 | BNS-3310 | Bambino Table & Chair Set (4 chairs) | 6 | $249.00 | $1,494.00
+4 | STG-2201 | Storage Cubby Unit - 8 Compartment, Natural | 8 | $189.50 | $1,516.00
+5 | STG-2205 | Storage Cubby Bins - Set of 8, Assorted | 8 | $34.99 | $279.92
+6 | ART-1100 | Easel Station - Double-Sided with Trays | 3 | $164.99 | $494.97
+7 | ART-1125 | Washable Tempera Paint - Gallon Set (8 colors) | 5 | $54.99 | $274.95
+8 | BK-8800 | Board Book Collection - Nature Theme (24 books) | 2 | $89.99 | $179.98
+9 | BLD-4400 | Mega Bloks Set - 500 pieces | 3 | $79.99 | $239.97
+10 | NPS-6610 | Nap Cots - Stackable, Blue | 20 | $62.50 | $1,250.00
+11 | NPS-6620 | Cot Sheets - Fitted, 100% Cotton (pack of 4) | 20 | $24.99 | $499.80
+12 | SAF-9901 | First Aid Kit - Center Size (50 person) | 2 | $89.99 | $179.98
+13 | SAF-9910 | Outlet Cover Pack (36 pieces) | 4 | $12.99 | $51.96
+14 | DSN-7700 | Wall Decal Set - Alphabet & Numbers | 3 | $45.99 | $137.97
+15 | LMP-5505 | LED Floor Lamp - Adjustable, Warm White | 4 | $89.99 | $359.96
+
+---
+
+Subtotal: $8,099.38
+Shipping & Handling (FedEx Freight, est. 450 lbs): $387.00
+Discount (5% bulk purchase): -$404.97
+Subtotal after discount: $8,081.41
+Oregon State Tax: $0.00 (Exempt - Educational Institution)
+
+TOTAL DUE: $8,468.41
+
+Terms: Net 30. 2% discount if paid within 10 days.
+
+Payment may be made by check, ACH, or credit card.
+Please include invoice number on all correspondence.
+
+Early Learning Supply Co.
+P.O. Box 22014
+Seattle, WA 98122
+(206) 555-0188 | orders@earlylearningsupply.com

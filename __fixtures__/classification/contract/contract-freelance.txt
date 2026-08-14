@@ -1,0 +1,55 @@
+FREELANCE SERVICES AGREEMENT
+
+This Freelance Services Agreement ("Agreement") is entered into as of June 1, 2024 (the "Effective Date"), between:
+
+CLIENT: BrightPath Learning Inc., a California corporation ("BrightPath"), with offices at 505 Howard Street, San Francisco, CA 94105.
+
+FREELANCER: Jordan Kim ("Freelancer"), an individual residing at 3842 24th Street, San Francisco, CA 94114.
+
+1. SERVICES
+1.1 BrightPath engages Freelancer to create instructional video content for the company's online learning platform, specifically a 12-module course titled "Introduction to UX Design" (the "Course").
+1.2 Deliverables include: (a) 12 video lessons, each 15-25 minutes in length; (b) supplementary PDF worksheets for each module; (c) quiz questions (minimum 10 per module); (d) a course introduction and conclusion video; (e) all associated graphics, thumbnails, and promotional materials.
+
+2. TIMELINE
+2.1 All deliverables shall be completed and submitted no later than September 30, 2024.
+2.2 Freelancer shall submit a detailed production schedule within 7 days of the Effective Date for BrightPath's approval.
+2.3 BrightPath shall provide feedback on each video within 5 business days of submission. Freelancer shall have one round of revisions per module included in the agreed fee.
+
+3. COMPENSATION
+3.1 Total Project Fee: $18,000, payable as follows:
+    - $3,000 upon execution of this Agreement
+    - $5,000 upon delivery and approval of Modules 1-4
+    - $5,000 upon delivery and approval of Modules 5-8
+    - $5,000 upon delivery and approval of Modules 9-12 and all supplementary materials
+3.2 Freelancer is responsible for all equipment, software, and production costs.
+3.3 1099 Reporting: BrightPath shall file Form 1099-NEC for all payments. Freelancer acknowledges responsibility for all applicable self-employment taxes.
+
+4. OWNERSHIP AND LICENSE
+4.1 Work Product: Upon receipt of full payment, BrightPath shall own all rights, title, and interest in all deliverables, including all intellectual property rights. Freelancer assigns any and all rights in the Work Product to BrightPath.
+4.2 Freelancer Portfolio: Freelancer may use excerpts of up to 60 seconds from each video for personal portfolio and self-promotion purposes, provided BrightPath is credited.
+4.3 Freelancer's Pre-Existing Materials: Any pre-existing templates, scripts, or tools used by Freelancer remain Freelancer's property. BrightPath receives a perpetual, non-exclusive license to use such materials as incorporated into the deliverables.
+
+5. REPRESENTATIONS
+Freelancer represents that: (a) all deliverables will be original and will not infringe any third-party rights; (b) Freelancer has the skill and ability to perform the services; (c) Freelancer will comply with all applicable laws.
+
+6. CONFIDENTIALITY
+Freelancer agrees not to disclose BrightPath's proprietary information, course content strategies, student data, or business plans to any third party.
+
+7. TERMINATION
+7.1 BrightPath may terminate for cause if Freelancer fails to meet the agreed-upon schedule by more than 14 days or delivers work that does not meet professional standards after one revision opportunity.
+7.2 Upon termination, Freelancer shall be paid for all approved deliverables completed prior to termination.
+
+8. GOVERNING LAW
+California.
+
+
+BRIGHTPATH LEARNING INC.
+By: _______________________________
+Name: Lisa Huang
+Title: Head of Content
+Date: June 1, 2024
+
+FREELANCER
+By: _______________________________
+Jordan Kim
+Date: June 1, 2024

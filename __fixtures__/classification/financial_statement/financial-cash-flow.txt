@@ -1,0 +1,68 @@
+CONSOLIDATED STATEMENT OF CASH FLOWS
+(In millions)
+
+For the Year Ended December 31,
+                                          2023         2022
+---
+CASH FLOWS FROM OPERATING ACTIVITIES
+
+Net income                               $3,100        $463
+
+Adjustments to reconcile net income to net cash from operating activities:
+  Depreciation and amortization          $1,845        $1,680
+  Stock-based compensation                $1,290        $1,120
+  Deferred income taxes                   ($310)        ($85)
+  Amortization of deferred revenue       $890          $740
+  Changes in operating assets and liabilities:
+    Accounts receivable                   ($541)        ($320)
+    Inventories                           ($116)        ($89)
+    Prepaid expenses and other            ($149)        ($60)
+    Accounts payable                      $258          $195
+    Accrued expenses                      $278          $180
+    Other working capital changes         ($45)         $32
+---
+Net cash provided by operating activities  $5,550      $3,706
+
+CASH FLOWS FROM INVESTING ACTIVITIES
+
+  Purchases of property and equipment    ($1,890)      ($1,750)
+  Purchases of intangibles               ($420)        ($680)
+  Proceeds from sale of equipment         $15           $8
+  Acquisitions of businesses, net of cash acquired  ($185) ($4,200)
+  Purchases of short-term investments     ($890)        ($650)
+  Proceeds from maturities of investments $1,200        $980
+  Purchases of long-term investments      ($500)        ($250)
+---
+Net cash used in investing activities    ($2,670)     ($5,542)
+
+CASH FLOWS FROM FINANCING ACTIVITIES
+
+  Proceeds from issuance of long-term debt  $0         $500
+  Principal repayments of long-term debt   ($500)       ($500)
+  Repayments of short-term debt            ($450)       ($200)
+  Proceeds from issuance of common stock   $320         $285
+  Repurchases of treasury stock            ($450)       ($400)
+  Tax withholding on stock-based comp     ($290)       ($240)
+  Proceeds from exercise of stock options  $640         $520
+  Dividends paid                           ($0)         ($0)
+---
+Net cash provided by financing activities ($730)        ($35)
+
+---
+Net increase (decrease) in cash          $2,150      ($1,871)
+Cash and cash equivalents, beginning     $3,192       $5,063
+Cash and cash equivalents, ending        $5,342       $3,192
+
+---
+Supplemental Cash Flow Disclosures:
+  Cash paid during the year for:
+    Interest                              $615          $585
+    Income taxes                          $1,150        $195
+
+  Non-cash investing and financing activities:
+    Capitalized lease obligations          $180          $210
+    Right-of-use assets obtained in exchange for lease obligations $180 $210
+
+Supplemental schedule of non-cash investing and financing activities available upon request.
+
+See notes to consolidated financial statements.

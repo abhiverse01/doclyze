@@ -1,0 +1,61 @@
+DATOS PERSONALES
+
+Nombre: Alejandro Fernández García
+Dirección: Calle de Alcalá 45, 3ºB, 28014 Madrid, España
+Teléfono: +34 91 555 0142
+Correo electrónico: alejandro.fernandez@correo.es
+LinkedIn: linkedin.com/in/alejandofgarcia
+
+RESUMEN PROFESIONAL
+
+Ingeniero de software sénior con más de 9 años de experiencia en el desarrollo de aplicaciones web y móviles para el sector fintech. Especializado en arquitectura de microservicios, sistemas de pago y cumplimiento normativo PSD2. Liderazgo comprobado en la gestión de equipos técnicos de hasta 12 personas. Apasionado por la ingeniería de calidad y las buenas prácticas de desarrollo.
+
+EXPERIENCIA PROFESIONAL
+
+Banco Digital S.A. — Ingeniero de Software Sénior / Tech Lead
+Madrid, España | Marzo 2020 – Presente
+
+- Líder técnico de un equipo de 12 ingenieros responsables de la plataforma de pagos transfronterizos que procesa más de 800.000 transacciones diarias con un valor superior a 120 millones de euros.
+- Diseñé y migré la arquitectura monolítica a microservicios utilizando Java 17, Spring Boot y Apache Kafka, reduciendo el tiempo de despliegue de 4 horas a 8 minutos.
+- Implementé soluciones de cumplimiento normativo PSD2 incluyendo autenticación fuerte de cliente (SCA) y APIs de acceso a cuentas (XS2A), logrando la certificación regulatoria en el plazo establecido.
+- Introducir pruebas automatizadas de integración y rendimiento, aumentando la cobertura de tests del 34% al 89%.
+- Mentorizó a 5 ingenieros junior, de los cuales 3 fueron promovidos a nivel intermedio en menos de dos años.
+
+Globant — Desarrollador de Software III
+Madrid, España | Junio 2017 – Febrero 2020
+
+- Desarrollé módulos backend para una plataforma de gestión de seguros utilizando Node.js, TypeScript y PostgreSQL.
+- Optimicé consultas a base de datos que redujeron el tiempo de respuesta de la API en un 65%, pasando de 1.200ms a 420ms en promedio.
+- Participé en la implementación de pipelines CI/CD con Jenkins y Docker, reduciendo errores en producción en un 40%.
+- Colaboré con equipos distribuidos en Argentina, México y España, coordinando entregas a través de metodologías ágiles Scrum.
+
+Everis (NTT Data) — Consultor Tecnológico
+Madrid, España | Septiembre 2015 – Mayo 2017
+
+- Desarrollé aplicaciones web para clientes del sector bancario utilizando Java EE, AngularJS y Oracle.
+- Realicé análisis de requisitos funcionales y técnicos en colaboración con arquitectos de soluciones.
+- Participé en proyectos de integración de sistemas para la migración de plataformas heredadas.
+
+FORMACIÓN ACADÉMICA
+
+Universidad Politécnica de Madrid — Máster en Ingeniería de Software
+Madrid, España | 2013 – 2015
+Especialidad: Arquitectura de Sistemas. Calificación: Sobresaliente (9.2/10)
+
+Universidad Complutense de Madrid — Grado en Ingeniería Informática
+Madrid, España | 2009 – 2013
+Calificación: Matrícula de Honor. GPA equivalente: 3.9/4.0
+
+COMPETENCIAS TÉCNICAS
+
+Lenguajes: Java, TypeScript, Python, SQL, Kotlin
+Frameworks: Spring Boot, Quarkus, Angular, React, NestJS
+Bases de datos: PostgreSQL, Oracle, MongoDB, Redis
+Infraestructura: Docker, Kubernetes, AWS (EC2, S3, Lambda, RDS), Terraform
+Herramientas: Git, Maven, Gradle, Jenkins, SonarQube, Jira
+
+IDIOMAS
+
+- Español: Nativo
+- Inglés: C1 (Cambridge Certificate in Advanced English, 2014)
+- Portugués: B1 (intermedio)

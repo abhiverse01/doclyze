@@ -1,0 +1,60 @@
+RACHEL NGUYEN, CISSP, OSCP
+415 Market Street, Apt 12, San Francisco, CA 94105
+rachel.nguyen@proton.me | (415) 555-0671 | github.com/rnguyen-sec
+
+SECURITY ENGINEER & PENETRATION TESTER
+
+Professional Summary
+Offensive security professional with 7 years of experience in red teaming, penetration testing, and security architecture. Former security consultant at Big Four firms with extensive experience across financial services, healthcare, and technology verticals. Published vulnerability researcher with 4 CVEs assigned.
+
+Technical Skills Matrix
+
+| Category            | Tools & Technologies                                                                 | Proficiency |
+|---------------------|-------------------------------------------------------------------------------------|-------------|
+| Penetration Testing | Burp Suite Pro, Cobalt Strike, Metasploit, Nmap, SQLmap                             | Expert      |
+| Web Security        | OWASP ZAP, XSS Hunter, SSRFmap, ParamSpider                                       | Expert      |
+| Network Security    | Wireshark, tcpdump, Zeek, Suricata, pfSense                                         | Advanced    |
+| Cloud Security      | ScoutSuite, Prowler, CloudSploit, AWS Security Hub                                  | Advanced    |
+| Reverse Engineering | Ghidra, IDA Pro, radare2, x64dbg, Binary Ninja                                     | Intermediate|
+| Scripting           | Python, Bash, PowerShell, Go                                                       | Expert      |
+| Container Security  | Trivy, Clair, Falco, kube-bench                                                     | Advanced    |
+| SIEM & Detection    | Splunk, Elastic Security, Sigma Rules, MITRE ATT&CK                               | Advanced    |
+| Compliance          | NIST 800-53, ISO 27001, SOC 2, PCI DSS, HIPAA                                     | Expert      |
+
+Professional Experience
+
+CrowdStrike — Senior Security Engineer, Red Team
+San Jose, CA | January 2022 – Present
+- Lead red team engagements for Fortune 500 clients, conducting full-scope adversary simulations including initial access, lateral movement, and data exfiltration
+- Discovered and responsibly disclosed 2 critical RCE vulnerabilities in enterprise VPN appliances (CVE-2023-42891, CVE-2023-43105)
+- Developed custom C2 tooling in Go with encrypted DNS tunneling, evading endpoint detection in 94% of tested enterprise environments
+- Authored 12 internal threat intelligence reports mapping emerging TTPs to MITRE ATT&CK framework
+
+Deloitte — Cyber Security Consultant
+San Francisco, CA | August 2018 – December 2021
+- Performed over 40 penetration tests across web applications, mobile apps, APIs, and internal networks
+- Led a network penetration test of a regional bank that identified 23 critical vulnerabilities including domain admin compromise paths
+- Developed automated reconnaissance tooling in Python that reduced assessment scoping time by 30%
+- Managed client relationships and delivered executive-level findings reports with risk-prioritized remediation roadmaps
+
+Rapid7 — Security Analyst
+Boston, MA | June 2016 – July 2018
+- Conducted vulnerability assessments and penetration tests as part of the managed services team
+- Analyzed threat intelligence feeds and correlated with customer vulnerability data to produce weekly risk reports
+- Built internal dashboards using Grafana and the Metasploit data service for tracking assessment metrics
+
+Education
+B.S. in Computer Science, Northeastern University, 2016
+Minor in Criminal Justice
+
+Certifications
+- Certified Information Systems Security Professional (CISSP) — 2021
+- Offensive Security Certified Professional (OSCP) — 2019
+- Certified Ethical Hacker (CEH) — 2018
+- AWS Certified Security – Specialty — 2022
+
+Vulnerability Research
+- CVE-2023-42891: RCE in FortiGate SSL VPN (CVSS 9.8)
+- CVE-2023-43105: Auth Bypass in Palo Alto GlobalProtect (CVSS 8.6)
+- CVE-2022-39104: SQL Injection in Oracle WebLogic (CVSS 7.2)
+- CVE-2021-40438: HTTP Request Smuggling in Apache HTTP Server (CVSS 5.3)

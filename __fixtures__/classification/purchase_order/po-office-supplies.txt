@@ -1,0 +1,67 @@
+PURCHASE ORDER
+
+PO Number: PO-2024-004512
+Date: April 8, 2024
+
+Buyer:
+Atlas Marketing Group
+900 North Michigan Avenue, Suite 1200
+Chicago, IL 60611
+Contact: Karen Mitchell, Office Manager
+Phone: (312) 555-0144
+Email: k.mitchell@atlasmarketing.com
+
+Vendor:
+Staples Business Advantage
+550 Innovation Avenue
+Framingham, MA 01701
+Vendor Account #: SB-ATLAS-78421
+
+Ship To:
+Atlas Marketing Group
+900 North Michigan Avenue, Suite 1200
+Chicago, IL 60611
+
+Shipping Method: Staples Standard Delivery (3-5 business days)
+Payment Terms: Net 30
+
+---
+
+Line | Item # | Description | Qty | Unit | Unit Price | Amount
+--- | --- | --- | --- | --- | --- | ---
+1 | 246198 | HP 952XL Black Ink Cartridge | 8 | EA | $38.99 | $311.92
+2 | 246201 | HP 952XL Cyan Ink Cartridge | 4 | EA | $39.99 | $159.96
+3 | 246204 | HP 952XL Magenta Ink Cartridge | 4 | EA | $39.99 | $159.96
+4 | 246207 | HP 952XL Yellow Ink Cartridge | 4 | EA | $39.99 | $159.96
+5 | 247927 | HammerMill Copy Plus Paper, 8.5x11, 10-RM Case | 10 | CS | $54.99 | $549.90
+6 | 248614 | Post-it Super Sticky Notes 3x3, Assorted, 12/PK | 6 | PK | $14.79 | $88.74
+7 | 241788 | Swingline Stapler, Standard | 4 | EA | $8.49 | $33.96
+8 | 241791 | Swingline Staples, Standard, 5000/PK | 8 | BX | $1.29 | $10.32
+9 | 244911 | BIC Round Stic Ballpoint, Black, 60/PK | 6 | PK | $8.99 | $53.94
+10 | 244914 | BIC Round Stic Ballpoint, Blue, 60/PK | 4 | PK | $8.99 | $35.96
+11 | 249128 | 3M Scotch Tape, 6-Roll Pack | 4 | PK | $12.49 | $49.96
+12 | 249231 | Smead File Folders, Manila, Letter, 100/BOX | 4 | BX | $19.99 | $79.96
+13 | 250487 | Fellowes Powershred 12C Cross-Cut Shredder | 1 | EA | $129.99 | $129.99
+14 | 251662 | Rubbermaid Trash Can, 23-Gal, Black | 2 | EA | $42.99 | $85.98
+
+---
+
+Subtotal: $2,009.51
+Estimated Tax (10.25% Chicago): $206.00
+Estimated Shipping: $45.00
+
+ESTIMATED TOTAL: $2,260.51
+
+---
+
+Requisition No: REQ-2024-0329
+Approved By: David Chen, VP Operations (4/7/2024)
+Department: Office Administration
+Budget Code: G&A-OFF-2024-Q2
+
+Please confirm order acceptance and ship by April 15, 2024.
+
+Authorized Signature:
+_______________________________
+Karen Mitchell, Office Manager
+Date: April 8, 2024

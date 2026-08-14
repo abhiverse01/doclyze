@@ -1,0 +1,38 @@
+ANNUAL REPORT EXCERPT — LETTER TO SHAREHOLDERS
+
+To Our Shareholders:
+
+Fiscal year 2023 was a landmark year for Meridian Technologies. We delivered record revenue of $33.7 billion, representing 18.2% year-over-year growth, while simultaneously expanding our operating margin by 1,100 basis points to 14.3%. This combination of top-line momentum and operational leverage is rare at our scale, and it reflects the fundamental strength of our product portfolio and the discipline of our go-to-market execution.
+
+Three themes defined our year:
+
+First, our cloud platform reached critical mass. Annual recurring revenue (ARR) surpassed $10 billion for the first time, with net revenue retention exceeding 125% for the seventh consecutive quarter. Our旗舰 product, Meridian Cloud, added over 2,000 new enterprise customers in 2023, including marquee wins at three of the top five global banks and the Department of Defense.
+
+Second, our international expansion accelerated meaningfully. Revenue from outside the United States grew 28% year-over-year and now represents 34% of total revenue. Our new data center regions in Frankfurt, Mumbai, and São Paulo came online on schedule, and we established a direct sales presence in Japan and South Korea.
+
+Third, we made significant progress on our AI roadmap. The launch of Meridian AI Assistant in Q3 has been our fastest-growing product introduction in company history, reaching 500,000 active users within 90 days. Our R&D investment of $6.9 billion (20.5% of revenue) positions us well for continued innovation.
+
+Looking ahead to 2024, we expect revenue in the range of $38.5 billion to $39.5 billion, representing approximately 15-17% growth. We are targeting non-GAAP operating margins of 18-19%. We plan to return capital to shareholders through a new $5 billion share repurchase authorization.
+
+I want to express my deep gratitude to our 42,000 employees worldwide whose dedication and creativity drive everything we do. We are building something enduring at Meridian, and I am more optimistic than ever about the road ahead.
+
+Sincerely,
+
+
+David K. Park
+Chief Executive Officer
+
+---
+
+SELECTED FINANCIAL HIGHLIGHTS
+
+(In millions, except per share data and percentages)
+                                FY 2023    FY 2022    Change
+Revenue                        $33,680    $28,500     +18.2%
+Gross Profit                   $19,480    $15,880     +22.7%
+Operating Income                $4,830     $1,210     +299.2%
+Net Income                      $3,100     $463       +569.8%
+Diluted EPS                     $7.21      $1.08      +567.6%
+Free Cash Flow                  $5,100     $3,200     +59.4%
+Operating Margin                14.3%      4.2%       +1,010 bps
+Headcount (end of period)       42,000     38,500     +9.1%

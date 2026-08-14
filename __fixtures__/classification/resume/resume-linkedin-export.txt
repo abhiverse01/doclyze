@@ -1,0 +1,57 @@
+LINKEDIN PROFILE EXPORT — Generated April 15, 2024
+
+About
+I'm a UX research leader who believes the best products come from deeply understanding the people who use them. Over the past decade, I've built and led research practices at companies ranging from early-stage startups to public companies, always with a focus on turning insights into actionable product direction. I'm particularly interested in mixed-methods research that combines the depth of qualitative interviews with the scale of quantitative data.
+
+Experience
+
+Spotify
+Head of User Research, Creator Platform
+January 2021 – Present · Stockholm, Sweden (Remote)
+
+Built the user research function for the Creator team from the ground up, growing from a solo researcher to a team of 6. The team supports product decisions across podcast creation tools, artist analytics (Spotify for Artists), and music upload workflows serving 11M+ creators.
+
+Key accomplishments:
+• Established a mixed-methods research practice that delivered 80+ studies in 2023, influencing product decisions across 12 teams
+• Launched a longitudinal research panel of 2,000 podcast creators, providing continuous behavioral and attitudinal data
+• Created a research ops infrastructure including a participant recruitment tool, consent management system, and automated reporting pipeline
+• Partnered with Data Science to develop a creator segmentation model that informed the 2023 product roadmap
+• Advocacy: Chaired the company-wide Research Guild, organizing monthly knowledge-sharing sessions for 45+ researchers
+
+Airbnb
+Senior UX Researcher, Payments & Trust
+March 2018 – December 2020 · San Francisco, CA
+
+Led research for the Payments, Trust & Safety, and Identity Verification teams during a period of significant regulatory expansion.
+
+• Conducted 120+ user interviews and usability studies across 15 markets (US, UK, EU, Japan, Brazil, India)
+• Led the research workstream for the redesign of the payment splitting feature, which contributed to a 12% increase in group booking conversion
+• Managed a $400K annual research vendor budget across 3 agencies
+• Trained and mentored 4 junior researchers
+
+Fitbit
+UX Researcher
+June 2015 – February 2018 · San Francisco, CA
+
+• Conducted foundational and evaluative research across the Fitbit app, web dashboard, and device companion experiences
+• Led a diary study (n=200) and in-lab usability tests that informed the complete redesign of the sleep tracking UX, contributing to a 23% increase in daily active sleep tracking users
+• Developed and maintained the team's research repository and participant screener library
+
+Education
+M.A. in Human-Computer Interaction, University of Michigan, 2015
+B.A. in Psychology, University of California, Davis, 2013
+
+Skills
+User Research, Usability Testing, Mixed Methods Research, Qualitative Analysis, Survey Design, Research Operations, Product Strategy, Cross-functional Leadership, Workshop Facilitation, Stakeholder Management, NVivo, Dovetail, UserTesting.com, Looker, Figma
+
+Licenses & Certifications
+• Certified UX Researcher, Nielsen Norman Group (2019)
+• Human Subjects Research Certification, CITI Program (renewed 2023)
+
+Publications & Talks
+• "Scaling Research Without Losing Depth" — UX Research Conference, Berlin (2023)
+• "Research Ops as a Competitive Advantage" — Mind the Product, London (2022)
+• Co-author: "Measuring the Impact of UX Research on Product Outcomes" — Journal of UX Research, Vol. 8 (2021)
+
+Interests
+Experimental cooking, trail running, contemporary art, board games

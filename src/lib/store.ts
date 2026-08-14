@@ -30,6 +30,8 @@ export interface StoredDocument {
   id: string;
   filename: string;
   detectedType: string;
+  /** v5: Numeric classification confidence 0-100. */
+  classificationConfidence: number;
   fileSizeBytes: number;
   extractedAt: string;
   completenessScore: number;
@@ -116,6 +118,7 @@ function validateState(raw: unknown): Partial<AppState> {
           id: d.id,
           filename: typeof d.filename === "string" ? d.filename : "unknown",
           detectedType: typeof d.detectedType === "string" ? d.detectedType : "general",
+          classificationConfidence: typeof d.classificationConfidence === "number" ? d.classificationConfidence : 0,
           fileSizeBytes: typeof d.fileSizeBytes === "number" ? d.fileSizeBytes : 0,
           extractedAt: typeof d.extractedAt === "string" ? d.extractedAt : new Date().toISOString(),
           completenessScore: typeof d.completenessScore === "number" ? d.completenessScore : 0,

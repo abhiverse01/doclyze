@@ -1,0 +1,80 @@
+PURCHASE ORDER
+
+PO Number: PO-IT-2024-00187
+Date: March 22, 2024
+Priority: Standard
+
+Buyer:
+Nexus Dynamics Inc.
+100 Innovation Drive, Floor 6
+Austin, TX 78701
+Contact: Raj Patel, IT Procurement Manager
+Phone: (512) 555-0299
+Email: r.patel@nexusdynamics.com
+
+Vendor:
+CDW Corporation
+200 N. Milwaukee Avenue
+Vernon Hills, IL 60061
+CDW Account #: NDI-489271
+
+Ship To:
+Nexus Dynamics Inc.
+100 Innovation Drive, Floor 6
+Austin, TX 78701
+
+Shipping Method: CDW Next Business Day
+Payment Terms: Net 45
+
+---
+
+Line | SKU | Description | Qty | Unit | Unit Price | Amount
+--- | --- | --- | --- | --- | --- | ---
+1 | MFG-MBKPRO14 | Apple MacBook Pro 14" M3 Pro, 18GB/512GB, Space Black | 10 | EA | $2,299.00 | $22,990.00
+2 | MFG-MBKAIR15 | Apple MacBook Air 15" M3, 16GB/512GB, Silver | 5 | EA | $1,499.00 | $7,495.00
+3 | MON-D2723H | Dell UltraSharp 27" 4K USB-C Monitor (U2723QE) | 15 | EA | $519.99 | $7,799.85
+4 | DOC-ARMMX10 | Apple Magic Keyboard with Touch ID (Numeric) | 15 | EA | $199.00 | $2,985.00
+5 | DOC-MOUSEPRO | Apple Magic Mouse (White) | 15 | EA | $99.00 | $1,485.00
+6 | DOCK-CALDU4 | CalDigit TS4 Thunderbolt 4 Dock | 15 | EA | $399.99 | $5,999.85
+7 | ACC-STAND27 | Ergotron LX Desk Mount for 27" Monitor | 15 | EA | $189.99 | $2,849.85
+8 | ACC-WEBCAM | Logitech Brio 4K Webcam | 5 | EA | $169.99 | $849.95
+9 | NET-SWITCH16 | Cisco Meraki MS120-16FP PoE Switch | 2 | EA | $1,895.00 | $3,790.00
+10 | SEC-LOCK | Kensington NanoSaver Lock for MacBook | 20 | EA | $49.99 | $999.80
+
+---
+
+Subtotal: $57,244.30
+TX Sales Tax (6.75%): $3,864.00
+CDW Service & Setup Fee (included per quote): $0.00
+Shipping: $0.00 (Free shipping on orders > $50K)
+
+TOTAL: $61,108.30
+
+---
+
+Requisition No: REQ-IT-2024-0089
+Approved By: Sarah Johnson, CTO (3/21/2024)
+Project: FY24 Engineering Laptop Refresh
+Capital Budget Approval: CAPEX-2024-031
+Asset Tag Request: Yes - upon delivery
+
+Delivery Requirements:
+- All items must arrive no later than April 5, 2024
+- Inspect all packages before signing delivery receipt
+- Report any damage to CDW within 24 hours
+- Schedule deployment support with IT Operations upon receipt
+
+Vendor Contact:
+Brian Torres, Account Manager
+CDW Corporation
+(847) 555-0167 | brian.torres@cdw.com
+
+---
+
+Accept this purchase order by signing below and returning by March 26, 2024.
+
+Vendor Authorized Signature:
+_______________________________
+Print Name & Title:
+_______________________________
+Date: ___________

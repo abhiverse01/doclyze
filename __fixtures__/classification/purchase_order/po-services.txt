@@ -1,0 +1,72 @@
+PURCHASE ORDER
+
+PO Number: PO-SVC-2024-00073
+Date: March 1, 2024
+
+Buyer:
+Pinnacle Therapeutics Inc.
+245 First Street, Suite 1800
+Cambridge, MA 02142
+Contact: Jennifer Walsh, Procurement Specialist
+Phone: (617) 555-0198
+Email: j.walsh@pinnaclethera.com
+
+Vendor:
+MedTech Clinical Research Organization LLC
+15 Broad Street, 6th Floor
+Boston, MA 02109
+Vendor Contact: Dr. Lisa Park, VP of Clinical Operations
+
+---
+
+SERVICE DESCRIPTION
+
+This purchase order covers clinical trial management services for Study PTX-204 (Phase II, Nilotinib in Parkinson's Disease) at the following 6 clinical sites:
+
+1. Massachusetts General Hospital, Boston, MA
+2. UCSF Medical Center, San Francisco, CA
+3. Cleveland Clinic, Cleveland, OH
+4. University of Pennsylvania, Philadelphia, PA
+5. Karolinska Institute, Stockholm, Sweden
+6. Charité University Hospital, Berlin, Germany
+
+---
+
+Line | Service Code | Description | Period | Rate | Amount
+--- | --- | --- | --- | --- | ---
+1 | CRO-PM-001 | Clinical Project Management (1 FTE) | 12 months | $18,500/mo | $222,000.00
+2 | CRO-CRA-001 | Clinical Monitoring (3 CRAs, remote + on-site) | 12 months | $12,000/mo each | $432,000.00
+3 | CRO-DM-001 | Data Management (EDC setup, queries, locks) | 12 months | $8,500/mo | $102,000.00
+4 | CRO-STAT-001 | Biostatistics (protocol SAP, interim analysis, CSR) | Fixed | Lump sum | $185,000.00
+5 | CRO-REG-001 | Regulatory Submissions & Correspondence | Fixed | Lump sum | $95,000.00
+6 | CRO-SITE-001 | Site Start-Up & Feasibility (6 sites) | Fixed | Per site $8,000 | $48,000.00
+7 | CRO-PHARM-001 | IMP Management (depot, distribution, reconciliation) | 12 months | $4,200/mo | $50,400.00
+8 | CRO-QA-001 | Quality Assurance Audits (2 internal, 4 site audits) | Fixed | Per audit $7,500 | $45,000.00
+9 | CRO-TM-001 | Trial Master File Maintenance | 12 months | $2,800/mo | $33,600.00
+10 | CRO-MISC-001 | Travel & Expenses (est.) | 12 months | $5,500/mo | $66,000.00
+
+---
+
+Subtotal: $1,279,000.00
+MA Sales Tax (6.25%): Service exemption under MGL Ch. 64H, §6(d)
+
+TOTAL: $1,279,000.00
+
+---
+
+Requisition No: REQ-CLIN-2024-0012
+Approved By: Dr. Amanda Foster, VP Clinical Dev (2/28/2024)
+Project: PTX-204 Phase II Clinical Trial
+Budget: R&D-CLIN-2024
+
+Payment Milestones:
+- 15% upon contract execution and EDC go-live
+- 35% monthly per deliverables
+- 25% upon database lock
+- 25% upon CSR delivery and final invoice
+
+Authorized Signature:
+_______________________________
+Jennifer Walsh, Procurement Specialist
+Pinnacle Therapeutics Inc.
+Date: March 1, 2024

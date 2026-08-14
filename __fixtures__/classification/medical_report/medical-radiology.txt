@@ -1,0 +1,59 @@
+MEMORIAL SLOAN KETTERING CANCER CENTER
+DEPARTMENT OF RADIOLOGY
+
+EXAMINATION: CT of the Abdomen and Pelvis with IV Contrast
+Accession #: MSK-RAD-2024-0084719
+
+Patient: Richardson, Barbara J.
+MRN: MSK-884729103
+DOB: June 15, 1958 | Age: 65 | Sex: Female
+Referring Physician: Dr. Michael Torres, MD, Oncology
+Clinical Indication: Follow-up for stage IIIA ovarian cancer, post-chemotherapy (6 cycles carboplatin/paclitaxel completed October 2023). CA-125 trending upward (42 → 68 U/mL). Evaluate for recurrence.
+
+Date of Study: March 18, 2024
+Technologist: J. Park, RT(R)(CT)
+
+TECHNIQUE:
+CT of the abdomen and pelvis was performed following administration of 100 mL Isovue-300 intravenous contrast. Images were obtained in the portal venous phase with 2.5 mm slice thickness. Prior study from October 15, 2023 was available for comparison.
+
+FINDINGS:
+
+Liver: The liver is normal in size and attenuation without focal lesions. No intrahepatic biliary dilatation. Portal vein is patent.
+
+Gallbladder: Normal. No cholelithiasis.
+
+Pancreas: Normal in morphology and enhancement. No pancreatic ductal dilatation. No peripancreatic fluid.
+
+Spleen: Normal in size, measuring 10.2 cm. Homogeneous enhancement.
+
+Adrenal Glands: Bilateral adrenal glands are normal.
+
+Kidneys: Bilateral kidneys enhance symmetrically without hydronephrosis or focal lesions. No perinephric abnormality.
+
+Lymph Nodes: NEW FINDING — Multiple pathologic-appearing enlarged lymph nodes in the retroperitoneum. The largest measures 2.1 x 1.8 cm in the left para-aortic region at the level of L2 (previously not present). Additional nodes measuring up to 1.4 cm are seen in the right para-aortic and interaortocaval regions. Previously, no pathologic lymphadenopathy was identified.
+
+Peritoneum/Omentum: There are NEW soft tissue nodular thickening along the right paracolic gutter, measuring up to 8 mm. NEW omental cake appearance with confluent soft tissue infiltration in the greater omentum, which was previously normal. Findings are consistent with peritoneal carcinomatosis.
+
+Pelvis: Postsurgical changes from bilateral salpingo-oophorectomy. No new pelvic mass or fluid collection. No pelvic sidewall lymphadenopathy.
+
+Bones: No suspicious osseous lesions.
+
+Other: Small bilateral pleural effusions, slightly increased from prior. No pulmonary embolism.
+
+IMPRESSION:
+
+1. CRITICAL: New retroperitoneal lymphadenopathy (largest 2.1 cm, left para-aortic at L2), new peritoneal implants along the right paracolic gutter, and new omental carcinomatosis. These findings are highly concerning for disease recurrence/progression of ovarian carcinoma.
+
+2. Small bilateral pleural effusions, slightly increased.
+
+3. Otherwise, no new hepatic, pulmonary, or osseous metastatic disease identified.
+
+RECOMMENDATION: Correlate with CA-125 trend and discuss in multidisciplinary tumor board. Consider PET/CT for further staging if clinically indicated.
+
+Electronically signed:
+
+_______________________________
+Dr. Catherine Wong, MD
+Attending Radiologist, Body Imaging
+Memorial Sloan Kettering Cancer Center
+March 18, 2024 16:45

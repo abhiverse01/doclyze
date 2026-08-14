@@ -1,0 +1,70 @@
+PROFORMA INVOICE
+
+Proforma Invoice No: PI-2024-00312
+Date: January 22, 2024
+Valid Until: February 22, 2024
+
+Seller:
+TerraVerde Coffee Importers S.A.
+Ruta 27, Km 12.5, Tarrazú
+San José, Costa Rica
+Contact: Carlos Mendoza, Export Director
+Phone: +506 2206-4100
+carlos@terraverdecoffee.cr
+
+Buyer:
+Blue Bottle Coffee Inc.
+300 Linden Street
+Oakland, CA 94607
+Attn: Procurement Department
+Contact: Thomas Werner, Green Coffee Buyer
+
+---
+
+PRODUCT DETAILS
+
+Lot | Origin | Farm | Process | Grade | Weight (kg) | FOB Price/kg | Amount (USD)
+--- | --- | --- | --- | --- | --- | --- | ---
+TV-2024-018 | Tarrazú | Finca Santa Elena | Washed | SHB EP | 692.00 | $5.85 | $4,048.20
+TV-2024-019 | Tarrazú | Finca La Minita | Honey | SHB EP | 450.00 | $7.20 | $3,240.00
+TV-2024-020 | West Valley | Finca Herbazu | Natural | SHB | 380.00 | $5.40 | $2,052.00
+TV-2024-021 | Naranjo | Finca Don Pedro | Washed | SHB EP | 520.00 | $6.10 | $3,172.00
+TV-2024-022 | Tarrazú | Finca Montaño | Washed | EP | 875.00 | $5.15 | $4,506.25
+
+---
+
+Subtotal (FOB San José): $17,018.45
+Ocean Freight (shared 40ft container, est.): $2,800.00
+Marine Cargo Insurance (110% CIF, 0.45%): $88.64
+Phytosanitary Certificate (ICAFE): $180.00
+Export Documentation & Handling: $320.00
+Origin Certificate (Costa Rica – CBI): $45.00
+
+Estimated CIF Oakland Total: $20,452.09
+
+---
+
+Payment Terms:
+- 50% deposit upon acceptance of this proforma via wire transfer
+- 50% balance upon presentation of shipping documents
+- Wire transfer details will be provided upon confirmation
+
+Delivery:
+- Estimated shipment: 4-6 weeks from receipt of deposit
+- Port of loading: Puerto Calderón, Costa Rica
+- Port of discharge: Port of Oakland, CA, USA
+- Incoterms: CIF (Cost, Insurance, Freight) Oakland
+
+Notes:
+- All coffee is specialty grade, screen 17/18
+- Moisture content guaranteed between 10.5% – 12.0%
+- Cupping scores available upon request (all lots scored 84+ on SCA scale)
+- This proforma is not a tax invoice and does not constitute a record of sale
+- Subject to availability at time of order confirmation
+
+Banking Details:
+Banco Nacional de Costa Rica
+SWIFT: BNCRCRSJ
+Account: TerraVerde Coffee Importers S.A.
+Account No: 100-01-000-003829-4
+USD Account

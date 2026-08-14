@@ -1,0 +1,102 @@
+MASSACHUSETTS INSTITUTE OF TECHNOLOGY
+OFFICIAL GRADUATE TRANSCRIPT
+
+Student: Nakamura, Kenji
+Student ID: 9412-GH-83210
+Degree Program: Ph.D. in Computer Science, Artificial Intelligence
+Admission Term: Fall 2019
+Department: Electrical Engineering and Computer Science (EECS)
+Advisor: Professor Daniela Rus
+
+GPA: 5.0 / 5.0 (MIT Graduate Scale)
+Total Graduate Units: 398 of 330 required (excess from research)
+Academic Standing: Satisfactory
+
+---
+
+FALL 2019
+
+6.S191 - Introduction to Deep Learning                  12  A   5.0
+6.7900 - Machine Learning                                 12  A   5.0
+6.867 - Machine Learning                                  12  A   5.0
+6.5620 - Geometric Computing                               12  A-  4.5
+                                          ------  -----
+Term Units: 48   Term GPA: 4.875
+
+SPRING 2020
+
+6.824 - Distributed Systems                               12  A   5.0
+6.829 - Fundamentals of Program Analysis                  12  A-  4.5
+6.8610 - Vision, Learning, and Computation (seminar)       6  A   5.0
+6.ThG - Graduate Thesis Research                           24  J   -
+                                          ------  -----
+Term Units: 54   Term GPA: 4.75 (graded only)
+
+FALL 2020
+
+6.803 - Artificial Intelligence                           12  A   5.0
+6.832 - Underactuated Robotics                            12  A-  4.5
+6.S898 - Advanced Topics in Robotics (Reinforcement)      6  A   5.0
+6.ThG - Graduate Thesis Research                           24  J   -
+                                          ------  -----
+Term Units: 54   Term GPA: 4.833
+
+SPRING 2021
+
+6.4310 - Probability and Random Variables                 12  A   5.0
+6.7900 - (Retake for depth, not counted toward req)      12  RCE  -
+6.867J - Genomic Data Analysis                            12  A-  4.5
+6.ThG - Graduate Thesis Research                           24  J   -
+                                          ------  -----
+Term Units: 48   Term GPA: 4.75
+
+FALL 2021
+
+6.811 - Principles and Practice of Assistive Robotics     12  A   5.0
+6.S899 - Special Topics: Neural Rendering                   6  A   5.0
+6.ThG - Graduate Thesis Research                           30  J   -
+                                          ------  -----
+Term Units: 48   Term GPA: 5.0
+
+SPRING 2022
+
+9.520 - Statistical Learning Theory and Applications       12  A   5.0
+6.ThG - Graduate Thesis Research                           36  J   -
+                                          ------  -----
+Term Units: 48   Term GPA: 5.0
+
+FALL 2022
+
+6.ThG - Graduate Thesis Research                           48  J   -
+                                          ------  -----
+Term Units: 48
+
+SPRING 2023
+
+6.ThG - Graduate Thesis Research                           48  J   -
+                                          ------  -----
+Term Units: 48
+
+FALL 2023
+
+6.ThT - Doctoral Thesis                                   0  J   -
+                                          ------  -----
+Term Units: 0
+
+---
+
+Qualifying Exam: Passed, October 2020 (Area: AI/ML)
+Thesis Title: "Robust Policy Optimization for Autonomous Navigation in Unstructured Environments"
+Thesis Committee: Prof. Daniela Rus (Chair), Prof. Leslie Kaelbling, Prof. Russ Tedrake
+Degree Confirmed: February 2024
+
+General Exam: Passed, May 2021
+Teaching: 6.S191 Teaching Assistant, Fall 2020; 6.867 Teaching Assistant, Spring 2022
+
+MIT uses a 5.0 grading scale: A=5.0, B=4.0, C=3.0, D=2.0, F=0.0
+J = Satisfactory research progress; RCE = Retake Credit Earned
+
+Issued: February 15, 2024
+MIT Office of the Registrar, Room 5-119, Cambridge, MA 02139
+This transcript is printed on security paper with embedded watermark.
+Verify at: web.mit.edu/registrar/transcripts

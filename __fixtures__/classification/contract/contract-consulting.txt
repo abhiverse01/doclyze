@@ -1,0 +1,58 @@
+CONSULTING SERVICES AGREEMENT
+
+This Consulting Services Agreement ("Agreement") is entered into as of May 15, 2024, by and between:
+
+CLIENT: Greenfield Solar Holdings LLC ("Client"), a Delaware limited liability company with offices at 1550 Wynkoop Street, Suite 500, Denver, CO 80202.
+
+CONSULTANT: Dr. Margaret Ellison ("Consultant"), an individual with an address of 2840 Pearl Street, Boulder, CO 80302.
+
+1. ENGAGEMENT
+Client hereby engages Consultant to provide environmental impact assessment and regulatory compliance consulting services in connection with Client's proposed 200MW solar farm project in Pueblo County, Colorado (the "Project").
+
+2. SCOPE OF SERVICES
+Consultant shall perform the following services:
+2.1 Conduct a comprehensive environmental impact assessment (EIA) for the Project site, including flora and fauna surveys, wetland delineation, and cultural resource assessment, in accordance with NEPA and Colorado state requirements.
+2.2 Prepare and file all required environmental permit applications, including the Colorado Department of Public Health and Environment (CDPHE) 1041 permit and Army Corps of Engineers Section 404 permit.
+2.3 Serve as the Project's environmental representative in all regulatory proceedings, public hearings, and agency consultations.
+2.4 Develop and implement an environmental monitoring and mitigation plan for the construction and operational phases of the Project.
+2.5 Provide up to 40 hours per month of ad-hoc environmental advisory services.
+
+3. TERM
+The initial term of this engagement shall be eighteen (18) months, commencing May 15, 2024, and ending November 14, 2025. The term may be extended by mutual written agreement.
+
+4. COMPENSATION
+4.1 Monthly Retainer: Client shall pay Consultant a monthly retainer fee of $12,500, payable on the first business day of each calendar month.
+4.2 Hourly Rate: For services exceeding 40 hours in any calendar month, Consultant shall be compensated at a rate of $325 per hour.
+4.3 Expenses: Client shall reimburse Consultant for pre-approved, reasonable out-of-pocket expenses including travel, lodging, subcontractor fees, and specialized testing costs. Expenses exceeding $5,000 require prior written approval.
+4.4 Payment Terms: Invoices are due within 30 days of receipt.
+
+5. INDEPENDENT CONTRACTOR STATUS
+Consultant is an independent contractor. Nothing in this Agreement creates an employer-employee relationship, partnership, or joint venture. Consultant is responsible for all applicable taxes and insurance.
+
+6. DELIVERABLES
+6.1 Draft EIA Report: Within 6 months of the Effective Date.
+6.2 Final EIA Report: Within 9 months, incorporating agency feedback.
+6.3 Permit Applications: Filed within 10 months.
+6.4 Monthly Status Reports: Submitted by the 5th business day of each month.
+
+7. CONFIDENTIALITY
+Consultant shall not disclose any proprietary information about the Project, including financial projections, land acquisition details, and interconnection agreements, to any third party without Client's prior written consent.
+
+8. TERMINATION
+Either party may terminate this Agreement for any reason upon 30 days' written notice. Client shall pay Consultant for all services performed and expenses incurred through the termination date.
+
+9. GOVERNING LAW
+This Agreement shall be governed by the laws of the State of Colorado.
+
+
+CLIENT:
+Greenfield Solar Holdings LLC
+By: _______________________________
+Name: Thomas Reyes
+Title: Director of Development
+Date: May 15, 2024
+
+CONSULTANT:
+By: _______________________________
+Dr. Margaret Ellison
+Date: May 15, 2024

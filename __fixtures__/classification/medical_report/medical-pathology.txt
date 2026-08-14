@@ -1,0 +1,63 @@
+CLEVELAND CLINIC
+DEPARTMENT OF PATHOLOGY
+SURGICAL PATHOLOGY REPORT
+
+Accession #: CC-PATH-2024-0092847
+Patient: Morrison, James E.
+MRN: CC-4472918305
+DOB: November 22, 1972 | Age: 51 | Sex: Male
+Accession Date: March 5, 2024
+Specimen Received: March 5, 2024 09:15
+
+ORDERING PHYSICIAN: Dr. Lisa Huang, MD, Gastroenterology
+CLINICAL HISTORY: 52-year-old male with history of ulcerative colitis (diagnosed 2012) on mesalamine. Colonoscopy revealed a 1.8 cm sessile lesion in the transverse colon with ulcerated surface. Biopsy performed.
+
+SPECIMEN:
+A. Colon, transverse, biopsy — 4 fragments, formalin-fixed, labeled "transverse colon mass"
+B. Colon, transverse, adjacent mucosa — 2 fragments, labeled "adjacent tissue"
+
+GROSS DESCRIPTION:
+Specimen A: Four tan-brown mucosal fragments, aggregate measuring 0.9 x 0.6 x 0.4 cm, received in formalin. Entirely submitted in cassette A1.
+Specimen B: Two tan mucosal fragments, aggregate measuring 0.4 x 0.3 x 0.2 cm. Entirely submitted in cassette A2.
+
+MICROSCOPIC DESCRIPTION:
+Specimen A: Sections show colonic mucosa with an infiltrating glandular neoplasm. The glands are irregular and cribriform with back-to-back arrangement. The neoplastic cells show hyperchromatic, stratified nuclei with prominent nucleoli and increased mitotic activity (approximately 8 mitoses per 10 HPF). The tumor invades through the muscularis mucosae into the submucosa. The maximum depth of invasion is 1.2 mm below the muscularis mucosae. There is no lymphovascular invasion identified. No perineural invasion. The tumor extends to the cauterized deep margin; orientation precludes definitive margin assessment. Background colonic mucosa shows chronic active colitis consistent with ulcerative colitis.
+
+Specimen B: Sections show colonic mucosa with features of chronic active colitis. No dysplasia identified in the fragments examined.
+
+IMMUNOHISTOCHEMISTRY (performed on Specimen A):
+- CK20: Positive (diffuse, strong)
+- CK7: Negative
+- CDX2: Positive (diffuse, strong)
+- p53: Aberrant overexpression (diffuse, strong nuclear)
+- MLH1: Retained expression
+- MSH2: Retained expression
+- MSH6: Retained expression
+- PMS2: Retained expression
+- Ki-67: Approximately 70% labeling index
+
+DIAGNOSIS:
+
+A. Colon, transverse, biopsy:
+   ADENOCARCINOMA, WELL TO MODERATELY DIFFERENTIATED
+   - Invasion into submucosa (pT1)
+   - Depth of submucosal invasion: 1.2 mm
+   - No lymphovascular invasion
+   - No perineural invasion
+   - Deep margin: Cannot be assessed (cautery artifact)
+   - Background: Chronic active colitis
+
+   Immunohistochemistry: CK20+/CK7-/CDX2+/p53 aberrant+/MMR proficient (MLH1, MSH2, MSH6, PMS2 retained)
+
+B. Colon, transverse, adjacent mucosa:
+   Chronic active colitis without dysplasia.
+
+COMMENT:
+The adenocarcinoma is arising in the setting of long-standing ulcerative colitis. The mismatch repair proteins are retained, making a microsatellite stable tumor. The submucosal invasion depth of 1.2 mm exceeds the 1.0 mm threshold generally used for endoscopic resectability (Haggitt level sm3). Surgical resection (segmental colectomy) is recommended given the inability to assess the deep margin and the submucosal invasion depth. Lymph node staging should be performed.
+
+Electronically signed:
+_______________________________
+Dr. Robert Nakamura, MD
+Attending Pathologist, Gastrointestinal Pathology
+Cleveland Clinic
+March 7, 2024 11:30

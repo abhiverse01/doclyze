@@ -1,0 +1,51 @@
+MARCUS THORNBURG
+Senior Software Engineer
+Portland, OR 97101 | (503) 555-0147 | marcus.thornburg@email.com | linkedin.com/in/mthornburg | github.com/mthornburg
+
+PROFESSIONAL SUMMARY
+Results-driven senior software engineer with 12 years of experience designing and building distributed systems at scale. Led backend architecture for three products exceeding 10M daily active users. Deep expertise in Go, Rust, and Kubernetes, with a track record of reducing infrastructure costs by 40% through performance optimization and intelligent autoscaling. Passionate about mentoring junior engineers and fostering engineering culture.
+
+TECHNICAL SKILLS
+Languages: Go, Rust, Python, TypeScript, SQL, C++
+Infrastructure: Kubernetes, Docker, Terraform, AWS (EC2, S3, Lambda, RDS, CloudFront), GCP (BigQuery, GKE)
+Databases: PostgreSQL, MySQL, Redis, Apache Cassandra, Elasticsearch
+Tools: Git, Prometheus, Grafana, Jaeger, Kafka, gRPC, protobuf
+
+PROFESSIONAL EXPERIENCE
+
+Stripe — Senior Software Engineer, Payments Infrastructure
+San Francisco, CA | January 2019 – Present
+- Architected and implemented a new payment processing pipeline in Go that handles 2.4M transactions per hour with 99.997% uptime
+- Led a team of 8 engineers in migrating legacy Java microservices to Rust, reducing p99 latency from 450ms to 38ms
+- Designed a real-time fraud detection system using Kafka Streams and machine learning models, decreasing fraudulent transactions by 23%
+- Established SLO frameworks and on-call practices across three teams, reducing incident response time by 60%
+- Mentored 4 junior engineers, two of whom were promoted to mid-level within 18 months
+
+Dropbox — Software Engineer, Storage Platform
+San Francisco, CA | June 2015 – December 2018
+- Built and maintained a petabyte-scale block storage service in Python and C++, serving 600M registered users
+- Optimized storage allocation algorithms, achieving 15% reduction in disk usage across the fleet
+- Implemented cross-data-center replication with eventual consistency guarantees, improving disaster recovery RTO from 4 hours to 12 minutes
+- Contributed to open-source Go libraries for distributed locking (accumulated 2.3k GitHub stars)
+
+Palantir Technologies — Software Engineer, Forward Deployed
+Palo Alto, CA | July 2012 – May 2015
+- Developed data integration pipelines for government clients, processing and transforming 50TB of structured and unstructured data weekly
+- Built interactive geospatial visualization dashboards using React and D3.js for analyst workflows
+- Deployed custom ETL solutions on client infrastructure with strict air-gap security requirements
+
+EDUCATION
+Carnegie Mellon University — B.S. in Computer Science, Minor in Mathematics
+Pittsburgh, PA | 2008 – 2012
+Cum Laude. GPA: 3.82/4.0
+Senior thesis: "Adaptive Load Balancing in Heterogeneous Distributed Systems"
+
+CERTIFICATIONS
+- AWS Solutions Architect – Professional (2021)
+- Certified Kubernetes Administrator (CKA) (2020)
+
+PUBLICATIONS
+Thornburg, M. et al. "Low-Latency Payment Processing at Scale." Proceedings of SREcon22 Americas, 2022.
+
+REFERENCES
+Available upon request.

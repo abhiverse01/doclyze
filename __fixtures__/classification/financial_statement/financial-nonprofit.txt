@@ -1,0 +1,113 @@
+RIVER CITY COMMUNITY FOUNDATION
+STATEMENT OF FINANCIAL POSITION
+As of December 31, 2023
+(In thousands)
+
+---
+
+ASSETS
+
+Without Donor Restrictions:
+  Cash and cash equivalents                    $1,892
+  Grants and pledges receivable, net              $485
+  Prepaid expenses                               $124
+  Furniture and equipment, net                    $289
+  Total Without Donor Restrictions              $2,790
+
+With Donor Restrictions:
+  Cash and investments                          $12,450
+  Grants and pledges receivable, net             $2,180
+  Endowment investments                         $28,900
+  Property held for charitable purposes          $1,250
+  Total With Donor Restrictions                $44,780
+
+TOTAL ASSETS                                  $47,570
+
+---
+
+LIABILITIES AND NET ASSETS
+
+Liabilities:
+  Accounts payable and accrued expenses            $412
+  Deferred revenue (refundable advances)          $180
+  Grants payable                                 $1,245
+  Annuity liabilities                            $890
+  Total Liabilities                             $2,727
+
+NET ASSETS
+
+Without Donor Restrictions:
+  Undesignated                                   $1,820
+  Board-designated (operating reserve)            $970
+  Total Without Donor Restrictions              $2,790
+
+With Donor Restrictions:
+  Permanently restricted (endowment)           $28,900
+  Temporarily restricted:
+    Scholarship funds                          $8,450
+    Program-specific funds                     $5,340
+    Capital project funds                      $2,090
+  Total With Donor Restrictions                $44,780
+  Less: Underwater endowments                  ($2,027)
+
+TOTAL NET ASSETS                              $45,543
+
+---
+
+STATEMENT OF ACTIVITIES
+For the Year Ended December 31, 2023
+(In thousands)
+
+REVENUE AND SUPPORT
+
+Without Donor Restrictions:
+  Individual donations                           $3,450
+  Corporate sponsorships                         $1,890
+  Foundation grants                              $2,100
+  Special event revenue (net of direct costs)    $680
+  Investment income (unrestricted)                $420
+  Program service fees                           $340
+  Subtotal Without Restrictions                 $8,880
+
+With Donor Restrictions:
+  Individual donations (restricted)              $4,200
+  Foundation grants (restricted)                 $6,800
+  Endowment investment return                     $1,890
+  Subtotal With Restrictions                   $12,890
+
+Net assets released from restrictions:
+  Satisfaction of program restrictions          ($3,400)
+  Satisfaction of time restrictions              ($980)
+
+TOTAL REVENUE AND SUPPORT                     $17,390
+
+---
+
+EXPENSES
+
+Program Services:
+  Education & youth programs                    $8,450
+  Community health initiatives                  $4,200
+  Arts & culture grants                         $3,100
+  Total Program Services                       $15,750
+
+Supporting Services:
+  Management & general                          $1,180
+  Fundraising                                    $980
+  Total Supporting Services                     $2,160
+
+TOTAL EXPENSES                               $17,910
+
+---
+
+CHANGE IN NET ASSETS                         ($520)
+
+NET ASSETS, BEGINNING OF YEAR                $46,063
+NET ASSETS, END OF YEAR                      $45,543
+
+---
+Program Expense Ratio: 87.9% (program services / total expenses)
+Fundraising Efficiency: $0.056 per dollar raised
+
+Audited by: CliftonLarsonAllen LLP, Portland, OR
+Report dated: March 15, 2024

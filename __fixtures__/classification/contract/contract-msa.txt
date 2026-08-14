@@ -1,0 +1,57 @@
+MASTER SERVICES AGREEMENT
+
+This Master Services Agreement ("MSA") is entered into as of January 8, 2024 (the "Effective Date"), by and between:
+
+CLIENT: TechNova Corporation, a Delaware corporation ("Client"), with offices at 600 Market Street, Suite 400, San Francisco, CA 94104.
+
+SERVICE PROVIDER: Helix Digital Solutions Ltd., a company incorporated in England and Wales ("Provider"), with registered offices at 71 Queen Victoria Street, London EC4V 4AY, United Kingdom.
+
+1. SCOPE OF AGREEMENT
+This MSA governs all Statements of Work ("SOWs") executed between the Parties. Each SOW shall specify the scope of services, deliverables, timeline, fees, and other applicable terms. In the event of a conflict between this MSA and an SOW, the SOW shall control with respect to the specific services described therein.
+
+2. SERVICES
+Provider shall perform the services described in each SOW in a professional and workmanlike manner, consistent with industry standards. Provider shall assign qualified personnel with relevant skills and experience to perform the services.
+
+3. FEES AND PAYMENT
+3.1 Fees shall be as set forth in the applicable SOW. Unless otherwise specified, fees are quoted in U.S. Dollars.
+3.2 Client shall pay undisputed invoices within thirty (30) days of receipt. Invoices shall include a detailed breakdown of time and materials or milestones completed.
+3.3 Late payments shall bear interest at the lesser of 1.5% per month or the maximum rate permitted by applicable law.
+3.4 Provider reserves the right to suspend services if any invoice remains unpaid for more than forty-five (45) days, provided Provider gives Client ten (10) days' prior written notice.
+
+4. INTELLECTUAL PROPERTY
+4.1 Pre-Existing IP: Each Party shall retain all right, title, and interest in its pre-existing intellectual property.
+4.2 Work Product: Subject to full payment, Client shall own all right, title, and interest in any deliverables, custom code, and documentation created specifically for Client under an SOW ("Work Product").
+4.3 Provider Tools: Provider retains ownership of its methodologies, frameworks, libraries, and tools used in the performance of services, including any improvements thereto made during the engagement.
+4.4 License Grant: Provider grants Client a perpetual, non-exclusive, worldwide, royalty-free license to use any Provider Tools incorporated into the Work Product, solely as part of the Work Product.
+
+5. CONFIDENTIALITY
+Each Party agrees to maintain the confidentiality of the other Party's confidential information using at least the same degree of care it uses to protect its own confidential information, but in no event less than reasonable care.
+
+6. WARRANTIES AND DISCLAIMERS
+6.1 Provider warrants that it will perform services in accordance with the applicable SOW and that Work Product will conform to the specifications set forth therein for a period of ninety (90) days following acceptance ("Warranty Period").
+6.2 EXCEPT AS EXPRESSLY SET FORTH HEREIN, ALL SERVICES AND WORK PRODUCT ARE PROVIDED "AS IS" WITHOUT WARRANTY OF ANY KIND. PROVIDER DISCLAIMS ALL WARRANTIES, EXPRESS OR IMPLIED, INCLUDING WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE, AND NON-INFRINGEMENT.
+
+7. LIMITATION OF LIABILITY
+7.1 IN NO EVENT SHALL EITHER PARTY BE LIABLE FOR ANY INDIRECT, INCIDENTAL, SPECIAL, CONSEQUENTIAL, OR PUNITIVE DAMAGES, REGARDLESS OF THE FORM OF ACTION.
+7.2 PROVIDER'S TOTAL AGGREGATE LIABILITY UNDER THIS MSA AND ALL SOWS SHALL NOT EXCEED THE TOTAL FEES PAID BY CLIENT TO PROVIDER IN THE TWELVE (12) MONTHS PRECEDING THE EVENT GIVING RISE TO LIABILITY.
+
+8. TERM AND TERMINATION
+8.1 This MSA shall commence on the Effective Date and continue until terminated.
+8.2 Either Party may terminate this MSA for convenience upon ninety (90) days' written notice.
+8.3 Either Party may terminate this MSA immediately upon written notice if the other Party materially breaches and fails to cure within thirty (30) days.
+
+9. GOVERNING LAW AND DISPUTE RESOLUTION
+This MSA shall be governed by the laws of England and Wales. Disputes shall first be submitted to mediation in London before either Party may initiate arbitration under the LCIA Rules.
+
+
+TECHNOVA CORPORATION
+By: _______________________________
+Name: Michael Chen
+Title: VP of Engineering
+Date: January 8, 2024
+
+HELIX DIGITAL SOLUTIONS LTD
+By: _______________________________
+Name: Emma Richardson
+Title: Managing Director
+Date: January 8, 2024

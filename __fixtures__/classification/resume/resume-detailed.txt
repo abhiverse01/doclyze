@@ -1,0 +1,62 @@
+KATHERINE ANNE LINDSAY, PMP, CSM
+1250 Peachtree Street NE, Unit 4B, Atlanta, GA 30309
+katherine.lindsay@email.com | (404) 555-0278 | linkedin.com/in/katherinelindsay
+
+PROFESSIONAL PROFILE
+Senior Technical Program Manager with 14 years of progressive experience in enterprise software delivery, cloud migrations, and cross-functional program governance. Proven ability to manage programs exceeding $50M in budget spanning multiple workstreams, vendors, and geographic regions. Deep expertise in Agile-at-scale transformations and SaaS platform implementations. Exceptional communicator who has presented program status to C-suite stakeholders at Fortune 100 companies.
+
+CORE COMPETENCIES
+- Program & Portfolio Management (PMP, SAFe SPC, CSM certified)
+- Cloud Migration & Modernization (AWS, Azure, GCP)
+- Vendor Management & Procurement
+- Risk Management & Mitigation
+- Budget Planning & Financial Reporting
+- Organizational Change Management
+- Agile Transformation & Coaching
+- Executive Communication & Stakeholder Management
+
+PROFESSIONAL EXPERIENCE
+
+The Home Depot — Director of Technical Program Management
+Atlanta, GA | March 2021 – Present
+Oversee a team of 12 program managers responsible for the enterprise technology portfolio valued at $120M annually. Report directly to the SVP of Technology.
+
+- Spearheaded the company's multi-year cloud migration initiative ("Project Horizon"), a $45M program to migrate 340+ applications from on-premise data centers to AWS and Azure hybrid architecture. Currently in Phase 3 of 5 with 60% of workloads migrated on schedule.
+- Established a centralized PMO with standardized intake processes, resource allocation models, and reporting cadences. Reduced project delivery variance from ±35% to ±8% within the first year.
+- Introduced OKR-based program tracking aligned to business outcomes, replacing output-based status reporting. Improved executive visibility and reduced time spent in steering committee meetings by 40%.
+- Managed vendor relationships with 5 major technology partners (Deloitte, Accenture, AWS Professional Services, Microsoft, and ServiceNow), negotiating contracts totaling $18M annually.
+- Led the post-merger technology integration following the $2.1B acquisition of HD Supply, coordinating the harmonization of IT systems, data platforms, and security frameworks across 15,000 employees.
+
+Deloitte Digital — Senior Program Manager
+Atlanta, GA | September 2016 – February 2021
+Managed large-scale digital transformation programs for clients in retail, healthcare, and financial services sectors.
+
+- Served as engagement manager for a $28M Salesforce implementation at a top-10 U.S. bank, coordinating 6 workstreams (Sales Cloud, Service Cloud, Financial Services Cloud, Data Integration, Testing, and Training) across 3 Deloitte teams and the client's internal IT organization.
+- Delivered an e-commerce platform replatforming project for a national retailer 2 months ahead of schedule and $1.2M under budget, earning the firm's "Excellence in Delivery" award.
+- Built and mentored a high-performing team of 8 consultants, achieving a 95% retention rate over 4 years.
+- Developed reusable program management artifacts and playbooks adopted firm-wide for SaaS implementation engagements.
+
+IBM — Program Manager, Global Technology Services
+Raleigh, NC | July 2011 – August 2016
+Managed outsourced IT service delivery programs for enterprise clients.
+
+- Account lead for a $15M/year managed services engagement with a pharmaceutical company, overseeing infrastructure operations, application support, and security monitoring for 8,500 endpoints across 23 locations.
+- Improved SLA compliance from 94.2% to 99.1% through process redesign and automation of incident management workflows.
+- Coordinated a disaster recovery program for a healthcare client, conducting 4 full-scale DR exercises and achieving RTO of 45 minutes (target: 2 hours).
+- Managed a team of 25 onshore and offshore technical resources.
+
+EDUCATION
+
+Georgia Institute of Technology — Master of Science in Information Technology
+Atlanta, GA | 2009 – 2011
+Concentration: IT Management. GPA: 3.78/4.0
+
+University of Virginia — Bachelor of Science in Systems Engineering
+Charlottesville, VA | 2005 – 2009
+
+CERTIFICATIONS
+- Project Management Professional (PMP) – Project Management Institute, 2013
+- Certified ScrumMaster (CSM) – Scrum Alliance, 2015
+- SAFe Program Consultant (SPC) – Scaled Agile, Inc., 2019
+- AWS Certified Cloud Practitioner – Amazon Web Services, 2020
+- ITIL v4 Foundation – Axelos, 2022

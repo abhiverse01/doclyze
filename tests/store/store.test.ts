@@ -76,6 +76,29 @@ describe("Doclyze Store", () => {
       expect(useDoclyzeStore.getState().documents).toHaveLength(1);
     });
 
+    /**
+     * v5 regression test — models the ACTUAL duplicate bug.
+     * The real bug was that the Dropzone fired both onFile and onFiles for
+     * a single file drop, causing two runExtractionPipeline calls that each
+     * generated a DIFFERENT crypto.randomUUID(). The store's same-ID
+     * dedup didn't help because the IDs were different.
+     * This test simulates that exact pattern and verifies the store behavior.
+     */
+    it("should create TWO entries when two DIFFERENT IDs are added for the same logical file", () => {
+      // This documents the known limitation: the store cannot dedup
+      // across different IDs — the fix must be at the call site (Dropzone),
+      // not the reducer. This test exists to prove the store correctly
+      // stores what it receives.
+      const docA = makeDoc({ id: "uuid-A", filename: "report.pdf" });
+      const docB = makeDoc({ id: "uuid-B", filename: "report.pdf" });
+      useDoclyzeStore.getState().addDocument(docA);
+      useDoclyzeStore.getState().addDocument(docB);
+      // With different IDs, the store treats them as different docs.
+      // The fix (Dropzone no longer fires both onFile and onFiles) prevents
+      // this from happening at the source.
+      expect(useDoclyzeStore.getState().documents).toHaveLength(2);
+    });
+
     it("should keep different documents separate", () => {
       useDoclyzeStore.getState().addDocument(makeDoc({ id: "doc-1" }));
       useDoclyzeStore.getState().addDocument(makeDoc({ id: "doc-2" }));

@@ -1,0 +1,31 @@
+Why I Stopped Using ChatGPT for My Creative Writing (And What I Use Instead)
+
+March 14, 2024 | by Rachel Kim
+
+Last summer, I hit a wall. I'd been working on my novel for two years—75,000 words of a literary thriller set in 1980s Seoul—and I was stuck. The plot was tangled, my protagonist felt flat, and every time I sat down to write, I ended up staring at the blinking cursor for an hour before giving up and doomscrolling.
+
+So I did what every desperate writer does in 2024: I turned to AI.
+
+At first, it felt like magic. I'd feed ChatGPT a scene outline and it would generate paragraphs of competent prose. The sentences were grammatically correct, the descriptions were vivid, and it even caught a continuity error I'd missed. I was writing 2,000 words a day instead of 500. My publisher was thrilled with the accelerated delivery.
+
+But something felt wrong. After three weeks of AI-assisted drafting, I re-read what I'd produced and realized I couldn't tell which parts were mine and which were the machine's. Worse, the voice had become generic. The idiosyncratic rhythms of my prose—the long, breathless sentences that my editor calls "Rachel's runaway trains"—had been replaced by something smooth and forgettable. The book read like it had been written by a committee of pleasant, well-read ghosts.
+
+That's when I made a decision: I'd still use AI, but not as a co-writer. Instead, I'd use it as a research assistant and a sparring partner.
+
+Here's my current workflow:
+
+1. World-building research: I ask Claude or ChatGPT to summarize historical events, explain technical concepts, or describe what Seoul looked like in 1987. This replaces hours of Googling and Wikipedia rabbit holes.
+
+2. Character interviews: I create a custom GPT configured as my protagonist and interview it. "How would you react if your sister told you she was working for the government?" This helps me understand my character's psychology without writing their voice.
+
+3. Plot debugging: When I'm stuck on a structural problem, I describe the plot so far and ask, "What are three possible directions this could go that I haven't considered?" I never use the suggestions directly, but they often unlock an idea I hadn't thought of.
+
+4. Feedback on tone: I paste a passage and ask, "What emotion does this convey?" Not "make it better"—just diagnosis.
+
+The result? My writing is slower but it's mine again. The novel is better. And I've learned that the most dangerous thing about AI for creative work isn't that it replaces us—it's that it can make us sound like a slightly worse version of everyone else.
+
+What about you? Have you found a sustainable way to use AI in your creative work? I'd love to hear about it in the comments.
+
+---
+
+Rachel Kim is a novelist and essayist based in Brooklyn, NY. Her debut, "The Quiet Tenant," was published by Knopf in 2022.

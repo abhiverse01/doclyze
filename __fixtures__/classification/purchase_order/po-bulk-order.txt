@@ -1,0 +1,75 @@
+PURCHASE ORDER
+
+PO Number: PO-BLK-2024-00044
+Date: May 2, 2024
+Priority: Standard
+
+Buyer:
+FreshHarvest Distribution Co.
+884 Produce Market Road
+Los Angeles, CA 90021
+Contact: Carlos Mendez, Purchasing Manager
+Phone: (213) 555-0166
+Email: c.mendez@freshharvestdist.com
+
+Vendor:
+Del Cabo Organic Farms
+Carretera Transpeninsular Km 42
+San José del Cabo, BCS, Mexico
+Contact: Ana Rivera, Export Manager
+Email: a.rivera@delcabo.com
+
+Ship To:
+FreshHarvest Distribution Co.
+884 Produce Market Road, Dock 7
+Los Angeles, CA 90021
+
+Shipping Method: refrigerated truck (vendor arranges, buyer pays)
+Temperature Requirement: 34-38°F (1-3°C) cold chain required
+Payment Terms: Wire transfer, Net 15
+
+---
+
+Line | SKU | Product | Pack | Qty | Unit Price | Amount
+--- | --- | --- | --- | --- | --- | ---
+1 | DC-ORG-TOM | Roma Tomatoes, Organic, 25 lb box | 500 | BX | $14.50 | $7,250.00
+2 | DC-ORG-CUC | Persian Cucumbers, Organic, 1.5 doz | 300 | BX | $9.75 | $2,925.00
+3 | DC-ORG-PEP | Bell Peppers (Mixed), Organic, 1.5 bu box | 200 | BX | $16.25 | $3,250.00
+4 | DC-ORG-SQU | Zucchini, Organic, 30 lb box | 150 | BX | $12.00 | $1,800.00
+5 | DC-ORG-EGG | Eggplant, Organic, 25 lb box | 100 | BX | $13.50 | $1,350.00
+6 | DC-ORG-GRN | Green Beans, Organic, 15 lb box | 120 | BX | $18.75 | $2,250.00
+7 | DC-ORG-BRY | Baby Arugula, Organic, 2 lb clamshell | 400 | CS | $6.50 | $2,600.00
+8 | DC-ORG-SPN | Baby Spinach, Organic, 2.5 lb clamshell | 350 | CS | $7.25 | $2,537.50
+9 | DC-ORG-KL  | Kale, Organic, 12 bunch | 250 | BX | $8.50 | $2,125.00
+10| DC-ORG-BSL | Basil, Sweet, Organic, 12 bunch | 150 | BX | $11.00 | $1,650.00
+
+---
+
+Subtotal: $27,737.50
+USDA Phytosanitary Certificate: $180.00
+Customs Brokerage Fee: $350.00
+Freight (est.): $2,400.00
+
+ESTIMATED TOTAL: $30,667.50
+
+---
+
+Delivery Schedule:
+- Order #1 (Lines 1-5, 50%): May 8, 2024
+- Order #2 (Lines 1-5, 50%): May 15, 2024
+- Order #3 (Lines 6-10): May 10, 2024
+
+Quality Requirements:
+- All products must be USDA Certified Organic
+- Minimum shelf life: 5 days upon arrival at distribution center
+- Cold chain temperature logs required for each shipment
+- Any product below grade upon arrival subject to quality deduction
+
+Requisition No: REQ-PROD-2024-0088
+Approved By: Maria Santos, Director of Operations (5/1/2024)
+
+Authorized Signature:
+_______________________________
+Carlos Mendez, Purchasing Manager
+FreshHarvest Distribution Co.
+Date: May 2, 2024

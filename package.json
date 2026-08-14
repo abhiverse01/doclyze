@@ -7,7 +7,7 @@
     "build": "next build && cp -r .next/static .next/standalone/.next/ && cp -r public .next/standalone/",
     "start": "NODE_ENV=production bun .next/standalone/server.js 2>&1 | tee server.log",
     "lint": "eslint .",
-    "test": "VITE_CONFIG_NATIVE_IGNORE_WARNING=true vitest run",
+    "test": "bun run scripts/check-file-integrity.ts && VITE_CONFIG_NATIVE_IGNORE_WARNING=true vitest run",
     "db:push": "prisma db push --accept-data-loss",
     "db:generate": "prisma generate",
     "db:migrate": "prisma migrate dev",

@@ -1,0 +1,30 @@
+When the Algorithm Doesn't See You: Racial Bias in Automated Hiring Systems and Organizational Accountability
+
+Abstract
+This case study examines the implementation and subsequent withdrawal of an AI-powered resume screening tool at a Fortune 500 retail corporation (hereafter "RetailCo"). The tool, deployed in 2021 to reduce time-to-hire for corporate positions, was found to systematically deprioritize candidates from historically Black colleges and universities (HBCUs) and candidates with non-Western names. Drawing on 42 interviews with HR leaders, hiring managers, affected candidates, and the AI vendor's engineering team, as well as analysis of the tool's scoring model and training data, we trace the mechanisms through which bias was introduced and identify organizational factors that delayed its detection. We develop a framework for "algorithmic accountability" in hiring contexts.
+
+1. Introduction
+Automated hiring systems—including resume screeners, video interview analyzers, and job-fit assessments—have been adopted by an estimated 75% of U.S. employers with more than 500 employees (Meritt, 2023). These tools promise efficiency and objectivity, but a growing body of evidence suggests they can amplify existing societal biases (Raghavan et al., 2020; Cowgill, 2023). This case study contributes to this literature by providing a detailed account of how bias emerges not only from technical design choices but from organizational processes surrounding AI adoption.
+
+2. Case Background
+RetailCo, a national retailer with 45,000 corporate employees, implemented HireRank Pro (a pseudonym for the commercial tool) in Q1 2021 across its corporate hiring functions (finance, marketing, supply chain, IT). The tool used natural language processing to extract features from resumes and assigned a "fit score" from 0-100 based on a model trained on RetailCo's historical hiring data—specifically, the resumes of candidates who had been hired and remained employed for at least 18 months between 2015 and 2019.
+
+3. Methodology
+Our research team was contacted by RetailCo's Chief Diversity Officer in late 2022 after internal audit findings raised concerns. We conducted 42 semi-structured interviews (HR: 12, hiring managers: 14, affected candidates: 8, vendor engineers: 4, legal/compliance: 4) between January and July 2023. We also obtained (with consent) de-identified model documentation, feature importance analyses, and aggregated scoring data for approximately 85,000 processed applications.
+
+4. Findings
+
+4.1 Bias Mechanisms. We identified three primary pathways through which bias was introduced:
+(a) Training Data Bias: RetailCo's 2015-2019 hiring data reflected historical patterns of underrepresentation. Only 8% of training examples were from HBCU graduates, compared to 12% of the qualified applicant pool.
+(b) Feature Encoding: The tool's NLP pipeline treated certain experiences differently. For example, "Greek life" involvement (common on resumes from predominantly white institutions) was positively correlated with fit scores, while participation in student organizations with African American cultural affiliations received no corresponding positive signal.
+(c) Name-Based Proxy Effects: Although HireRank Pro explicitly excluded candidate names from scoring, the tool processed email addresses and social media links, some of which contained names that correlated with demographic groups.
+
+4.2 Organizational Accountability Failures. We identify four organizational factors that delayed bias detection: (a) the vendor's model documentation was insufficient for meaningful audit; (b) RetailCo's HR team lacked the technical expertise to evaluate the model; (c) disparate impact testing was conducted only once, at deployment, rather than continuously; (d) there was no channel for candidates to contest algorithmic decisions.
+
+5. Discussion and Recommendations
+We propose a four-pillar framework for algorithmic accountability in hiring: (1) pre-deployment bias audits with statistical power analysis; (2) continuous monitoring with automated disparate impact alerts; (3) candidate-facing transparency, including the right to human review; and (4) cross-functional governance involving HR, engineering, legal, and diversity teams.
+
+References
+Cowgill, B. (2023). "Algorithmic Hiring Tools: What Do They Actually Do?" Annual Review of Economics, 15, 279-308.
+Meritt, B. (2023). "The State of AI in Hiring." HR Research Institute Report.
+Raghavan, M. et al. (2020). "Mitigating Bias in Algorithmic Hiring." FAT* 2020.

@@ -1,0 +1,74 @@
+CURRICULUM VITAE
+
+PROFESSOR ELENA VASQUEZ-MORENO, Ph.D.
+Department of Electrical Engineering and Computer Sciences
+University of California, Berkeley
+545 Cory Hall, Berkeley, CA 94720
+elena.vasquez@berkeley.edu | (510) 555-0127
+
+RESEARCH INTERESTS
+Computational photography, computer vision, neural rendering, differentiable simulation, physics-informed deep learning
+
+EDUCATION
+Ph.D. in Computer Science, Stanford University, 2014
+Dissertation: "Inverse Rendering and Material Estimation from Single Images Under Unknown Illumination"
+Advisor: Professor Marc Levoy
+Committee: Professor Fei-Fei Li, Professor Pat Hanrahan
+
+M.S. in Computer Science, Stanford University, 2011
+B.S. in Electrical Engineering (summa cum laude), MIT, 2009
+
+APPOINTMENTS
+Professor, EECS Department, UC Berkeley, 2022 – Present
+Associate Professor, EECS Department, UC Berkeley, 2018 – 2022
+Assistant Professor, EECS Department, UC Berkeley, 2014 – 2018
+Visiting Researcher, Google DeepMind, Summer 2021
+Postdoctoral Fellow, MIT CSAIL, 2013 – 2014
+
+PUBLICATIONS (Selected)
+
+Journal Articles
+1. Vasquez-Moreno, E. and Chen, W. "Neural Radiance Fields for Dynamic Scenes with Occlusion-Aware Volumetric Rendering." ACM Transactions on Graphics (SIGGRAPH), vol. 43, no. 4, 2024.
+2. Vasquez-Moreno, E., Park, J., and Patel, R. "Physics-Guided Neural Inverse Rendering for Transparent Objects." International Journal of Computer Vision, vol. 132, pp. 423–449, 2023.
+3. Chen, W. and Vasquez-Moreno, E. "Differentiable Monte Carlo Ray Tracing through Participating Media." Computer Graphics Forum, vol. 41, no. 2, 2022.
+4. Vasquez-Moreno, E. et al. "Single-Image Material Recognition Using Cross-Modal Attention Networks." IEEE Transactions on Pattern Analysis and Machine Intelligence, vol. 44, no. 8, pp. 4152–4167, 2022.
+
+Conference Papers
+5. Liu, Y., Vasquez-Moreno, E., and Tan, Z. "Real-Time Neural Hair Rendering with Strand-Aware Splatting." SIGGRAPH 2023.
+6. Vasquez-Moreno, E. and Kumar, A. "Self-Supervised Pretraining for Monocular Depth Estimation in Wild Environments." CVPR 2022.
+7. Park, J., Vasquez-Moreno, E., and Chen, W. "Relighting Humans: Occlusion-Aware Inverse Rendering for Full-Body Portraits." ECCV 2021 (Oral, 2.8% acceptance rate).
+
+GRADUATE STUDENTS (Current)
+- Wei Chen (Ph.D., expected 2025) — now Research Scientist at NVIDIA
+- Yuki Tanaka (Ph.D., expected 2026)
+- Raj Patel (Ph.D., expected 2027)
+- Julia Liu (Ph.D., expected 2026)
+
+GRADUATE STUDENTS (Alumni)
+- Dr. Ananya Kumar, Ph.D. 2023 — Assistant Professor, University of Washington
+- Dr. James Park, Ph.D. 2022 — Research Scientist, Adobe Research
+- Dr. Sarah Mitchell, Ph.D. 2021 — Senior Engineer, Apple Vision Pro team
+
+HONORS AND AWARDS
+- Sloan Research Fellowship, 2023
+- ACM SIGGRAPH Significant New Researcher Award, 2022
+- NSF CAREER Award, 2019
+- MIT Technology Review "35 Innovators Under 35," 2017
+- Best Paper Award, CVPR 2021
+- Hellman Faculty Fellowship, UC Berkeley, 2019
+
+SERVICE
+- Area Chair: CVPR 2024, ICCV 2023, ECCV 2022, SIGGRAPH 2023
+- Program Committee: NeurIPS 2022–2024, ICML 2023–2024
+- Editorial Board: IEEE TPAMI (2023–present), ACM TOG (2020–present)
+- Grant Review Panel: NSF CISE (2021, 2023)
+
+GRANTS (Active)
+- NSF IIS-2345678: "Physics-Aware Neural Rendering for Autonomous Navigation," $1.2M, 2024–2027 (PI)
+- DARPA HR00112410023: "Real-Time Inverse Rendering for AR/VR," $1.8M, 2024–2026 (Co-PI)
+- Google Research Award: "Neural Material Estimation at Scale," $150K, 2023–2024 (PI)
+
+TEACHING
+- CS 294-082: Deep Learning for Computer Vision (Graduate), 2022, 2024
+- CS 184: Computer Graphics and Imaging (Undergraduate), 2015–2021
+- CS 285: Deep Reinforcement Learning (Graduate, co-taught), 2020

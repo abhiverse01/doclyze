@@ -1,0 +1,81 @@
+LABORATORY CORPORATION OF AMERICA
+LABORATORY REPORT
+
+Patient Name: Thompson, Alexander M.
+Patient ID: DOB-03142001-9847
+Date of Birth: March 14, 2001
+Sex: Male
+Ordering Physician: Dr. Sarah Kim, MD
+Order Date: March 10, 2024
+Collection Date: March 12, 2024
+Collection Time: 07:45 AM
+Fasting Status: Fasting (10+ hours)
+Specimen Type: Blood
+Accession #: LCA-2024-3847192
+
+---
+
+COMPLETE BLOOD COUNT (CBC) WITH DIFFERENTIAL
+
+Test                    Result       Reference Range    Flag
+WBC                     6.8 x10^3/uL  4.5-11.0 x10^3/uL
+RBC                     5.12 x10^6/uL  4.30-5.80 x10^6/uL
+Hemoglobin              15.4 g/dL     13.5-17.5 g/dL
+Hematocrit              44.8 %        38.8-50.0 %
+MCV                     87.5 fL       80.0-100.0 fL
+MCH                     30.1 pg       27.0-33.0 pg
+MCHC                    34.4 g/dL     32.0-36.0 g/dL
+Platelet Count          245 x10^3/uL  150-400 x10^3/uL
+MPV                     10.2 fL       7.4-10.4 fL
+
+Differential:
+Neutrophils %            58.2 %        40.0-75.0 %
+Lymphocytes %            30.4 %        20.0-50.0 %
+Monocytes %               7.8 %         2.0-10.0 %
+Eosinophils %             2.4 %         0.0-6.0 %
+Basophils %               1.2 %         0.0-2.0 %
+
+---
+
+COMPREHENSIVE METABOLIC PANEL
+
+Test                    Result       Reference Range    Flag
+Glucose                  88 mg/dL      70-100 mg/dL
+BUN                     16 mg/dL      7-20 mg/dL
+Creatinine               0.94 mg/dL    0.74-1.35 mg/dL
+eGFR                    >90 mL/min/1.73m2 (>60)
+Sodium                   140 mmol/L    136-145 mmol/L
+Potassium                4.2 mmol/L    3.5-5.0 mmol/L
+Chloride                 102 mmol/L    98-107 mmol/L
+CO2                     27 mmol/L     22-30 mmol/L
+Calcium                  9.4 mg/dL     8.5-10.5 mg/dL
+Total Protein            7.1 g/dL      6.0-8.3 g/dL
+Albumin                  4.5 g/dL      3.5-5.0 g/dL
+Total Bilirubin          0.8 mg/dL     0.2-1.2 mg/dL
+Alkaline Phosphatase     72 U/L        44-147 U/L
+AST (SGOT)               24 U/L        10-40 U/L
+ALT (SGPT)               28 U/L        7-56 U/L
+
+---
+
+THYROID PANEL
+
+TSH                      2.14 mIU/L    0.45-4.50 mIU/L
+Free T4                  1.18 ng/dL    0.82-1.77 ng/dL
+
+---
+
+VITAMIN D
+25-Hydroxy Vitamin D    34 ng/mL      30-100 ng/mL
+
+---
+
+All results within normal limits. No critical values identified.
+
+Electronically signed by:
+Lab Director: Patricia M. Hanson, MD, PhD
+Pathology Department
+Laboratory Corporation of America
+Report generated: March 13, 2024 14:22 EST
+
+This report is intended for the ordering physician. Patient should discuss results with their healthcare provider.

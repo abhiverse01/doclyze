@@ -1,0 +1,69 @@
+CSE 574 — DATA SCIENCE PRACTICUM
+Spring Semester 2024
+University of Washington, Paul G. Allen School of Computer Science & Engineering
+
+Instructor: Dr. Priya Nair | priya@cs.washington.edu | Office Hours: Tue 2-3PM, CSE 540
+TA: Jordan Kim | jkim@cs.washington.edu | Office Hours: Thu 3-4PM, CSE basement lab
+
+COURSE DESCRIPTION
+
+This project-based course bridges the gap between data science theory and practice. Students will work in teams of 3-4 on a real-world data science project sourced from industry partners (Amazon, Zillow, and the Fred Hutchinson Cancer Center). The course covers the full data science lifecycle: problem formulation, data acquisition and cleaning, exploratory analysis, feature engineering, model selection and training, evaluation, and deployment.
+
+LEARNING OBJECTIVES
+
+Upon completion of this course, students will be able to:
+- Formulate a data science problem from a vague business or research question
+- Acquire, clean, and validate data from multiple sources (APIs, databases, web scraping)
+- Apply appropriate statistical and machine learning methods to real-world datasets
+- Evaluate models using rigorous methodologies (cross-validation, statistical significance testing)
+- Communicate findings through data visualization and technical writing
+- Deploy a trained model as a REST API endpoint
+
+PREREQUISITES
+- CSE 416 (Introduction to Machine Learning) or STAT 435
+- Proficiency in Python (pandas, scikit-learn, matplotlib)
+- Basic SQL
+
+REQUIRED TEXTS
+- "Python for Data Analysis" by Wes McKinney (3rd ed., O'Reilly, 2022)
+- "Feature Engineering and Selection" by Kuhn & Johnson (Chapman & Hall, 2019)
+- Selected papers from the reading list (available on Canvas)
+
+GRADING
+
+Component | Weight | Description
+--- | --- | ---
+Project Milestones (5) | 40% | Problem statement, data audit, EDA report, model report, final presentation
+Peer Evaluation | 10% | Team members rate each other's contributions
+Homework (3) | 20% | Individual assignments on data cleaning, feature engineering, and model evaluation
+Midterm Quiz | 10% | Covers data pipeline design and evaluation methodology
+Class Participation | 10% | Attendance, discussion, and in-class exercises
+Reading Responses (5) | 10% | 200-word responses to assigned readings
+
+SCHEDULE (Selected Topics)
+
+Week 1 (Mar 4): Course Overview, Project Introductions
+Week 2 (Mar 11): Data Acquisition — APIs, SQL, Web Scraping
+Week 3 (Mar 18): Data Cleaning & Validation (HW1 due)
+Week 4 (Mar 25): Exploratory Data Analysis
+Week 5 (Apr 1): Feature Engineering (Reading Response 1 due)
+Week 6 (Apr 8): Supervised Learning — Regression & Classification
+Week 7 (Apr 15): Model Evaluation & Selection (HW2 due, Midterm Quiz)
+Week 8 (Apr 22): Unsupervised Learning & Anomaly Detection
+Week 9 (Apr 29): NLP Fundamentals (Reading Response 3 due)
+Week 10 (May 6): Model Deployment & MLOps
+Week 11 (May 13): Project Presentations (Final Reports due)
+
+PROJECT PARTNERS
+
+1. Amazon Advertising — Predictive bidding model for sponsored products
+2. Zillow — Housing price prediction using multi-modal data
+3. Fred Hutchinson Cancer Center — Breast cancer recurrence risk model
+
+ACADEMIC INTEGRITY
+All work submitted must be your own unless explicitly stated otherwise. AI-assisted coding tools (Copilot, ChatGPT) may be used for boilerplate code and debugging but not for generating analytical logic, model architectures, or written content. Violations will be reported to the Community Standards & Student Conduct office.
+
+DISABILITY ACCOMMODATIONS
+Contact Disability Resources for Students (drs@uw.edu, 0115 DSB) to request accommodations. Requests should be made at least 10 days before the needed accommodation.
+
+Last Updated: March 1, 2024

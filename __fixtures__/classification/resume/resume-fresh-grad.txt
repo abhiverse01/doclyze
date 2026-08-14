@@ -1,0 +1,48 @@
+SOPHIA RODRIGUEZ
+sophia.rodriguez@email.com | (312) 555-0293 | Chicago, IL | github.com/sophiarod | linkedin.com/in/sophiarodriguez
+
+EDUCATION
+University of Illinois at Urbana-Champaign
+B.S. in Computer Science | Expected May 2025
+GPA: 3.74/4.0 | Dean's List: Fall 2022, Spring 2023, Fall 2023
+Relevant Coursework: Data Structures, Algorithms, Operating Systems, Database Systems, Machine Learning, Computer Networks, Software Engineering
+
+EXPERIENCE
+Northwestern Medicine — Software Engineering Intern
+Chicago, IL | June 2024 – August 2024
+- Developed a Python-based data pipeline that automated patient record reconciliation across three legacy systems, saving clinical staff approximately 15 hours per week
+- Built a React dashboard for monitoring data pipeline health, deployed to internal Kubernetes cluster
+- Wrote comprehensive unit tests achieving 94% code coverage using pytest
+- Collaborated with a cross-functional team of engineers, product managers, and clinical stakeholders
+
+UIUC Research Lab — Undergraduate Research Assistant
+Urbana, IL | September 2023 – May 2024
+- Assisted Professor Kumar in natural language processing research focused on low-resource language text classification
+- Implemented transformer-based models using PyTorch, achieving state-of-the-art F1 scores on two benchmark datasets
+- Co-authored a workshop paper accepted at ACL 2024
+- Managed GPU compute resources and experiment tracking using Weights & Biases
+
+Campus Startup (HabitTracker) — Full Stack Developer (Co-founder)
+Urbana, IL | January 2023 – Present
+- Built a habit tracking web application using Next.js and PostgreSQL, currently with 1,200 active users
+- Designed and implemented REST API with authentication, serving 50k+ requests daily
+- Integrated Chart.js for personalized analytics and streak visualizations
+
+PROJECTS
+- Distributed Key-Value Store: Implemented a Raft-based KV store in Go as part of the Distributed Systems course. Achieved linearizable consistency across a 5-node cluster.
+- Compiler for MiniJava: Built a complete compiler frontend (lexer, parser, type checker) in OCaml for a subset of Java, generating x86 assembly output.
+- Android Fitness App: Published a Kotlin/Compose app on Google Play with 500+ downloads featuring workout logging and progress charts.
+
+SKILLS & TECHNOLOGIES
+Languages: Python, JavaScript/TypeScript, Java, Go, OCaml, SQL
+Frameworks: React, Next.js, Node.js, Flask, PyTorch, scikit-learn
+Tools: Git, Docker, Linux, AWS (EC2, S3), PostgreSQL, Redis
+
+AWARDS
+- ACM ICPC North America Qualifier – Top 50 team (2023)
+- HackIllinois Best Use of AI/ML Award (2023)
+- University Honors Program
+
+EXTRACURRICULAR ACTIVITIES
+- Women in Computer Science (WiCS) – Event Coordinator (2023-2024)
+- ACM Student Chapter – Vice President (2024-2025)

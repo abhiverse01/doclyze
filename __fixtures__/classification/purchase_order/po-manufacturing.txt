@@ -1,0 +1,81 @@
+PURCHASE ORDER
+
+PO Number: MFG-PO-2024-02314
+Date: January 18, 2024
+Priority: Urgent
+
+Buyer:
+Pinnacle Manufacturing Corp.
+1200 Industrial Parkway
+Columbus, OH 43228
+Contact: Robert Chen, Procurement Director
+Phone: (614) 555-0182
+Email: r.chen@pinnaclemfg.com
+
+Vendor:
+Nippon Steel Trading Co., Ltd.
+1-2-1 Otemachi, Chiyoda-ku
+Tokyo 100-0004, Japan
+Contact: Takeshi Yamamoto
+Email: t.yamamoto@nipponsteeltrading.jp
+
+Ship To:
+Pinnacle Manufacturing Corp.
+Receiving Dock 3
+1200 Industrial Parkway
+Columbus, OH 43228
+
+Shipping Method: FOB Osaka, Japan (buyer arranges freight)
+Payment Terms: Letter of Credit (Irrevocable, Confirmed)
+Shipping Terms: Incoterms FOB
+
+---
+
+Line | Material Spec | Description | Qty | Unit | Unit Price | Amount
+--- | --- | --- | --- | --- | --- | ---
+1 | SS304-2B-0.8mm | Stainless Steel Sheet, 304, 2B Finish, 0.8mm, 4x8ft | 500 | SH | $42.50 | $21,250.00
+2 | SS304-2B-1.2mm | Stainless Steel Sheet, 304, 2B Finish, 1.2mm, 4x8ft | 300 | SH | $58.75 | $17,625.00
+3 | SS316L-2B-1.5mm | Stainless Steel Sheet, 316L, 2B Finish, 1.5mm, 4x8ft | 200 | SH | $89.00 | $17,800.00
+4 | AL-6061-T6-3mm | Aluminum Sheet, 6061-T6, 3mm, 4x8ft | 400 | SH | $31.25 | $12,500.00
+5 | CU-C1100-1.5mm | Copper Sheet, C1100, 1.5mm, 4x8ft | 100 | SH | $78.50 | $7,850.00
+6 | SS304-PIPE-2SCH40 | Stainless Steel Pipe, 304, Schedule 40, 2" NPS, 20ft | 50 | PCS | $124.00 | $6,200.00
+7 | SS304-PIPE-4SCH40 | Stainless Steel Pipe, 304, Schedule 40, 4" NPS, 20ft | 30 | PCS | $289.00 | $8,670.00
+8 | SS304-FLG-WN-2 | Weld Neck Flange, 304, Class 150, 2" | 100 | PCS | $18.50 | $1,850.00
+9 | SS304-FLG-WN-4 | Weld Neck Flange, 304, Class 150, 4" | 60 | PCS | $34.75 | $2,085.00
+
+---
+
+Subtotal: $95,830.00
+Freight (est., buyer's account): Not included
+Insurance (est.): $480.00
+Customs Brokerage (est.): $2,200.00
+
+Estimated Landed Cost: $98,510.00
+
+---
+
+Requisition No: REQ-MFG-2024-0017
+Approved By: James Wilson, VP Manufacturing (1/17/2024)
+Project: PHOENIX Production Line Expansion
+Budget: CAPEX-PHX-2024
+
+Quality Requirements:
+- All materials must be accompanied by Mill Test Certificates (MTC) per EN 10204 3.1
+- Material traceability required per ASME Section II requirements
+- Incoming inspection at Pinnacle receiving dock before acceptance
+- Any non-conforming material will be rejected at vendor's expense
+
+Delivery Schedule:
+- Partial shipment #1 (Lines 1, 2, 4): February 28, 2024
+- Partial shipment #2 (Lines 3, 5, 6-9): March 15, 2024
+
+Letter of Credit Details:
+- Issuing Bank: JPMorgan Chase, New York
+- L/C Number: To be advised
+- Expiry Date: April 30, 2024
+
+Authorized Signature:
+_______________________________
+Robert Chen, Procurement Director
+Pinnacle Manufacturing Corp.
+Date: January 18, 2024

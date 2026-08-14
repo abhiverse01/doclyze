@@ -1,0 +1,54 @@
+MAYO CLINIC LABORATORIES
+LIPID PANEL
+
+Patient Name: Okonkwo, Chinaza A.
+Patient ID: CO-2023083471001
+DOB: September 8, 2002 | Age: 21 | Sex: Female
+Ordering Physician: Dr. Patricia Nguyen, MD, Internal Medicine
+Order Date: February 14, 2024
+Collection Date: February 16, 2024
+Collection Time: 08:15 AM
+Fasting Status: Fasting (12 hours)
+Specimen: Serum
+Accession #: MCL-2024-0091283
+
+---
+
+Test                          Result        Reference Range      Flag
+Total Cholesterol              198 mg/dL    <200 mg/dL          
+HDL Cholesterol                 54 mg/dL    >40 mg/dL (women)     
+LDL Cholesterol (calculated)   118 mg/dL    <100 mg/dL (optimal) * 
+VLDL Cholesterol (calculated)   26 mg/dL    2-38 mg/dL           
+Triglycerides                  130 mg/dL    <150 mg/dL           
+Non-HDL Cholesterol            144 mg/dL    <130 mg/dL           *
+Total Cholesterol/HDL Ratio     3.7         <5.0                 
+LDL/HDL Ratio                   2.2         <3.0                 
+
+---
+
+ADDITIONAL CARDIOVASCULAR RISK MARKERS
+
+hs-CRP                           1.8 mg/L    <2.0 mg/L           
+Lp(a)                            45 nmol/L    <75 nmol/L          
+ApoB                            92 mg/dL     <100 mg/dL          
+ApoA1                           148 mg/dL    >120 mg/dL          
+ApoB/ApoA1 Ratio                0.62         <0.9                
+
+---
+
+INTERPRETATION
+
+Total cholesterol is at the upper limit of normal. LDL cholesterol is above the optimal threshold of 100 mg/dL at 118 mg/dL. Non-HDL cholesterol is also mildly elevated at 144 mg/dL (target <130). Triglycerides and HDL are within normal limits.
+
+In the context of this 21-year-old female patient with no known cardiovascular risk factors, no family history of premature coronary artery disease, and a normal hs-CRP, these findings do not warrant pharmacologic therapy at this time. Lifestyle modifications including a heart-healthy diet (Mediterranean-style), regular aerobic exercise, and weight management are recommended. Repeat lipid panel in 12 months.
+
+---
+
+Methodology: Enzymatic assays performed on Roche Cobas 8000. LDL calculated using Friedewald formula. hs-CRP by immunoturbidimetric assay. Lp(a) by immunoturbidimetric assay.
+
+Electronically signed:
+Supervising Pathologist: Dr. William R. Foster, MD, PhD
+Mayo Clinic Laboratories
+Report Date: February 17, 2024
+
+This report is for the use of the ordering physician.

@@ -1,0 +1,85 @@
+CONSOLIDATED BALANCE SHEET
+(In millions, except per share data)
+
+As of December 31,
+                                    2023           2022
+---
+ASSETS
+
+Current Assets:
+  Cash and cash equivalents            $4,827         $3,192
+  Short-term investments               $2,150         $1,875
+  Accounts receivable, net             $5,432         $4,891
+  Inventories                          $1,205         $1,089
+  Prepaid expenses and other           $892           $743
+  Total current assets                 $14,506        $11,790
+
+Property and Equipment, net:
+  Land                                $485           $485
+  Buildings and improvements          $3,247         $3,012
+  Machinery and equipment             $8,912         $8,456
+  Furniture and fixtures              $1,234         $1,108
+  Less: Accumulated depreciation      ($6,284)       ($5,672)
+  Total PP&E, net                     $7,594         $7,389
+
+Intangible Assets, net:
+  Goodwill                            $12,450        $12,450
+  Customer relationships              $3,800         $4,200
+  Developed technology                 $2,100         $2,350
+  Trade names                         $1,450         $1,450
+  Less: Accumulated amortization       ($2,980)       ($2,340)
+  Total intangibles, net              $16,820        $18,110
+
+Operating Lease Right-of-Use Assets   $2,340         $2,580
+Deferred Tax Assets                   $1,890         $1,650
+Other Long-Term Assets                $892           $780
+---
+TOTAL ASSETS                          $44,042        $42,299
+
+---
+LIABILITIES AND EQUITY
+
+Current Liabilities:
+  Accounts payable                    $3,245         $2,987
+  Accrued expenses                   $2,890         $2,612
+  Deferred revenue (current)         $4,120         $3,850
+  Short-term debt                    $750           $1,200
+  Current portion of long-term debt  $500           $500
+  Total current liabilities           $11,505        $11,149
+
+Long-Term Debt                        $8,200         $8,700
+Deferred Revenue (long-term)         $3,450         $3,120
+Operating Lease Liabilities          $2,180         $2,390
+Deferred Tax Liabilities              $980           $890
+Other Long-Term Liabilities          $645           $580
+---
+Total Liabilities                     $26,960        $26,829
+
+---
+EQUITY
+
+Common Stock, $0.01 par value,
+  Authorized: 1,000 shares
+  Issued and outstanding: 420 shares (2023),
+  418 shares (2022)                   $4             $4
+Additional Paid-In Capital            $8,942         $8,640
+Retained Earnings                    $9,240         $7,890
+Treasury Stock                       ($1,104)       ($1,064)
+---
+Total Stockholders' Equity            $17,082        $15,470
+
+---
+TOTAL LIABILITIES AND EQUITY          $44,042        $42,299
+
+---
+See accompanying notes to consolidated financial statements.
+
+Independent Auditor's Report
+
+To the Board of Directors and Stockholders of Meridian Technologies Inc.:
+
+In our opinion, the consolidated financial statements present fairly, in all material respects, the financial position of Meridian Technologies Inc. and its subsidiaries as of December 31, 2023 and 2022, and the results of their operations and their cash flows for each of the three years in the period ended December 31, 2023, in conformity with accounting principles generally accepted in the United States of America.
+
+Ernst & Young LLP
+San Francisco, California
+January 29, 2024

@@ -1,0 +1,46 @@
+EMPLOYEE REMOTE WORK POLICY
+
+Policy Number: HR-2024-012
+Effective Date: April 1, 2024
+Applies To: All full-time and part-time employees
+Approved By: Chief People Officer
+
+1. PURPOSE
+This policy establishes guidelines for remote work arrangements at Meridian Technologies Inc., balancing operational needs with employee flexibility. Remote work is a privilege, not an entitlement, and may be modified or revoked based on business requirements.
+
+2. ELIGIBILITY
+2.1 Employees who have completed their 90-day probationary period and received a "Meets Expectations" or higher performance rating are eligible to request remote work.
+2.2 Roles that require physical presence (lab work, facilities management, on-site IT support) are generally not eligible for remote work arrangements.
+2.3 Remote work arrangements are subject to manager approval and must be documented in the company's HRIS system.
+
+3. REMOTE WORK MODELS
+3.1 Fully Remote: Employee works from a location other than a Meridian office 100% of the time. Requires VP-level approval.
+3.2 Hybrid: Employee works from a Meridian office 2-3 days per week and remotely on remaining days. This is the default model for eligible roles.
+3.3 Temporary Remote: Short-term remote arrangement (up to 30 days) for personal or family circumstances. Requires manager approval only.
+
+4. WORKSPACE REQUIREMENTS
+4.1 Employees must maintain a dedicated workspace that is free from distractions, sufficiently quiet for video calls, and ergonomically appropriate.
+4.2 The company provides a one-time $1,000 home office stipend for approved fully remote and hybrid employees, to be used for desk, chair, monitor, or other approved equipment. Receipts must be submitted within 90 days.
+4.3 High-speed internet (minimum 50 Mbps download) is required.
+
+5. AVAILABILITY AND COMMUNICATION
+5.1 Remote employees must be available during core business hours (10:00 AM - 4:00 PM in their primary office's time zone) unless otherwise agreed with their manager.
+5.2 Employees must respond to Slack messages and emails within 2 hours during business hours.
+5.3 Cameras must be on during all video meetings unless the employee has a documented accommodation.
+
+6. EXPENSES AND EQUIPMENT
+6.1 The company will provide a laptop and any required peripherals.
+6.2 Monthly internet subsidy of $75 for fully remote employees; $40 for hybrid employees.
+6.3 The company does not reimburse for home utility costs, general home maintenance, or office supplies.
+
+7. DATA SECURITY
+7.1 Remote employees must use the company-provided VPN for all work activities.
+7.2 Screens must be locked when unattended.
+7.3 Work devices must not be used by household members.
+7.4 Printing of confidential documents at home is prohibited.
+
+8. POLICY VIOLATIONS
+Violations of this policy may result in modification or revocation of remote work privileges and/or disciplinary action up to and including termination.
+
+---
+Questions about this policy should be directed to the People Operations team at hr@meridian.com.

@@ -1,0 +1,21 @@
+JAMES L. PATTERSON
+(415) 555-0391 | james.patterson@email.com | San Francisco, CA
+
+Senior Product Manager — 8 years experience in B2B SaaS
+
+EXPERIENCE
+
+Notion — Senior Product Manager, Platform | 2021 – Present
+Own the API platform and developer experience. Grew API adoption 340% in 18 months. Launched public API v2 with webhook support, OAuth 2.0, and rate limiting. Manage a team of 4 PMs and coordinate with engineering org of 60+.
+
+Figma — Product Manager, Enterprise | 2018 – 2021
+Led enterprise features: SSO, SCIM provisioning, admin dashboard, audit logs. Drove enterprise ARR from $12M to $48M. Shipped admin analytics console used by 2,000+ enterprise admins.
+
+Box — Associate Product Manager | 2016 – 2018
+Owned file preview and collaboration features. Redesigned commenting system, increasing engagement by 28%. Conducted 50+ user interviews per quarter.
+
+EDUCATION
+B.A. in Economics, UC Berkeley, 2016
+
+SKILLS
+Product strategy, roadmapping, SQL, Amplitude, Mixpanel, Figma, technical writing, developer relations, API design

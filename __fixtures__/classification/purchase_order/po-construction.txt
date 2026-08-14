@@ -1,0 +1,73 @@
+PURCHASE ORDER
+
+PO Number: GC-PO-2024-00918
+Date: February 5, 2024
+Priority: Standard
+
+Buyer:
+Summit General Contractors Inc.
+2200 Industrial Parkway, Suite 100
+Sacramento, CA 95834
+Contact: Brian Coughlin, Project Manager
+Phone: (916) 555-0277
+
+Vendor:
+Sierra Concrete & Materials Inc.
+4800 Fruitridge Road
+Sacramento, CA 95820
+Vendor Contact: Mike Alvarez, Sales Manager
+
+Deliver To:
+Westfield Medical Center Expansion
+3800 J Street
+Sacramento, CA 95816
+Job Site Contact: Dave Ramirez, Superintendent
+
+Delivery Method: Vendor's trucks, direct to job site
+Payment Terms: Net 30 from delivery
+
+---
+
+Line | Product Code | Description | Qty | Unit | Unit Price | Amount
+--- | --- | --- | --- | --- | --- | ---
+1 | CON-3000PSI | Ready-Mix Concrete, 3000 PSI, per CY | 280 | CY | $142.00 | $39,760.00
+2 | CON-4000PSI | Ready-Mix Concrete, 4000 PSI, per CY | 180 | CY | $158.00 | $28,440.00
+3 | CON-5000PSI | Ready-Mix Concrete, 5000 PSI, per CY | 65 | CY | $175.00 | $11,375.00
+4 | REBAR-#4 | Rebar #4 (1/2"), 20ft length, Grade 60 | 800 | PCS | $12.50 | $10,000.00
+5 | REBAR-#5 | Rebar #5 (5/8"), 20ft length, Grade 60 | 400 | PCS | $18.75 | $7,500.00
+6 | REBAR-#8 | Rebar #8 (1"), 20ft length, Grade 60 | 120 | PCS | $45.00 | $5,400.00
+7 | WWM-6x6-10G | Welded Wire Mesh, 6x6, 10 Ga, 5x10 sheet | 200 | SH | $28.50 | $5,700.00
+8 | VAPOR-15MIL | Stego Wrap Vapor Barrier, 15 mil, 10ft x 100ft | 25 | RL | $189.00 | $4,725.00
+9 | CAULK-SL | Sikaflex-1a Polyurethane Sealant, 29 oz tube | 48 | EA | $14.50 | $696.00
+10 | DPM-ACRYL | Concrete Cure & Seal, 5 gal pail | 12 | EA | $68.00 | $816.00
+
+---
+
+Subtotal: $114,412.00
+CA Sales Tax (8.75%): $10,011.05
+
+TOTAL: $124,423.05
+
+---
+
+Requisition No: REQ-GC-2024-0044
+Approved By: Brian Coughlin, PM (2/4/2024)
+Project: Westfield Medical Center ED Expansion
+Contract #: WC-MC-2023-008
+
+Delivery Schedule:
+- 3000 PSI: 100 CY/wk starting Feb 19, 2024 (3 weeks)
+- 4000 PSI: 60 CY/wk starting Feb 19, 2024 (3 weeks)
+- 5000 PSI: 65 CY single delivery March 8, 2024
+- Rebar & WWM: Deliver Feb 12-16, 2024
+- Misc. materials: Deliver Feb 15, 2024
+
+Note: All deliveries must occur between 7:00 AM - 4:00 PM weekdays.
+Concrete delivery tickets must include: batch time, truck #, water added, and slump.
+Rebar must have mill certifications (ASTM A615 Grade 60).
+
+Authorized Signature:
+_______________________________
+Brian Coughlin, Project Manager
+Summit General Contractors Inc.
+Date: February 5, 2024

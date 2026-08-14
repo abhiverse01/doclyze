@@ -16,6 +16,8 @@ import {
   XCircle,
   Files,
   Upload,
+  RefreshCw,
+  AlertTriangle,
 } from "lucide-react";
 import { useRouter } from "next/navigation";
 import { useDoclyzeStore } from "@/lib/store";
@@ -25,7 +27,7 @@ import { DocumentPresentorSkeleton, InsightsPanelSkeleton } from "./presentor/sk
 import { InsightsPanel } from "./insights-panel";
 import { runExtractionPipeline, ProgressUpdate, ProgressStage } from "@/lib/extraction/orchestrator";
 import { labelForType } from "@/lib/extraction/orchestrator";
-import type { DoclyzeExtractionResult } from "@/lib/extraction/types";
+import type { DoclyzeExtractionResult, DocType } from "@/lib/extraction/types";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
@@ -114,6 +116,7 @@ export function Analyzer() {
         id: result.documentId,
         filename: result.filename,
         detectedType: result.detectedType,
+        classificationConfidence: result.classificationConfidence,
         fileSizeBytes: result.fileSizeBytes,
         extractedAt: result.extractedAt,
         completenessScore: result.completenessScore,
@@ -177,6 +180,7 @@ export function Analyzer() {
           id: result.documentId,
           filename: result.filename,
           detectedType: result.detectedType,
+          classificationConfidence: result.classificationConfidence,
           fileSizeBytes: result.fileSizeBytes,
           extractedAt: result.extractedAt,
           completenessScore: result.completenessScore,
@@ -217,6 +221,46 @@ export function Analyzer() {
     );
   };
 
+  // v5: Manual reclassification — re-run extraction with a forced type
+  const [isReclassifying, setIsReclassifying] = React.useState(false);
+
+  // Store the raw file for reclassification
+  const pendingFileRef = React.useRef<File | null>(null);
+
+  const handleReclassify = React.useCallback(async (newType: DocType) => {
+    if (!fullResult || isReclassifying) return;
+    setIsReclassifying(true);
+    try {
+      // Re-run the pipeline with a classification override
+      // We create a synthetic file-like object from the raw text
+      const blob = new Blob([fullResult.rawText], { type: fullResult.fileType });
+      const syntheticFile = new File([blob], fullResult.filename, { type: fullResult.fileType });
+
+      const result = await runExtractionPipeline(syntheticFile, (update) => {
+        // Suppress progress for reclassification
+      }, newType);
+
+      setFullResult(result);
+      addDocument({
+        id: result.documentId,
+        filename: result.filename,
+        detectedType: result.detectedType,
+        classificationConfidence: result.classificationConfidence,
+        fileSizeBytes: result.fileSizeBytes,
+        extractedAt: result.extractedAt,
+        completenessScore: result.completenessScore,
+        ocrUsed: result.ocrUsed,
+        result,
+      });
+      toast.success(`Reclassified as ${labelForType(result.detectedType)}`);
+    } catch (err) {
+      const message = err instanceof Error ? err.message : "Reclassification failed";
+      toast.error(message);
+    } finally {
+      setIsReclassifying(false);
+    }
+  }, [fullResult, isReclassifying, addDocument]);
+
   // ─── Empty state: no file uploaded yet ─────────────────────────────────────
   if (!fullResult && !progress && !error && batchQueue.length === 0) {
     return (
@@ -237,7 +281,7 @@ export function Analyzer() {
             insights — all in your browser.
           </p>
           <div className="mt-8">
-            <Dropzone onFile={handleFile} onFiles={handleFiles} />
+            <Dropzone onFiles={handleFiles} />
           </div>
 
           {/* What happens next */}
@@ -471,6 +515,20 @@ export function Analyzer() {
               <Badge variant="outline" className="text-xs font-semibold uppercase tracking-wide">
                 {docTypeLabel}
               </Badge>
+              {/* v5: Classification confidence badge */}
+              <Badge
+                variant="outline"
+                className={cn(
+                  "text-[10px] font-mono",
+                  fullResult.classificationConfidence >= 70
+                    ? "border-[var(--confidence-high)]/40 text-[var(--confidence-high)]"
+                    : fullResult.classificationConfidence >= 40
+                    ? "border-[var(--confidence-medium)]/40 text-[var(--confidence-medium)]"
+                    : "border-[var(--severity-warning)]/40 text-[var(--severity-warning)]"
+                )}
+              >
+                confidence {fullResult.classificationConfidence}/100
+              </Badge>
               {fullResult.ocrUsed && (
                 <Badge variant="outline" className="text-[10px] uppercase border-[var(--severity-notice)]/40 text-[var(--severity-notice)]">
                   OCR
@@ -505,7 +563,7 @@ export function Analyzer() {
         </div>
 
         {/* Completeness bar */}
-        <div className="mb-6">
+        <div className="mb-4">
           <div className="flex items-center justify-between text-[11px] mb-1.5">
             <span className="text-muted-foreground font-medium">Extraction completeness</span>
             <span className="font-mono text-muted-foreground">{fullResult.completenessScore}/100</span>
@@ -526,6 +584,9 @@ export function Analyzer() {
             />
           </div>
         </div>
+
+        {/* v5: Document-level extraction quality summary + reclassification control */}
+        <ClassificationControl fullResult={fullResult} onReclassify={handleReclassify} />
 
         {/* Tabs */}
         <Tabs value={activeTab} onValueChange={setActiveTab} className="w-full">
@@ -766,4 +827,101 @@ function formatSize(bytes: number): string {
   if (bytes < 1024) return `${bytes} B`;
   if (bytes < 1024 * 1024) return `${(bytes / 1024).toFixed(1)} KB`;
   return `${(bytes / (1024 * 1024)).toFixed(1)} MB`;
+}
+
+/** v5: Classification confidence display + manual reclassification control */
+const RECLASSIFY_OPTIONS: { value: DocType; label: string }[] = [
+  { value: "resume", label: "Resume / CV" },
+  { value: "invoice", label: "Invoice / Receipt" },
+  { value: "contract", label: "Contract / Agreement" },
+  { value: "research_paper", label: "Research Paper" },
+  { value: "academic_transcript", label: "Academic Transcript" },
+  { value: "purchase_order", label: "Purchase Order" },
+  { value: "financial_statement", label: "Financial Statement" },
+  { value: "medical_report", label: "Medical / Lab Report" },
+  { value: "general", label: "General Document" },
+];
+
+function ClassificationControl({
+  fullResult,
+  onReclassify,
+}: {
+  fullResult: DoclyzeExtractionResult;
+  onReclassify: (type: DocType) => void;
+}) {
+  const [showPicker, setShowPicker] = React.useState(false);
+  const conf = fullResult.classificationConfidence;
+  const isLow = conf < 40;
+
+  // Count fields for quality summary
+  const totalFields = fullResult.fieldGroups.reduce((s, fg) => s + fg.fields.length, 0);
+  const filledFields = fullResult.fieldGroups.reduce(
+    (s, fg) => s + fg.fields.filter((f) => f.value !== null).length,
+    0
+  );
+  const lowConfFields = fullResult.fieldGroups.reduce(
+    (s, fg) => s + fg.fields.filter((f) => f.confidence === "low" && f.value !== null).length,
+    0
+  );
+
+  return (
+    <div className={cn(
+      "mb-6 rounded-lg border p-3 text-xs",
+      isLow
+        ? "border-[var(--severity-warning)]/40 bg-[var(--severity-warning)]/5"
+        : "border-border bg-muted/30"
+    )}>
+      <div className="flex items-center justify-between gap-3">
+        <div className="flex-1 min-w-0">
+          <div className="flex items-center gap-2">
+            {isLow && <AlertTriangle className="h-3.5 w-3.5 text-[var(--severity-warning)] shrink-0" />}
+            <span className="font-medium">{isLow ? "Low classification confidence" : "Extraction quality"}</span>
+          </div>
+          <p className="mt-0.5 text-muted-foreground">
+            {filledFields} of {totalFields} fields found{lowConfFields > 0 ? `, ${lowConfFields} low-confidence` : ""}
+            {isLow && " — consider reclassifying manually"}
+          </p>
+        </div>
+        <div className="flex items-center gap-2 shrink-0">
+          {showPicker ? (
+            <div className="flex items-center gap-1.5">
+              <select
+                autoFocus
+                className="h-7 rounded-md border border-border bg-background px-2 text-[11px] focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring"
+                defaultValue={fullResult.detectedType}
+                onKeyDown={(e) => {
+                  if (e.key === "Escape") setShowPicker(false);
+                }}
+                onChange={(e) => {
+                  onReclassify(e.target.value as DocType);
+                  setShowPicker(false);
+                }}
+              >
+                {RECLASSIFY_OPTIONS.map((opt) => (
+                  <option key={opt.value} value={opt.value}>{opt.label}</option>
+                ))}
+              </select>
+              <button
+                onClick={() => setShowPicker(false)}
+                className="text-muted-foreground hover:text-foreground"
+                aria-label="Cancel reclassification"
+              >
+                <XCircle className="h-3.5 w-3.5" />
+              </button>
+            </div>
+          ) : (
+            <Button
+              variant="outline"
+              size="sm"
+              className="h-7 text-[11px] gap-1"
+              onClick={() => setShowPicker(true)}
+            >
+              <RefreshCw className="h-3 w-3" />
+              Reclassify
+            </Button>
+          )}
+        </div>
+      </div>
+    </div>
+  );
 }

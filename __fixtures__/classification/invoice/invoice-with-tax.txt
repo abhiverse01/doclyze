@@ -1,0 +1,74 @@
+TAX INVOICE
+
+Invoice Number: VAT-2024-00561
+GST Registration: 99-912-345-678
+ABN: 84 621 987 403
+Date of Issue: April 2, 2024
+Due Date: May 2, 2024
+
+From:
+Digital Frontiers Pty Ltd
+Level 14, 120 Collins Street
+Melbourne VIC 3000, Australia
+Contact: accounts@digitalfrontiers.com.au
+
+Bill To:
+Pinnacle Health Group Ltd
+580 St Kilda Road
+Melbourne VIC 3004, Australia
+Attn: Finance Department
+PO Reference: PHG-2403-789
+
+---
+
+SERVICES RENDERED
+
+1. Custom CRM Development – Sprint 4
+   Description: Development of lead scoring algorithm, automated follow-up workflows, and Salesforce integration module. Includes 8 story points of backend development and 4 story points of frontend work.
+   Hours: 120.0 @ AUD $185.00 = AUD $22,200.00
+   GST (10%): AUD $2,220.00
+   Line Total: AUD $24,420.00
+
+2. UX Audit & Recommendations Report
+   Description: Comprehensive heuristic evaluation of the patient portal, including accessibility audit (WCAG 2.1 AA compliance), usability testing with 8 participants, and written recommendations with priority rankings.
+   Fixed Fee: AUD $8,500.00
+   GST (10%): AUD $850.00
+   Line Total: AUD $9,350.00
+
+3. DevOps Consulting – Monthly Retainer (March)
+   Description: Cloud infrastructure management, CI/CD pipeline maintenance, monitoring and alerting configuration, and on-call support for production issues.
+   Fixed Fee: AUD $4,800.00
+   GST (10%): AUD $480.00
+   Line Total: AUD $5,280.00
+
+4. Data Migration Support – Phase 2
+   Description: ETL scripting and validation for migrating 1.2M patient records from legacy PostgreSQL database to new cloud-hosted database. Data cleansing and deduplication included.
+   Hours: 40.0 @ AUD $185.00 = AUD $7,400.00
+   GST (10%): AUD $740.00
+   Line Total: AUD $8,140.00
+
+---
+
+Subtotal (ex GST): AUD $42,900.00
+GST (10%): AUD $4,290.00
+
+TOTAL INCL. GST: AUD $47,190.00
+
+---
+
+TAX SUMMARY
+GST Collected: AUD $4,290.00
+GST on Acquisitions: AUD $1,230.00 (not shown on this invoice)
+Net GST Payable to ATO: AUD $3,060.00
+
+Payment Terms: Net 30 days from date of issue.
+Interest on overdue accounts: 2.0% per month.
+
+Please remit payment to:
+Bank: Australia and New Zealand Banking Group (ANZ)
+BSB: 014-002
+Account: 4928-7103
+Account Name: Digital Frontiers Pty Ltd
+Reference: VAT-2024-00561
+
+This document is a valid tax invoice for GST purposes under A New Tax System (Goods and Services Tax) Act 1999.

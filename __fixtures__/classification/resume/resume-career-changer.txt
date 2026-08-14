@@ -1,0 +1,51 @@
+DAVID OSEI-ASANTE
+david.osei@email.com | (646) 555-0184 | Brooklyn, NY | linkedin.com/in/davidoseiasante
+
+PROFESSIONAL SUMMARY
+Former high school physics teacher transitioning into data science and analytics. Five years of experience in curriculum design, data-driven instruction, and quantitative assessment. Completed an intensive data science bootcamp and built a portfolio of end-to-end machine learning projects. Combines strong analytical thinking, communication skills honed through teaching, and a deep comfort with mathematical reasoning.
+
+DATA SCIENCE EXPERIENCE
+
+Data Science Fellow – NYC Data Science Academy
+New York, NY | March 2024 – June 2024
+- Completed a 12-week immersive program covering statistical modeling, machine learning, deep learning, and NLP
+- Capstone project: Built a predictive model for NYC restaurant health inspection outcomes using gradient-boosted trees, achieving 82% accuracy on held-out test data
+- Won "Best Presentation" award for end-of-program project showcase
+
+Freelance Data Analyst
+New York, NY | January 2024 – Present
+- Developed interactive Tableau dashboards for a local nonprofit tracking community health outcomes across 12 Brooklyn neighborhoods
+- Performed A/B test analysis for an e-commerce client's email marketing campaigns, identifying a segment-specific subject line strategy that increased open rates by 31%
+
+TEACHING EXPERIENCE
+
+Biology & Physics Teacher – Success Academy Charter Schools
+Brooklyn, NY | August 2019 – December 2023
+- Taught AP Physics 1 and Regents Biology to 150+ students across four class sections annually
+- Analyzed student assessment data weekly using internal dashboards to differentiate instruction and identify at-risk students
+- Designed project-based learning units incorporating sensor data collection and Python-based data visualization
+- Mentored 12 student teachers through the organization's teacher residency program
+- Achieved a 94% Regents Biology pass rate, compared to the school network average of 81%
+
+Education Coordinator – City Year New York
+New York, NY | August 2017 – July 2019
+- Managed tutoring programs serving 200 students across two Bronx middle schools
+- Collected and reported on program metrics including attendance, academic growth, and survey data for quarterly board presentations
+- Trained and supervised a team of 8 AmeriCorps members
+
+EDUCATION
+
+M.S. in Education, Secondary Science – Hunter College, CUNY
+New York, NY | 2017 – 2019
+GPA: 3.91/4.0
+Thesis: "Effectiveness of Simulation-Based Labs in Urban Physics Classrooms"
+
+B.A. in Mathematics – University of Ghana
+Legon, Ghana | 2012 – 2016
+First Class Honors. GPA: 3.88/4.0
+
+TECHNICAL SKILLS
+Programming: Python (pandas, scikit-learn, matplotlib, seaborn, TensorFlow), R, SQL
+Visualization: Tableau, Power BI, Matplotlib, Seaborn
+Data & ML: Regression, Classification, Clustering, NLP, A/B Testing, Feature Engineering
+Tools: Git, Jupyter, Google Colab, AWS (S3, SageMaker)

@@ -21,7 +21,8 @@ const ACCEPTED = {
 const MAX_SIZE = 25 * 1024 * 1024; // 25 MB
 
 interface DropzoneProps {
-  onFile: (file: File) => void;
+  /** @deprecated Use onFiles instead — onFile was removed to prevent double-fire duplicates. */
+  onFile?: (file: File) => void;
   onFiles?: (files: File[]) => void;
   disabled?: boolean;
 }
@@ -48,9 +49,9 @@ export function Dropzone({ onFile, onFiles, disabled }: DropzoneProps) {
       }
       if (accepted.length > 0) {
         setSelectedFiles(accepted);
-        if (accepted.length === 1) {
-          onFile(accepted[0]);
-        }
+        // Only call onFiles — the parent handles single vs batch internally.
+        // Previously both onFile and onFiles fired for single files, causing
+        // two concurrent extraction pipelines with different UUIDs → duplicate entries.
         onFiles?.(accepted);
       }
     },
