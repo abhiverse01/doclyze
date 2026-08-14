@@ -2,6 +2,10 @@
  * Parsers -- turn raw file bytes into normalized text (and page list for PDFs).
  * All run on the client (no server roundtrip needed for v1).
  * Heavy work (OCR) is offloaded to a Web Worker via tesseract.js.
+ *
+ * v6: PDF parsing now retains positional/font-size data via layout analysis.
+ * The `layoutData` field in ParseOutput provides column detection, heading
+ * detection, and table reconstruction for downstream extractors.
  */
 
 import * as pdfjsLib from "pdfjs-dist/legacy/build/pdf.mjs";
@@ -11,6 +15,12 @@ import Papa from "papaparse";
 import { createWorker } from "tesseract.js";
 
 import { normalizeText } from "./normalize";
+import {
+  type LayoutTextItem,
+  type LayoutResult,
+  analyzeLayout,
+  buildReadingOrderText,
+} from "./layout";
 
 // --- PDF.js worker bootstrap ---------------------------------------------
 // The worker file in /public is a copy of
@@ -34,6 +44,9 @@ export interface ParseOutput {
   ocrUsed: boolean;
   /** For CSV/TSV -- the parsed rows, so we don't have to re-parse downstream. */
   tabular?: { headers: string[]; rows: Record<string, string | number | null>[] };
+  /** v6: Layout analysis data for PDF documents. Contains positional info,
+   *  detected columns, headings, and reconstructed tables. */
+  layoutData?: LayoutResult;
 }
 
 /** Sniff the real MIME type from magic bytes -- never trust the extension alone. */
@@ -69,6 +82,17 @@ function ensurePdfjs() {
   }
 }
 
+/**
+ * Derive font size from a pdfjs text item's transform matrix.
+ * transform = [scaleX, skewX, skewY, scaleY, translateX, translateY]
+ * Font size = scaleY (absolute value). Falls back to 12 if unparseable.
+ */
+function deriveFontSize(transform: number[]): number {
+  // transform[3] is scaleY — the font size for normal horizontal text
+  const fs = Math.abs(transform[3]);
+  return fs > 0 ? Math.round(fs * 10) / 10 : 12;
+}
+
 async function parsePdf(
   bytes: Uint8Array,
   onProgress?: (stage: string, pct: number) => void
@@ -87,13 +111,47 @@ async function parsePdf(
     throw new Error(`PDF parsing failed: ${msg}. The file may be corrupted or password-protected.`);
   }
 
+  // v6: Collect layout-aware text items per page
+  const allPageItems: Array<{
+    pageNum: number;
+    items: LayoutTextItem[];
+    pageWidth: number;
+  }> = [];
+
+  // Legacy flat text per page (kept for raw text tab compatibility)
   const pages: string[] = [];
   let totalText = "";
   let needsOcr = true;
+
   for (let i = 1; i <= pdf.numPages; i++) {
     onProgress?.("extracting_text", 0.1 + 0.6 * (i / pdf.numPages));
     const page = await pdf.getPage(i);
     const content = await page.getTextContent();
+    const viewport = page.getViewport({ scale: 1 });
+
+    // v6: Build LayoutTextItem[] with full positional data
+    const pageItems: LayoutTextItem[] = [];
+    for (const item of content.items) {
+      if (!("str" in item) || !item.str.trim()) continue;
+      const fontSize = deriveFontSize(item.transform);
+      pageItems.push({
+        str: item.str,
+        page: i,
+        x: Math.round(item.transform[4] * 10) / 10,
+        y: Math.round(item.transform[5] * 10) / 10,
+        width: Math.round((item.width || 0) * 10) / 10,
+        height: Math.round((item.height || fontSize) * 10) / 10,
+        fontSize,
+        transform: [...item.transform],
+      });
+    }
+    allPageItems.push({
+      pageNum: i,
+      items: pageItems,
+      pageWidth: viewport.width,
+    });
+
+    // Also build legacy flat text (for raw text tab)
     const lines: { y: number; parts: string[] }[] = [];
     for (const item of content.items) {
       if (!("str" in item)) continue;
@@ -115,6 +173,16 @@ async function parsePdf(
     if (pageText.trim().length > 80) needsOcr = false;
   }
 
+  // v6: Run layout analysis on collected items
+  let layoutData: LayoutResult | undefined;
+  if (allPageItems.some(p => p.items.length > 0)) {
+    layoutData = analyzeLayout(allPageItems);
+  }
+
+  // v6: Use layout-aware text if available; fall back to flat text
+  const layoutText = layoutData ? buildReadingOrderText(layoutData) : "";
+  const primaryText = layoutText.trim().length > 0 ? layoutText : totalText;
+
   // OCR fallback for scanned PDFs
   if (needsOcr && pdf.numPages > 0) {
     onProgress?.("running_ocr", 0.7);
@@ -129,7 +197,12 @@ async function parsePdf(
   }
 
   onProgress?.("extracting_text", 0.95);
-  return { text: normalizeText(totalText), pages, ocrUsed: false };
+  return {
+    text: normalizeText(primaryText),
+    pages,
+    ocrUsed: false,
+    layoutData,
+  };
 }
 
 async function runOcrOnPdfPages(
@@ -207,14 +280,47 @@ async function parseDocx(bytes: Uint8Array): Promise<ParseOutput> {
     bytes.byteOffset + bytes.byteLength
   ) as ArrayBuffer;
   try {
-    const text = await (mammoth as any).extractRawText({ arrayBuffer });
-    if (!text.value || text.value.trim().length === 0) {
+    // v6: Use mammoth's convertToHtml to capture heading structure
+    const mammothResult = await (mammoth as any).convertToHtml({ arrayBuffer });
+    const html = mammothResult.value || "";
+
+    // Extract heading structure from HTML
+    const headingRegex = /<(h[1-6])[^>]*>(.*?)<\/\1>/gi;
+    const docxHeadings: Array<{ text: string; level: number }> = [];
+    let headingMatch;
+    while ((headingMatch = headingRegex.exec(html)) !== null) {
+      const level = parseInt(headingMatch[1][1]);
+      const text = headingMatch[2].replace(/<[^>]*>/g, "").trim();
+      if (text) docxHeadings.push({ text, level });
+    }
+
+    // Also get raw text
+    const textResult = await (mammoth as any).extractRawText({ arrayBuffer });
+    const rawText = textResult.value || "";
+
+    if (!rawText.trim()) {
       return { text: "", pages: [], ocrUsed: false };
     }
+
+    // Build a LayoutResult from DOCX headings for uniform downstream handling
+    const layoutData: LayoutResult = {
+      pages: [],
+      allHeadings: docxHeadings.map((h, i) => ({
+        text: h.text,
+        level: h.level,
+        page: 0,
+        y: i, // Use index as pseudo-y for ordering
+        fontSize: 0, // No font size data from mammoth
+      })),
+      allTables: [],
+      bodyFontSize: 12, // Default assumption
+    };
+
     return {
-      text: normalizeText(text.value),
+      text: normalizeText(rawText),
       pages: [],
       ocrUsed: false,
+      layoutData,
     };
   } catch (err) {
     const msg = err instanceof Error ? err.message : String(err);

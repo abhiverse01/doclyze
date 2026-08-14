@@ -19,6 +19,7 @@ import { detectPII, summarizePII } from "./pii-detector";
 import { detectLanguage } from "./lang-detect";
 import {
   DoclyzeExtractionResult,
+  DocType,
   FieldGroup,
   ExtractedField,
   ExtractedTable,
@@ -120,6 +121,8 @@ export async function runExtractionPipeline(
   let insights: Insight[];
   let completeness: number;
   let typed: TypeDetails;
+  // v6: Structure tree from general extractor
+  let structureTree: import("./extractors/general").StructureNode[] | undefined;
 
   switch (classification.type) {
     case "resume": {
@@ -207,12 +210,14 @@ export async function runExtractionPipeline(
     }
     case "general":
     default: {
-      const r = extractGeneral(parsed.text, file.name);
+      // v6: Pass layout data to general extractor for structure-aware extraction
+      const r = extractGeneral(parsed.text, file.name, parsed.layoutData);
       fieldGroups = r.fieldGroups;
       tables = r.tables;
       insights = r.insights;
       completeness = r.completeness;
       typed = { type: "general", details: r.details };
+      structureTree = r.structureTree;
       break;
     }
   }
@@ -319,6 +324,10 @@ export async function runExtractionPipeline(
     typed,
     rawText: parsed.text,
     pages: parsed.pages,
+    // v6: Expose layout data for Presentor's Document Structure view
+    layoutData: parsed.layoutData,
+    // v6: Structure tree for general documents
+    structureTree,
   };
 
   emit("complete", 1);

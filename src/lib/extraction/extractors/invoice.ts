@@ -11,6 +11,7 @@ import {
   InvoiceDetails,
   Severity,
 } from "../types";
+import { cleanExtractedSpan } from "../clean-span";
 
 const EMAIL_RE = /\b[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,}\b/;
 const MONEY_RE_BASE = /(?:[$€£¥₹]|USD|EUR|GBP|JPY|INR)?\s?(\(\s*-?\d[\d,.]*\s*\)|-?\d{1,3}(?:,\d{3})*(?:\.\d{2})?|-?\d{1,3}(?:\.\d{3})*,\d{2}|-?\d+\.\d{2})/;
@@ -104,7 +105,7 @@ export function extractInvoice(text: string, filename: string): {
   const billToMatch = text.match(/bill\s*to[:\s]*\n?([\s\S]*?)(?:\n\s*\n|ship\s*to:|description|qty|item)/i);
   const billToBlock = billToMatch?.[1]?.trim() ?? "";
   const billToName = billToBlock.split(/\n/)[0]?.trim() ?? null;
-  const billToEmail = billToBlock.match(EMAIL_RE)?.[0] ?? null;
+  const billToEmail = cleanExtractedSpan(billToBlock.match(EMAIL_RE)?.[0] ?? "") || null;
   const billToAddress = billToBlock.split(/\n/).slice(1).join(", ").trim() || null;
 
   // Vendor — text before "Bill To" or first occurrence of email/phone.
@@ -118,7 +119,7 @@ export function extractInvoice(text: string, filename: string): {
     vendorLines.find((l) => companyIndicator.test(l) && /^[A-Z][a-zA-Z0-9\s&.,'-]{2,}$/.test(l)) ??
     vendorLines.find((l) => !HEADER_WORDS.test(l) && /^[A-Z][a-zA-Z0-9\s&.,'-]{2,}$/.test(l) && l.length > 5) ??
     null;
-  const vendorEmail = preBillTo.match(EMAIL_RE)?.[0] ?? null;
+  const vendorEmail = cleanExtractedSpan(preBillTo.match(EMAIL_RE)?.[0] ?? "") || null;
   const vendorNameIdx = vendorName ? vendorLines.findIndex((l) => l === vendorName) : -1;
   const vendorAddress = vendorNameIdx >= 0
     ? vendorLines
@@ -133,7 +134,7 @@ export function extractInvoice(text: string, filename: string): {
   const invoiceNumber = invoiceNumMatch?.[1] ?? null;
 
   // Dates
-  const dates = Array.from(text.matchAll(new RegExp(DATE_RE_BASE.source, 'g'))).map((m) => m[0]);
+  const dates = Array.from(text.matchAll(new RegExp(DATE_RE_BASE.source, 'g'))).map((m) => cleanExtractedSpan(m[0]));
   const invoiceDate = dates[0] ? normalizeDate(dates[0]) : null;
   const dueDate = dates[1] ? normalizeDate(dates[1]) : null;
 

@@ -98,6 +98,7 @@ export function TableSheet({ table, tableIndex, filename, documentId, highlightT
   const columns = React.useMemo<ColumnDef<SheetRow>[]>(
     () => table.columns.map((col) => ({
       id: col.id, accessorKey: col.id, header: col.label, enableSorting: col.sortable ?? false,
+      meta: { cellType: col.type },
       cell: (info) => <CellRenderer value={info.getValue() as string | number | null} type={col.type} />,
     })),
     [table.columns]

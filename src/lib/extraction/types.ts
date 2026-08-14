@@ -8,6 +8,8 @@
  * The API route at /api/insights accepts this exact payload.
  */
 
+import type { LayoutResult } from "./layout";
+
 export type DocType =
   | "resume"
   | "invoice"
@@ -304,4 +306,8 @@ export interface DoclyzeExtractionResult {
   rawText: string;
   /** Per-page text (for paginated sources like PDFs); empty for non-paginated. */
   pages: string[];
+  /** v6: Layout analysis data for PDF documents — positional, headings, tables. */
+  layoutData?: LayoutResult;
+  /** v6: Structure tree for general/presentation documents. */
+  structureTree?: import("./extractors/general").StructureNode[];
 }

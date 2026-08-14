@@ -11,6 +11,7 @@ import {
   Insight,
   MedicalReportDetails,
 } from "../types";
+import { cleanExtractedSpan } from "../clean-span";
 
 const DATE_RE_BASE =
   /\b(\d{1,2}[/-]\d{1,2}[/-]\d{2,4}|[A-Z][a-z]+ \d{1,2},? \d{4}|\d{4}-\d{2}-\d{2})\b/;
@@ -57,7 +58,7 @@ export function extractMedicalReport(text: string, filename: string): {
   const dateMatch =
     text.match(/(?:date\s*(?:of\s*(?:report|specimen|collection|service))|report\s*date|collected|received)[:\s]*\n?\s*([A-Za-z0-9 ,/\-]+)/i);
   const dateOfReport = dateMatch?.[1]?.trim().split(/\n/)[0] ??
-    Array.from(text.matchAll(new RegExp(DATE_RE_BASE.source, "g"))).map((m) => m[0])[0] ?? null;
+    Array.from(text.matchAll(new RegExp(DATE_RE_BASE.source, "g"))).map((m) => cleanExtractedSpan(m[0]))[0] ?? null;
 
   // ─── Ordering physician ──────────────────────────────────────────────────
   const physicianMatch =

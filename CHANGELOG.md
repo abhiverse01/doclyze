@@ -2,6 +2,79 @@
 
 All notable changes to the Doclyze project are documented in this file.
 
+## v6 — Layout-Aware Extraction Engine (2026-08-14)
+
+### The Reproducible Failure Case
+
+A lecture-slide PDF (`web-programming-day1.pdf`) exposed four systemic defects:
+1. **URL extraction captured trailing punctuation** — extracted `https://github.com/abhiverse01"` with a trailing double-quote
+2. **"Named entities" were just capitalized phrases** — slide titles like "Three Languages" and "The Big Picture" were presented as entities
+3. **Multi-column table content was destroyed** — a Term/Definition table was read as interleaved fragments: "Client The", "Browser Software", "Frontend Everything"
+4. **Heading detection found only 1 of 10+ headings** — only the ALL-CAPS title matched, while mixed-case section headers were invisible
+
+### Root Causes (all confirmed and fixed)
+
+1. **URL regex** (`/https?:\/\/[^\s)]+/`) stopped at whitespace or `)` but not at quotes, commas, periods, or semicolons
+2. **Entity extraction** was a pure capitalized-phrase detector with no heading exclusion, no type discrimination, no context analysis
+3. **PDF parser** discarded all positional data from `getTextContent()`, immediately flattening text items by y-position only — multi-column layouts had their columns interleaved
+4. **Heading detection** relied solely on Markdown `#` prefixes and ALL-CAPS patterns, ignoring font-size signals available from the PDF transform matrix
+
+### PDF Extraction Rebuilt for Layout Awareness (Section 1)
+
+- **`src/lib/extraction/layout.ts`** (new, 370 lines): Full layout analysis module
+  - Column detection via x-position gap clustering
+  - Heading detection via font-size differentiation from body text baseline
+  - Table detection via positional grid alignment (x/y binning)
+  - Reading-order reconstruction for multi-column layouts
+- **`src/lib/extraction/parsers.ts`**: PDF parser now collects `LayoutTextItem[]` with page, x, y, width, height, fontSize per text item. Layout analysis runs after text extraction. DOCX parser now uses `mammoth.convertToHtml()` to extract real `<h1>`–`<h6>` heading structure.
+- **`ParseOutput.layoutData`**: New field carries `LayoutResult` through the pipeline to extractors and Presentor
+
+### Entity Extraction Rebuilt (Section 2)
+
+- **Heading exclusion**: Headings (from layout or regex) are excluded from entity candidates
+- **Type discrimination**: Entities classified as person (context: "by", "author", "Dr."), organization (suffix: Inc., LLC, University, Institute), or location (known place names + context: "based in", "located at")
+- **Low-confidence filtering**: Only medium/high confidence entities are included; low-confidence guesses are omitted rather than presented
+
+### Regex Hygiene Sweep (Section 3)
+
+- **`src/lib/extraction/clean-span.ts`** (new): Shared `cleanExtractedSpan()` utility that trims trailing/leading punctuation (`"`, `'`, `)`, `]`, `.`, `,`, `;`, `:`, etc.)
+- Applied at every regex extraction site across all extractors: general, resume, invoice, contract, purchase-order, medical-report
+- URL regex patterns updated to exclude common trailing punctuation characters from the match itself (defense in depth)
+
+### General Extractor Produces Structure Tree (Section 4)
+
+- **`buildStructureTree()`**: Produces a hierarchical `StructureNode[]` with headings, nested content, and attached tables
+- **`StructureNode`** type: `{ heading, level, content, children: StructureNode[], tables }`
+- **Structural quality field group**: Reports headings detected (with provenance: font-size vs pattern), tables reconstructed (with dimensions), entity types found
+- Layout-detected tables rendered as real `ExtractedTable` objects (proper columns/rows, not truncated key-value pairs)
+
+### Presentor: Document Structure View (Section 5)
+
+- **New "Structure" tab** in the analyzer (alongside Sheet/Insights/Raw Text)
+- **`src/components/doclyze/presentor/structure-view.tsx`** (new): Collapsible tree rendering of the document's heading hierarchy with nested body text and inline tables
+- **`table-sheet.tsx` bug fix**: Column `meta.cellType` now properly propagated to `useReactTable` column definitions (was missing, causing all cells to render with default icon)
+
+### Evaluation Corpus Expansion (Section 6)
+
+- 9 new fixture files in `__fixtures__/structural/`:
+  - `presentation/`: 3 lecture/training slide-deck-style documents
+  - `multi-column/`: 2-column definitions, 3-column comparison
+  - `deep-headings/`: 4-level heading hierarchy (31 headings)
+  - `definition-table/`: API reference table, feature comparison matrix
+  - `punctuation-urls/`: URLs/emails in 9 punctuation-adjacent contexts
+
+### New Tests (40 new, 202 total)
+
+- **`tests/extraction/clean-span.test.ts`** (16 tests): Punctuation trimming for URLs, emails, dates; iterative trimming; deduplication
+- **`tests/extraction/layout.test.ts`** (13 tests): Column detection, heading detection, table detection, reading-order text
+- **`tests/extraction/v6-fixtures.test.ts`** (11 tests): Direct regression tests for all 4 Section 0 defects with simulated layout data
+
+### Verification
+
+- All 202 tests pass (9 test files, 0 failures)
+- TypeScript compilation: 0 errors in `src/`
+- Full regression: all 162 v5 tests still green
+
 ## v5 — Parser Intelligence & End-to-End Truth (2026-08-14)
 
 ### Critical Fixes

@@ -14,12 +14,14 @@ import {
   ResumeDetails,
   Severity,
 } from "../types";
+import { cleanExtractedSpan, cleanExtractedSpans } from "../clean-span";
 
 // ─── Patterns ────────────────────────────────────────────────────────────────
 const EMAIL_RE = /\b[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,}\b/;
 const PHONE_RE =
   /(\+?\d{1,2}[\s.-]?)?\(?\d{3}\)?[\s.-]?\d{3,4}[\s.-]?\d{4}/;
-const URL_RE_BASE = /(https?:\/\/[^\s)]+)|(?:www\.)?([a-z0-9-]+\.)+(com|io|me|dev|ai|net|org|app)(\/[^\s)]*)?/i;
+// v6: URL regex that stops at common trailing punctuation
+const URL_RE_BASE = /(https?:\/\/[^\s"'`\)\]}>;,]+)|(?:www\.)?([a-z0-9-]+\.)+(com|io|me|dev|ai|net|org|app)(\/[^\s"'`\)\]}>;,]*)?/i;
 const LINKEDIN_RE = /(?:https?:\/\/)?(?:[a-z]{2,3}\.)?linkedin\.com\/(?:in|pub|company)\/[a-z0-9-]+/i;
 const GITHUB_RE = /(?:https?:\/\/)?(?:www\.)?github\.com\/[a-z0-9-]+/i;
 
@@ -189,13 +191,15 @@ export function extractResume(text: string, filename: string): {
   }
 
   const emailMatch = fullText.match(EMAIL_RE);
+  const emailRaw = emailMatch?.[0] ?? null;
+  const email = emailRaw ? cleanExtractedSpan(emailRaw) : null;
   const phoneMatch = fullText.match(PHONE_RE);
   const linkedin = fullText.match(LINKEDIN_RE);
   const github = fullText.match(GITHUB_RE);
   // Find URLs but exclude ones that are part of an email address
-  const emailStr = emailMatch?.[0] ?? "";
+  const emailStr = emailRaw ?? "";
   const otherUrls = Array.from(fullText.matchAll(new RegExp(URL_RE_BASE.source, 'gi')))
-    .map((m) => m[0])
+    .map((m) => cleanExtractedSpan(m[0]))
     .filter((u) => {
       // Skip if this URL is a substring of the email
       if (emailStr && emailStr.includes(u)) return false;

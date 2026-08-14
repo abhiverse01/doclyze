@@ -18,11 +18,13 @@ import {
   Upload,
   RefreshCw,
   AlertTriangle,
+  TreePine,
 } from "lucide-react";
 import { useRouter } from "next/navigation";
 import { useDoclyzeStore } from "@/lib/store";
 import { Dropzone } from "./dropzone";
 import { DocumentPresentor } from "./document-presentor";
+import { StructureView } from "./presentor/structure-view";
 import { DocumentPresentorSkeleton, InsightsPanelSkeleton } from "./presentor/skeletons";
 import { InsightsPanel } from "./insights-panel";
 import { runExtractionPipeline, ProgressUpdate, ProgressStage } from "@/lib/extraction/orchestrator";
@@ -591,6 +593,11 @@ export function Analyzer() {
         {/* Tabs */}
         <Tabs value={activeTab} onValueChange={setActiveTab} className="w-full">
           <TabsList className="bg-muted/40 p-1 h-auto">
+            <TabsTrigger value="structure" className="data-[state=active]:bg-background data-[state=active]:shadow-sm text-xs gap-1.5">
+              <TreePine className="h-3.5 w-3.5" />
+              <span className="hidden sm:inline">Structure</span>
+              <span className="sm:hidden">Tree</span>
+            </TabsTrigger>
             <TabsTrigger value="sheet" className="data-[state=active]:bg-background data-[state=active]:shadow-sm text-xs gap-1.5">
               <Table2 className="h-3.5 w-3.5" />
               <span className="hidden sm:inline">Structured Sheet</span>
@@ -612,6 +619,19 @@ export function Analyzer() {
               <span className="sm:hidden">Text</span>
             </TabsTrigger>
           </TabsList>
+
+          <TabsContent value="structure" className="mt-6 focus-visible:outline-none">
+            {fullResult.structureTree && fullResult.structureTree.length > 0 ? (
+              <StructureView tree={fullResult.structureTree} />
+            ) : (
+              <Card className="p-8 text-center">
+                <TreePine className="mx-auto h-6 w-6 text-muted-foreground/50" />
+                <p className="mt-2 text-sm text-muted-foreground">
+                  No hierarchical structure was extracted. This view is available for documents where heading detection succeeded (e.g. PDFs with varying font sizes, or documents with Markdown headings).
+                </p>
+              </Card>
+            )}
+          </TabsContent>
 
           <TabsContent value="sheet" className="mt-6 focus-visible:outline-none">
             <DocumentPresentor

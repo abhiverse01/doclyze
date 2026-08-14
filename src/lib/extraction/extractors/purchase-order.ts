@@ -10,6 +10,7 @@ import {
   Insight,
   PurchaseOrderDetails,
 } from "../types";
+import { cleanExtractedSpan } from "../clean-span";
 
 const MONEY_RE_BASE = /(?:[$€£¥₹]|USD|EUR|GBP|JPY|INR)?\s?(\(\s*-?\d[\d,.]*\s*\)|-?\d{1,3}(?:,\d{3})*(?:\.\d{2})?|-?\d{1,3}(?:\.\d{3})*,\d{2}|-?\d+\.\d{2})/;
 const DATE_RE_BASE =
@@ -82,7 +83,7 @@ export function extractPurchaseOrder(text: string, filename: string): {
   const poNumber = poNumberMatch?.[1] ?? null;
 
   // ─── Date ─────────────────────────────────────────────────────────────────
-  const dates = Array.from(text.matchAll(new RegExp(DATE_RE_BASE.source, "g"))).map((m) => m[0]);
+  const dates = Array.from(text.matchAll(new RegExp(DATE_RE_BASE.source, "g"))).map((m) => cleanExtractedSpan(m[0]));
   const date = dates[0] ?? null;
 
   // ─── Buyer ─────────────────────────────────────────────────────────────────
