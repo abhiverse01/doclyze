@@ -29,6 +29,7 @@ import { DocumentPresentorSkeleton, InsightsPanelSkeleton } from "./presentor/sk
 import { InsightsPanel } from "./insights-panel";
 import { runExtractionPipeline, ProgressUpdate, ProgressStage } from "@/lib/extraction/orchestrator";
 import { labelForType } from "@/lib/extraction/orchestrator";
+import { createTextFileFromExtracted } from "@/lib/extraction/synthetic-file";
 import type { DoclyzeExtractionResult, DocType } from "@/lib/extraction/types";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
@@ -313,12 +314,9 @@ CERTIFICATIONS
     if (!fullResult || isReclassifying) return;
     setIsReclassifying(true);
     try {
-      // Re-run the pipeline with a classification override.
-      // CRITICAL: Use text/plain MIME type so parseFile treats the blob as
-      // raw text rather than re-parsing it as the original format (e.g. PDF),
-      // which would fail because rawText is a string, not the original bytes.
-      const blob = new Blob([fullResult.rawText], { type: "text/plain" });
-      const syntheticFile = new File([blob], fullResult.filename.replace(/\.[^.]+$/, ".txt"), { type: "text/plain" });
+      // Use shared helper to prevent MIME-type mismatch bugs.
+      // See src/lib/extraction/synthetic-file.ts for rationale.
+      const syntheticFile = createTextFileFromExtracted(fullResult.rawText, fullResult.filename);
 
       const result = await runExtractionPipeline(syntheticFile, (update) => {
         // Suppress progress for reclassification

@@ -33,10 +33,11 @@ export function AppShell({ children }: { children: React.ReactNode }) {
           >
             <Menu className="h-4 w-4" />
           </Button>
+          {/* Navigation model: Logo in app header → /dashboard (app home) */}
           <Link
-            href="/"
+            href="/dashboard"
             className="flex items-center"
-            aria-label="Go to homepage"
+            aria-label="Go to dashboard"
           >
             <Logo height={20} />
           </Link>

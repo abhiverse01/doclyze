@@ -184,6 +184,12 @@ export function SettingsPanel({ open, onOpenChange }: SettingsPanelProps) {
                 >
                   GitHub
                 </a>
+                <a
+                  href="mailto:abhishek.aimarine@gmail.com"
+                  className="text-[11px] text-muted-foreground hover:text-foreground transition-colors"
+                >
+                  Email
+                </a>
               </div>
             </div>
           </SettingsSection>

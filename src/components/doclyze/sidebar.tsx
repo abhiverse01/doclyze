@@ -11,13 +11,13 @@ import {
   Clock,
   X,
   Search,
-  Home,
   FileText,
   Receipt,
   ScrollText,
   GraduationCap,
   Table2,
   FileBarChart,
+  ExternalLink,
   type LucideIcon,
 } from "lucide-react";
 import Link from "next/link";
@@ -101,15 +101,16 @@ export function Sidebar({ mobileOpen, onCloseMobile, onOpenSettings }: SidebarPr
 
   const nav = (
     <nav aria-label="Main navigation" className="flex flex-col gap-1">
-      {/* FIX #5: Home link to return to landing page */}
-      <NavItem
-        collapsed={collapsed}
-        icon={<Home className="h-4 w-4" aria-hidden="true" />}
-        label="Home"
-        href="/"
-        active={pathname === "/"}
-        onClick={onCloseMobile}
-      />
+      {/*
+        NAVIGATION MODEL (documented v10):
+        - Logo/wordmark (sidebar header, mobile header) → /dashboard (app home)
+        - "Dashboard" nav item → /dashboard
+        - "Analyzer" nav item → /analyzer
+        - "Homepage" nav item (ExternalLink icon) → / (public marketing page)
+        This separation means the logo always stays within the app context,
+        while the marketing page is accessible via an explicit, visually-
+        distinct affordance.
+      */}
       <NavItem
         collapsed={collapsed}
         icon={<LayoutDashboard className="h-4 w-4" aria-hidden="true" />}
@@ -129,6 +130,26 @@ export function Sidebar({ mobileOpen, onCloseMobile, onOpenSettings }: SidebarPr
     </nav>
   );
 
+  // v10: Time-based grouping for recent documents
+  const groupedDocs = React.useMemo(() => {
+    const now = Date.now();
+    const today: typeof recentDocs = [];
+    const thisWeek: typeof recentDocs = [];
+    const older: typeof recentDocs = [];
+    for (const doc of recentDocs.slice(0, 8)) {
+      const diffMs = now - new Date(doc.extractedAt).getTime();
+      const diffHr = diffMs / 3_600_000;
+      if (diffHr < 24) today.push(doc);
+      else if (diffHr < 168) thisWeek.push(doc);
+      else older.push(doc);
+    }
+    const groups: { label: string; docs: typeof recentDocs }[] = [];
+    if (today.length) groups.push({ label: 'Today', docs: today });
+    if (thisWeek.length) groups.push({ label: 'Earlier this week', docs: thisWeek });
+    if (older.length) groups.push({ label: 'Older', docs: older });
+    return groups;
+  }, [recentDocs]);
+
   const recent = (
     <div className="flex flex-col gap-1">
       {recentDocs.length === 0 ? (
@@ -139,7 +160,8 @@ export function Sidebar({ mobileOpen, onCloseMobile, onOpenSettings }: SidebarPr
             Upload one to get started.
           </p>
         )
-      ) : (
+      ) : collapsed ? (
+        // Collapsed: flat list (no room for group headers)
         recentDocs.slice(0, 8).map((doc) => (
           <RecentDocRow
             key={doc.id}
@@ -148,6 +170,24 @@ export function Sidebar({ mobileOpen, onCloseMobile, onOpenSettings }: SidebarPr
             href={`/analyzer/${doc.id}`}
             onClick={onCloseMobile}
           />
+        ))
+      ) : (
+        // Expanded: time-grouped
+        groupedDocs.map((group) => (
+          <div key={group.label} className="flex flex-col gap-0.5">
+            <span className="px-2.5 pt-2 pb-0.5 text-[9px] font-semibold uppercase tracking-[0.14em] text-muted-foreground/50">
+              {group.label}
+            </span>
+            {group.docs.map((doc) => (
+              <RecentDocRow
+                key={doc.id}
+                doc={doc}
+                collapsed={collapsed}
+                href={`/analyzer/${doc.id}`}
+                onClick={onCloseMobile}
+              />
+            ))}
+          </div>
         ))
       )}
     </div>
@@ -206,6 +246,33 @@ export function Sidebar({ mobileOpen, onCloseMobile, onOpenSettings }: SidebarPr
             <kbd className="ml-auto rounded border border-border/80 bg-background px-1 py-0.5 text-[9px] font-mono">Ctrl+K</kbd>
           </button>
         </>
+      )}
+      {!collapsed && (
+        <Link
+          href="/"
+          onClick={onCloseMobile}
+          className="mx-2 mt-0.5 flex items-center gap-2 rounded-md px-2.5 py-1.5 text-[11px] text-muted-foreground/60 hover:text-muted-foreground transition-colors"
+          aria-label="Go to Doclyze homepage"
+        >
+          <ExternalLink className="h-3 w-3" />
+          <span>Homepage</span>
+        </Link>
+      )}
+      {collapsed && (
+        <TooltipProvider delayDuration={200}>
+          <Tooltip>
+            <TooltipTrigger asChild>
+              <Link
+                href="/"
+                className="mx-auto flex h-8 w-8 items-center justify-center rounded-md text-muted-foreground/50 hover:text-muted-foreground hover:bg-sidebar-accent/60 transition-colors"
+                aria-label="Go to Doclyze homepage"
+              >
+                <ExternalLink className="h-3.5 w-3.5" />
+              </Link>
+            </TooltipTrigger>
+            <TooltipContent side="right">Homepage</TooltipContent>
+          </Tooltip>
+        </TooltipProvider>
       )}
       {!collapsed && (
         <div className="mt-1 px-3 text-[10px] uppercase tracking-[0.18em] text-muted-foreground/50">
@@ -270,7 +337,8 @@ export function Sidebar({ mobileOpen, onCloseMobile, onOpenSettings }: SidebarPr
               onKeyDown={handleDrawerKeyDown}
             >
               <div className="flex items-center justify-between px-4 py-4 border-b border-sidebar-border">
-                <Link href="/" onClick={onCloseMobile} className="flex items-center gap-2">
+                {/* Mobile: Logo goes to dashboard (app home) */}
+                <Link href="/dashboard" onClick={onCloseMobile} className="flex items-center gap-2">
                   <Logo height={24} />
                 </Link>
                 <Button
@@ -309,10 +377,11 @@ export function Sidebar({ mobileOpen, onCloseMobile, onOpenSettings }: SidebarPr
 function SidebarHeader({ collapsed, onToggle }: { collapsed: boolean; onToggle: () => void }) {
   return (
     <div className="flex items-center justify-between gap-2 border-b border-sidebar-border px-3 py-3">
+      {/* Navigation model: Logo inside the app always goes to /dashboard (app home) */}
       <Link
-        href="/"
+        href="/dashboard"
         className="flex items-center gap-2 text-sidebar-foreground hover:opacity-80 transition-opacity"
-        aria-label="Doclyze home"
+        aria-label="Doclyze dashboard"
       >
         {collapsed ? <Monogram size={24} /> : <Logo height={22} />}
       </Link>
@@ -348,7 +417,7 @@ function NavItem({
     "focus-visible:ring-2 focus-visible:ring-ring",
     active
       ? "bg-sidebar-accent text-sidebar-accent-foreground shadow-sm"
-      : "text-sidebar-foreground/80 hover:bg-sidebar-accent/60 hover:text-sidebar-foreground"
+      : "text-sidebar-foreground/80 hover:bg-sidebar-accent/60 hover:text-sidebar-foreground active:bg-sidebar-accent/80 active:scale-[0.995]"
   );
 
   const content = (
@@ -397,7 +466,7 @@ function RecentDocRow({ doc, collapsed, href, onClick }: {
     <Link href={href} onClick={onClick} className={cn(
       "group flex w-full items-center gap-2.5 rounded-lg px-2.5 py-2 text-left transition-all duration-150 outline-none",
       "focus-visible:ring-2 focus-visible:ring-ring",
-      "hover:bg-sidebar-accent/60",
+      "hover:bg-sidebar-accent/60 active:bg-sidebar-accent/80 active:scale-[0.995]",
       collapsed && "justify-center px-1"
     )}>
       {/* FIX #4: Colorful type-specific icon instead of boring generic icon */}

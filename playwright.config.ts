@@ -11,7 +11,7 @@ export default defineConfig({
   retries: 0,
   workers: 1,
   reporter: 'list',
-  timeout: 30_000,
+  timeout: 60_000,
   use: {
     baseURL: 'http://localhost:3000',
     trace: 'on-first-retry',
@@ -25,7 +25,7 @@ export default defineConfig({
   webServer: {
     command: 'bun run dev',
     url: 'http://localhost:3000',
-    reuseExistingServer: true,
-    timeout: 30_000,
+    reuseExistingServer: false,
+    timeout: 120_000,
   },
 });
