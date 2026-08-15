@@ -521,6 +521,8 @@ export function analyzePageLayout(
 
 /**
  * Analyze layout for an entire document (multiple pages of text items).
+ * v7: Heading levels are assigned GLOBALLY across all pages,
+ * not per-page, so the same font-size always maps to the same level.
  */
 export function analyzeLayout(
   pages: Array<{ pageNum: number; items: LayoutTextItem[]; pageWidth: number }>,
@@ -537,18 +539,111 @@ export function analyzeLayout(
   const allBodySizes = pageLayouts.map(p => p.bodyFontSize).filter(s => s > 0);
   const bodyFontSize = allBodySizes.length > 0 ? median(allBodySizes) : 12;
 
-  // Collect all headings with page info
+  // v7: Reassign heading levels globally using all pages' heading font sizes.
+  // Per-page level assignment causes the same font-size to get different
+  // levels on different pages (e.g., 18pt = H2 on page 2 but H1 on page 3).
   const allHeadings = pageLayouts.flatMap(p => p.headings);
+  const globalHeadings = reassignHeadingLevelsGlobally(allHeadings, bodyFontSize);
+
+  // Update per-page headings with globally-assigned levels
+  const globalLevelMap = new Map<string, number>();
+  for (const h of globalHeadings) {
+    globalLevelMap.set(`${h.page}:${Math.round(h.y)}`, h.level);
+  }
+  for (const pl of pageLayouts) {
+    pl.headings = pl.headings.map(h => ({
+      ...h,
+      level: globalLevelMap.get(`${h.page}:${Math.round(h.y)}`) ?? h.level,
+    }));
+  }
 
   // Collect all tables
   const allTables = pageLayouts.flatMap(p => p.tables);
 
   return {
     pages: pageLayouts,
-    allHeadings,
+    allHeadings: globalHeadings,
     allTables,
     bodyFontSize,
   };
+}
+
+/**
+ * Reassign heading levels using the GLOBAL font-size distribution.
+ * Ensures the same font-size always maps to the same heading level,
+ * regardless of which page it appears on.
+ */
+function reassignHeadingLevelsGlobally(
+  headings: DetectedHeading[],
+  bodyFontSize: number,
+): DetectedHeading[] {
+  if (headings.length === 0) return [];
+
+  const MIN_BODY_RATIO = 1.2;
+  const maxLevels = 4;
+
+  // Get unique font sizes across ALL headings, sorted descending.
+  // v7: Do NOT filter by MIN_BODY_RATIO here — headings were already
+  // validated during per-page detection (each page has its own bodyFontSize).
+  // Re-filtering with the global median would drop legitimate headings
+  // from pages where body text is smaller.
+  const rawFontSizes = [...new Set(headings.map(h => h.fontSize))]
+    .sort((a, b) => b - a);
+
+  if (rawFontSizes.length === 0) return headings;
+
+  // v7: Cluster font sizes that are within 20% of each other.
+  // E.g., 24pt and 22pt differ by only 9% → same level.
+  // This prevents spreading 5 distinct sizes across 4 levels
+  // when the document really has 2-3 semantic levels.
+  const CLUSTER_RATIO = 1.2; // Sizes within 20% get merged
+  const allFontSizes: number[] = [];
+  for (const fs of rawFontSizes) {
+    const last = allFontSizes[allFontSizes.length - 1];
+    if (last !== undefined && fs >= last / CLUSTER_RATIO) {
+      // Close enough to the previous size — skip (same cluster)
+      continue;
+    }
+    allFontSizes.push(fs);
+  }
+
+  // Assign levels: biggest font = H1, etc.
+  const sizeToLevel = new Map<number, number>();
+  const numSizes = Math.min(allFontSizes.length, maxLevels);
+
+  if (allFontSizes.length <= maxLevels) {
+    allFontSizes.forEach((fs, i) => sizeToLevel.set(fs, i + 1));
+  } else {
+    const minFs = allFontSizes[allFontSizes.length - 1];
+    const maxFs = allFontSizes[0];
+    const range = maxFs - minFs;
+    const bucketSize = range / maxLevels;
+    for (const fs of allFontSizes) {
+      const level = Math.min(maxLevels, Math.max(1, Math.ceil((maxFs - fs) / bucketSize) + 1));
+      sizeToLevel.set(fs, level);
+    }
+  }
+
+  // Map non-clustered sizes to the level of their nearest cluster representative
+  for (const fs of rawFontSizes) {
+    if (sizeToLevel.has(fs)) continue;
+    // Find the nearest clustered size
+    let bestDist = Infinity;
+    let bestLevel = numSizes;
+    for (const [clusterFs, level] of sizeToLevel) {
+      const dist = Math.abs(clusterFs - fs);
+      if (dist < bestDist) {
+        bestDist = dist;
+        bestLevel = level;
+      }
+    }
+    sizeToLevel.set(fs, bestLevel);
+  }
+
+  return headings.map(h => ({
+    ...h,
+    level: sizeToLevel.get(h.fontSize) ?? numSizes,
+  }));
 }
 
 /**
