@@ -201,6 +201,28 @@ const MEDICAL_REPORT_KW = [
   "collection date",
   "ordering physician",
 ];
+const CORRESPONDENCE_KW = [
+  "dear sir",
+  "dear madam",
+  "yours sincerely",
+  "yours faithfully",
+  "yours truly",
+  "best regards",
+  "warm regards",
+  "kind regards",
+  "subject:",
+  "ref:",
+  "reference:",
+  "we are writing",
+  "i am writing",
+  "we wish to",
+  "i wish to",
+  "please find",
+  "thank you for",
+  "looking forward",
+  "sincerely",
+  "regards,",
+];
 
 // ─── Scoring ──────────────────────────────────────────────────────────────────
 
@@ -250,6 +272,8 @@ interface StructuralSignals {
   hasReferenceRanges: boolean;
   /** Financial table patterns (assets = liabilities + equity) */
   hasFinancialTable: boolean;
+  /** v8: Salutation pattern (Dear Sir/Madam, To:) */
+  hasSalutation: boolean;
 }
 
 function detectStructuralSignals(text: string): StructuralSignals {
@@ -315,6 +339,10 @@ function detectStructuralSignals(text: string): StructuralSignals {
     (/(?:revenue|net income|gross profit).*?\$[\d,]+/im.test(text) &&
      /(?:operating expenses|cost of goods|ebitda)/i.test(text));
 
+  // v8: Salutation pattern for correspondence detection
+  const hasSalutation =
+    /(?:^|\n)\s*(?:Dear|To|Respected)\s+(?:Mr|Mrs|Ms|Dr|Prof|Sir|Madam)/im.test(text);
+
   return {
     hasContactBlock,
     sectionHeaders,
@@ -326,6 +354,7 @@ function detectStructuralSignals(text: string): StructuralSignals {
     hasGradeTable,
     hasReferenceRanges,
     hasFinancialTable,
+    hasSalutation,
   };
 }
 
@@ -401,6 +430,10 @@ function structuralBonus(type: string, signals: StructuralSignals): number {
         /(?:patient|specimen|result|test|diagnosis|clinical)/i.test(h)
       );
       bonus += Math.min(medHeaders.length * 5, 10);
+      break;
+    }
+    case "correspondence": {
+      if (signals.hasSalutation) bonus += 25;
       break;
     }
   }
@@ -525,6 +558,13 @@ export function classifyDocument({ text, filename, tabular }: ClassifyInput): Cl
       signals: [`Filename "${filename}" suggests a medical/lab report`],
     };
   }
+  if (/(?:cover.?letter|letter|correspondence|complaint|reference.?letter)/i.test(fn)) {
+    return {
+      type: "correspondence",
+      confidence: 85,
+      signals: [`Filename "${filename}" suggests a letter/correspondence`],
+    };
+  }
 
   // ─── Content scoring ─────────────────────────────────────────────────────
   const wordCount = text.split(/\s+/).filter(Boolean).length;
@@ -539,6 +579,7 @@ export function classifyDocument({ text, filename, tabular }: ClassifyInput): Cl
     purchase_order: PURCHASE_ORDER_KW,
     financial_statement: FINANCIAL_STATEMENT_KW,
     medical_report: MEDICAL_REPORT_KW,
+    correspondence: CORRESPONDENCE_KW,
   };
 
   // Detect structural signals once
@@ -590,6 +631,7 @@ export function classifyDocument({ text, filename, tabular }: ClassifyInput): Cl
   if (structSignals.hasGradeTable) signals.push("Detected: grade table");
   if (structSignals.hasReferenceRanges) signals.push("Detected: medical reference ranges");
   if (structSignals.hasFinancialTable) signals.push("Detected: financial table");
+  if (structSignals.hasSalutation) signals.push("Detected: formal salutation (correspondence signal)");
 
   // Route to general if confidence below threshold
   if (confidence < CONFIDENCE_THRESHOLD) {

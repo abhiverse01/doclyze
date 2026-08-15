@@ -2,22 +2,22 @@
 
 import * as React from "react";
 import { useTheme } from "next-themes";
-import { Sparkles, Sun, Moon, Monitor, Info, CheckCircle2, XCircle, Loader2 } from "lucide-react";
+import { Sparkles, Sun, Moon, Monitor, Info, CheckCircle2, XCircle, Loader2, Palette, Keyboard, Database, Shield, User } from "lucide-react";
 import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogDescription } from "@/components/ui/dialog";
 import { Switch } from "@/components/ui/switch";
 import { Label } from "@/components/ui/label";
 import { useDoclyzeStore } from "@/lib/store";
-import { Logo } from "./logo";
+import { Logo, Monogram } from "./logo";
 import { cn } from "@/lib/utils";
+import { DataManagementSection } from "./data-management";
 
-/** Only real, tested shortcuts — verified from command-palette.tsx implementation */
 const SHORTCUTS: { keys: string[]; label: string }[] = [
   { keys: ["\u2318", "K"], label: "Open command palette" },
-  { keys: ["1"], label: "Go to Dashboard (in palette)" },
-  { keys: ["2"], label: "Go to Analyzer (in palette)" },
-  { keys: ["U"], label: "Upload document (in palette)" },
-  { keys: ["["], label: "Toggle sidebar (in palette)" },
-  { keys: [","], label: "Open Settings (in palette)" },
+  { keys: ["1"], label: "Go to Dashboard" },
+  { keys: ["2"], label: "Go to Analyzer" },
+  { keys: ["U"], label: "Upload document" },
+  { keys: ["["], label: "Toggle sidebar" },
+  { keys: [","], label: "Open Settings" },
 ];
 
 interface SettingsPanelProps {
@@ -35,7 +35,6 @@ export function SettingsPanel({ open, onOpenChange }: SettingsPanelProps) {
 
   React.useEffect(() => setMounted(true), []);
 
-  // Check AI provider status when panel opens
   React.useEffect(() => {
     if (!open) return;
     let cancelled = false;
@@ -49,27 +48,31 @@ export function SettingsPanel({ open, onOpenChange }: SettingsPanelProps) {
         else setAIStatus("error");
       })
       .catch(() => !cancelled && setAIStatus("error"));
-    return () => {
-      cancelled = true;
-    };
+    return () => { cancelled = true; };
   }, [open]);
 
   return (
     <Dialog open={open} onOpenChange={onOpenChange}>
-      <DialogContent className="sm:max-w-[480px]">
-        <DialogHeader>
-          <DialogTitle>Settings</DialogTitle>
-          <DialogDescription>
-            Configure Doclyze appearance and AI-assisted insights.
-          </DialogDescription>
-        </DialogHeader>
+      <DialogContent className="sm:max-w-[520px] gap-0 p-0 overflow-hidden">
+        {/* Modern header with gradient accent */}
+        <div className="relative px-6 pt-6 pb-4 border-b border-border">
+          <div className="absolute top-0 left-0 right-0 h-0.5 bg-gradient-to-r from-[var(--brand)] via-[var(--brand)]/60 to-transparent" />
+          <DialogHeader className="space-y-1.5">
+            <DialogTitle className="text-lg font-semibold flex items-center gap-2.5">
+              <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-[var(--brand-soft)]">
+                <Monogram size={18} />
+              </div>
+              Settings
+            </DialogTitle>
+            <DialogDescription className="text-xs">
+              Configure appearance, AI insights, and data management.
+            </DialogDescription>
+          </DialogHeader>
+        </div>
 
-        <div className="flex flex-col gap-6 py-2">
-          {/* Theme */}
-          <section className="flex flex-col gap-3">
-            <Label className="text-xs uppercase tracking-wider text-muted-foreground">
-              Appearance
-            </Label>
+        <div className="flex flex-col gap-0 max-h-[65vh] overflow-y-auto px-6 py-4">
+          {/* Appearance Section */}
+          <SettingsSection icon={<Palette className="h-4 w-4" />} title="Appearance">
             <div className="grid grid-cols-3 gap-2">
               <ThemeOption
                 label="Light"
@@ -90,19 +93,15 @@ export function SettingsPanel({ open, onOpenChange }: SettingsPanelProps) {
                 onClick={() => setTheme("system")}
               />
             </div>
-          </section>
+          </SettingsSection>
 
-          {/* AI Insights */}
-          <section className="flex flex-col gap-3">
-            <div className="flex items-center justify-between">
-              <Label className="text-xs uppercase tracking-wider text-muted-foreground">
-                AI Insights (Beta)
-              </Label>
-              <AIBadge status={aiStatus} />
-            </div>
-            <div className="flex items-start gap-3 rounded-lg border border-border bg-muted/30 p-3">
-              <Sparkles className="h-4 w-4 mt-0.5 text-[var(--brand)] shrink-0" />
-              <div className="flex-1">
+          {/* AI Insights Section */}
+          <SettingsSection icon={<Sparkles className="h-4 w-4" />} title="AI Insights" badge={<AIBadge status={aiStatus} />}>
+            <div className="flex items-start gap-3 rounded-lg border border-border bg-muted/20 p-3">
+              <div className="flex h-8 w-8 shrink-0 items-center justify-center rounded-md bg-[var(--brand-soft)] mt-0.5">
+                <Sparkles className="h-4 w-4 text-[var(--brand)]" />
+              </div>
+              <div className="flex-1 min-w-0">
                 <div className="flex items-center justify-between gap-2">
                   <Label htmlFor="ai-toggle" className="text-sm font-medium cursor-pointer">
                     Enable AI deep insights
@@ -114,96 +113,108 @@ export function SettingsPanel({ open, onOpenChange }: SettingsPanelProps) {
                     disabled={aiStatus !== "configured"}
                   />
                 </div>
-                <p className="mt-1.5 text-xs text-muted-foreground leading-relaxed">
-                  When enabled, Doclyze sends the structured extraction to an LLM
-                  to surface non-obvious patterns and tailored suggestions.
-                  Deterministic insights always work — this is an additive layer.
+                <p className="mt-1 text-[11px] text-muted-foreground leading-relaxed">
+                  Sends structured extraction to an LLM to surface non-obvious patterns.
+                  Deterministic insights always work independently.
                 </p>
                 {aiStatus === "not_configured" && (
-                  <p className="mt-2 text-xs text-[var(--severity-notice)] leading-relaxed">
+                  <p className="mt-2 text-[11px] text-[var(--severity-notice)] leading-relaxed bg-[var(--severity-notice)]/5 rounded-md px-2.5 py-1.5 border border-[var(--severity-notice)]/10">
                     Not configured. Add a free-tier API key to{" "}
-                    <code className="rounded bg-muted px-1 py-0.5 text-[10px]">.env.local</code>{" "}
-                    and restart the server. See{" "}
-                    <code className="rounded bg-muted px-1 py-0.5 text-[10px]">.env.example</code>.
+                    <code className="rounded bg-muted px-1 py-0.5 text-[10px] font-mono">.env.local</code>
                   </p>
                 )}
                 {aiStatus === "configured" && (
-                  <p className="mt-2 text-xs text-[var(--confidence-high)] leading-relaxed">
-                    Provider ready — AI insights will be generated on demand.
+                  <p className="mt-2 text-[11px] text-[var(--confidence-high)] leading-relaxed">
+                    Provider ready — AI insights generated on demand.
                   </p>
                 )}
               </div>
             </div>
-          </section>
+          </SettingsSection>
 
-          {/* Keyboard Shortcuts */}
-          <section className="flex flex-col gap-3">
-            <Label className="text-xs uppercase tracking-wider text-muted-foreground">
-              Keyboard Shortcuts
-            </Label>
-            <div className="rounded-lg border border-border bg-muted/30 p-3">
-              <div className="flex flex-col gap-2">
-                {SHORTCUTS.map(({ keys, label }) => (
-                  <div key={label} className="flex items-center justify-between gap-4">
-                    <span className="text-xs text-muted-foreground">{label}</span>
-                    <div className="flex items-center gap-1">
-                      {keys.map((k, i) => (
-                        <React.Fragment key={i}>
-                          {i > 0 && <span className="text-[10px] text-muted-foreground/50">+</span>}
-                          <kbd className="inline-flex h-5 min-w-[20px] items-center justify-center rounded border border-border bg-background px-1 text-[10px] font-mono text-muted-foreground">
-                            {k}
-                          </kbd>
-                        </React.Fragment>
-                      ))}
-                    </div>
+          {/* Keyboard Shortcuts Section */}
+          <SettingsSection icon={<Keyboard className="h-4 w-4" />} title="Keyboard Shortcuts">
+            <div className="rounded-lg border border-border bg-muted/20 divide-y divide-border">
+              {SHORTCUTS.map(({ keys, label }) => (
+                <div key={label} className="flex items-center justify-between px-3 py-2 first:pt-2.5 last:pb-2.5">
+                  <span className="text-xs text-muted-foreground">{label}</span>
+                  <div className="flex items-center gap-1">
+                    {keys.map((k, i) => (
+                      <React.Fragment key={i}>
+                        {i > 0 && <span className="text-[10px] text-muted-foreground/40">+</span>}
+                        <kbd className="inline-flex h-5 min-w-[20px] items-center justify-center rounded border border-border bg-background px-1.5 text-[10px] font-mono text-muted-foreground shadow-sm">
+                          {k}
+                        </kbd>
+                      </React.Fragment>
+                    ))}
                   </div>
-                ))}
-              </div>
+                </div>
+              ))}
             </div>
-          </section>
+          </SettingsSection>
 
-          {/* About */}
-          <section className="flex flex-col gap-3">
-            <Label className="text-xs uppercase tracking-wider text-muted-foreground">
-              About
-            </Label>
-            <div className="rounded-lg border border-border bg-muted/30 p-4">
-              <div className="flex items-center gap-3 mb-3">
-                <Logo height={20} />
+          {/* Data Management Section */}
+          <SettingsSection icon={<Database className="h-4 w-4" />} title="Data">
+            <DataManagementSection />
+          </SettingsSection>
+
+          {/* About Section */}
+          <SettingsSection icon={<Info className="h-4 w-4" />} title="About">
+            <div className="rounded-lg border border-border bg-muted/20 p-3.5">
+              <div className="flex items-center gap-2.5 mb-2.5">
+                <Logo height={18} />
+                <span className="text-sm font-semibold">Doclyze</span>
+                <span className="text-[10px] font-mono text-muted-foreground/60 bg-muted px-1.5 py-0.5 rounded">v1.0</span>
               </div>
-              <p className="text-xs text-muted-foreground leading-relaxed">
-                Doclyze is a document intelligence tool that ingests any file and
-                returns clean, spreadsheet-grade structured data plus narrative
-                insight. Extraction runs entirely in your browser — no file
-                leaves the device except the structured payload sent to the
-                optional AI insight provider.
+              <p className="text-[11px] text-muted-foreground leading-relaxed">
+                Document intelligence that ingests any file and returns clean,
+                spreadsheet-grade structured data plus narrative insight.
+                Extraction runs entirely in your browser.
               </p>
-              <div className="mt-3 flex items-center gap-2 text-[10px] uppercase tracking-wider text-muted-foreground/70">
-                <Info className="h-3 w-3" />
-                <span>v1.0 · Local-first · No account required</span>
-              </div>
-              <div className="mt-3 flex items-center gap-4 text-xs text-muted-foreground">
-                <span>Abhishek Shah</span>
+              <div className="mt-3 flex items-center gap-3">
+                <div className="flex items-center gap-1.5 text-[11px] text-muted-foreground">
+                  <User className="h-3 w-3" />
+                  <span>Abhishek Shah</span>
+                </div>
                 <a
                   href="https://github.com/abhiverse01"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="hover:text-foreground transition-colors"
+                  className="text-[11px] text-[var(--brand)] hover:underline"
                 >
                   GitHub
                 </a>
-                <a
-                  href="mailto:abhishek.aimarine@gmail.com"
-                  className="hover:text-foreground transition-colors"
-                >
-                  Email
-                </a>
               </div>
             </div>
-          </section>
+          </SettingsSection>
         </div>
       </DialogContent>
     </Dialog>
+  );
+}
+
+function SettingsSection({
+  icon,
+  title,
+  badge,
+  children,
+}: {
+  icon: React.ReactNode;
+  title: string;
+  badge?: React.ReactNode;
+  children: React.ReactNode;
+}) {
+  return (
+    <div className="flex flex-col gap-2.5 py-3 first:pt-0 border-b border-border/60 last:border-b-0">
+      <div className="flex items-center justify-between">
+        <Label className="text-xs uppercase tracking-wider text-muted-foreground/80 flex items-center gap-2">
+          <span className="text-muted-foreground/60">{icon}</span>
+          {title}
+        </Label>
+        {badge}
+      </div>
+      {children}
+    </div>
   );
 }
 
@@ -223,11 +234,11 @@ function ThemeOption({
       onClick={onClick}
       aria-pressed={active}
       className={cn(
-        "flex flex-col items-center gap-1.5 rounded-md border px-3 py-2.5 text-xs font-medium transition-colors outline-none",
+        "flex flex-col items-center gap-1.5 rounded-lg border px-3 py-3 text-xs font-medium transition-all duration-150 outline-none",
         "focus-visible:ring-2 focus-visible:ring-ring",
         active
-          ? "border-[var(--brand)] bg-[var(--brand-soft)] text-foreground"
-          : "border-border text-muted-foreground hover:bg-muted/60 hover:text-foreground"
+          ? "border-[var(--brand)] bg-[var(--brand-soft)] text-foreground shadow-sm"
+          : "border-border text-muted-foreground hover:bg-muted/60 hover:text-foreground hover:border-border"
       )}
     >
       {icon}
@@ -254,7 +265,7 @@ function AIBadge({ status }: { status: AIStatus }) {
   if (status === "not_configured") {
     return (
       <span className="inline-flex items-center gap-1 text-[10px] font-medium text-[var(--severity-notice)]">
-        <XCircle className="h-3 w-3" /> Not configured
+        <XCircle className="h-3 w-3" /> Not set
       </span>
     );
   }

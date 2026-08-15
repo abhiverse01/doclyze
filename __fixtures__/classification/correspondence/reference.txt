@@ -1,0 +1,32 @@
+Dr. Anil Bhattarai
+Department of Computer Science
+Tribhuvan University
+Kirtipur, Kathmandu
+Nepal
+
+February 10, 2024
+
+To the Admissions Committee
+MSc Computer Science Program
+University of Oxford
+Oxford, United Kingdom
+
+Dear Members of the Admissions Committee,
+
+I am writing to provide a character and academic reference for Ms. Aarati Shrestha, who is applying to the MSc Computer Science program at the University of Oxford. I have known Aarati for three years in my capacity as her undergraduate thesis supervisor and professor of algorithms and data structures at Tribhuvan University.
+
+Aarati is among the top five percent of students I have taught in my twelve-year academic career. Her undergraduate thesis on "Optimizing Graph Traversal Algorithms for Large-Scale Social Network Analysis" demonstrated exceptional analytical depth and originality. She independently designed a novel heuristic that reduced traversal time by 30% on datasets exceeding one million nodes.
+
+Beyond her technical abilities, Aarati possesses outstanding personal qualities. She is disciplined, self-motivated, and possesses a genuine intellectual curiosity that extends beyond the classroom. She regularly contributed to our department's research seminars and mentored junior students in data structures and competitive programming.
+
+I have no doubt that Aarati will thrive in a rigorous graduate program. She has the intellectual foundation, work ethic, and character to make meaningful contributions to your academic community. I recommend her without reservation.
+
+Please feel free to contact me should you require any further information.
+
+Regards,
+
+Dr. Anil Bhattarai
+Professor, Department of Computer Science
+Tribhuvan University
+Email: anil.bhattarai@tu.edu.np
+Phone: +977-1-4331234

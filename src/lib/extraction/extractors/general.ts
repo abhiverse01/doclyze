@@ -282,12 +282,12 @@ export function buildStructureTree(
   const lines = text.split(/\n/);
   const headingLineMap = new Map<number, number>(); // line index -> heading index
 
-  for (const line of lines) {
-    const trimmed = line.trim();
+  for (let li = 0; li < lines.length; li++) {
+    const trimmed = lines[li].trim();
     for (let h = 0; h < headings.length; h++) {
       if (trimmed === headings[h].heading ||
           trimmed.toUpperCase() === headings[h].heading.toUpperCase()) {
-        headingLineMap.set(lines.indexOf(line), h);
+        headingLineMap.set(li, h);
         break;
       }
     }

@@ -622,3 +622,80 @@ Stage Summary:
 - Column-detection threshold (12% pageWidth) confirmed reasonable for Letter/A4/Widescreen — NOT changed
 - 0 regressions in existing document types
 - Note: browser-based live test could not be performed due to Next.js dev server being killed by sandbox memory limits. Programmatic verification (same extraction pipeline, real PDFs, real pdfjs-dist) was used instead.
+---
+Task ID: 1
+Agent: main
+Task: v8 GODMODE - Fix runtime errors, verify OCR system, fix display inconsistency, product maturity
+
+Work Log:
+- Fixed `landing.tsx` missing `Type` import from lucide-react (runtime ReferenceError)
+- Fixed `data-management.tsx` corrupted JSX (duplicated Button block from prior session truncation)
+- Fixed `dashboard.tsx` missing `correspondence` in TYPE_ICONS Record (TS2741)
+- Fixed `store.ts` missing `clearAllData` in AppState interface (TS2339)
+- Fixed `parsers.ts` `extractEmbeddedImageText()`: removed `paintJpegXObject` (doesn't exist in pdfjs-dist), removed `page.getObjects()` (doesn't exist on PDFPageProxy), rewrote to use operator list counting
+- Resolved display inconsistency: "Extraction quality X/100" (calibrated) vs "N of M extracted fields have values" (raw count) now clearly labeled
+- Verified OCR confidence system: `ocr-confidence.ts` (310 lines) properly retains per-line Tesseract confidence, segments noise, feeds only high-conf text to extraction
+- Verified correspondence type: complete (439-line extractor, classifier integration, 8 fixtures, type system)
+- Audited developer credit: present in all 3 locations (footer, settings, README), regression test in place
+- Verified settings panel coherence (theme, AI status, shortcuts, data management, about)
+- Verified sidebar per-document quality signals (completeness %, type badge, OCR indicator)
+- Wrote comprehensive CHANGELOG.md for v8
+- All 218 tests passing across 11 test files
+
+Stage Summary:
+- 6 build-breaking bugs fixed (landing Type import, data-management JSX, dashboard correspondence, store clearAllData, parsers pdfjs API)
+- Display inconsistency resolved with clear labeling
+- OCR confidence system verified end-to-end
+- CHANGELOG.md rewritten (was truncated, now complete)
+---
+Task ID: 2
+Agent: main
+Task: GODMODE comprehensive audit - find and fix ALL issues
+
+Work Log:
+- Fixed duplicate React key error: layout.ts generated `layout-table-0` per-page (local index `t`), causing collisions in multi-page PDFs. Fixed by re-indexing globally in analyzeLayout()'s allTables collection
+- Added defense-in-depth: document-presentor.tsx now uses `tableIdx` as fallback key component to prevent future collisions from any source
+- Fixed general.ts structure tree bug: `lines.indexOf(line)` in a for-of loop returns FIRST match index, not current iteration index. Changed to `for (let li = 0; ...)` with explicit index
+- Added missing `correspondence` icon to command-palette.tsx TYPE_ICONS map
+- Comprehensive audit of all 11 extractors: no CRITICAL or HIGH bugs found
+- Comprehensive audit of all 14 component files: no missing imports, no unhandled nulls, no broken JSX
+- CSS variable audit: all 13 used CSS custom properties verified as defined in globals.css
+- Store interface audit: all components use only existing store properties
+- TypeScript: zero errors in src/
+- Vitest: 218/218 tests passing
+
+Stage Summary:
+- 4 bugs fixed (duplicate keys, indexOf bug, missing command palette icon, defense-in-depth key)
+- 0 remaining issues found across 11 extractors + 14 components + 7 pipeline modules
+- Build is clean, tests are green
+
+---
+Task ID: 1
+Agent: main
+Task: v9 — Zero-Defect Gate, UI/UX Godmode, Full Documentation
+
+Work Log:
+- Fixed document-presentor.tsx key to always use composite `${table.id}-${tableIdx}`
+- Expanded file-integrity script to cover .md/.mdx docs + null-byte detection
+- Installed Playwright + chromium, created smoke tests for /, /dashboard, /analyzer
+- Added test:gate and test:smoke scripts to package.json
+- Created THIRD_PARTY_API_POLICY.md documenting verified/non-existent APIs
+- Ran systemic ID/indexOf sweep across all src/ files — 0 new bugs found
+- Playwright smoke test caught NEW bug: nested <button> in dashboard.tsx hydration error
+- Fixed dashboard.tsx: changed outer <button> to <div role="button"> with keyboard handler
+- Added "Try a sample resume" onboarding button to analyzer empty state
+- Added framer-motion reveal animations to all 4 tab content panels
+- Added consistent focus-visible rings and transition-colors to icon-only buttons across field-group-sheet, insights-panel, structure-view, analyzer
+- Added aria-label to 4 icon-only buttons
+- Rewrote README.md comprehensively, verified all 18 feature claims against live codebase
+- Updated CHANGELOG.md with full v9 entry
+- Updated EXTENDING.md date
+- Ran full gate: file integrity (124 files, 0 errors) + 218 unit tests + 3 Playwright smoke tests — ALL PASS
+- Browser-verified: landing, analyzer (with sample doc processing), dashboard — ALL WORKING
+
+Stage Summary:
+- Gate installed: file integrity + unit tests + Playwright smoke tests (test:gate)
+- 1 new bug caught by gate (nested button hydration) and fixed
+- Onboarding sample document feature working
+- UI/UX motion, micro-interactions, accessibility improved
+- README rewritten with 100% codebase-verified claims

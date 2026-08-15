@@ -348,7 +348,7 @@ function InsightCard({
             {jumpTarget && onJump && (
               <button
                 onClick={() => onJump(jumpTarget)}
-                className="mt-2 inline-flex items-center gap-1 text-[11px] font-medium text-[var(--brand)] hover:underline"
+                className="mt-2 inline-flex items-center gap-1 text-[11px] font-medium text-[var(--brand)] hover:underline transition-colors rounded-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-1"
               >
                 <ArrowRight className="h-3 w-3" />
                 View in sheet

@@ -88,4 +88,4 @@ Use WebSocket or Supabase realtime to allow multiple users to view/annotate the 
 
 ---
 
-*Last updated: v6 (2026-08-14)*
+*Last updated: v9 (2026-08-15)*

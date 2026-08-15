@@ -21,6 +21,11 @@ import {
   analyzeLayout,
   buildReadingOrderText,
 } from "./layout";
+import {
+  analyzeOCRConfidence,
+  extractOCRLinesFromResult,
+  type OCRConfidenceResult,
+} from "./ocr-confidence";
 
 // --- PDF.js worker bootstrap ---------------------------------------------
 // The worker file in /public is a copy of
@@ -47,6 +52,9 @@ export interface ParseOutput {
   /** v6: Layout analysis data for PDF documents. Contains positional info,
    *  detected columns, headings, and reconstructed tables. */
   layoutData?: LayoutResult;
+  /** v8: OCR confidence analysis — separates high-confidence text from noise.
+   *  Only present when OCR was used. */
+  ocrConfidence?: OCRConfidenceResult;
 }
 
 /** Sniff the real MIME type from magic bytes -- never trust the extension alone. */
@@ -91,6 +99,103 @@ function deriveFontSize(transform: number[]): number {
   // transform[3] is scaleY — the font size for normal horizontal text
   const fs = Math.abs(transform[3]);
   return fs > 0 ? Math.round(fs * 10) / 10 : 12;
+}
+
+/**
+ * v8: Extract text from large embedded raster images in a PDF.
+ *
+ * For PDFs that have a text layer but also contain embedded images
+ * (e.g. scanned signatures, photographed stamps, screenshotted diagrams),
+ * this function identifies pages with image XObjects and renders the full
+ * page at high resolution to run OCR, then diffs against the existing text
+ * layer to find text that only exists in the image.
+ *
+ * SCOPE (honest per Section 2):
+ * - Handled: Pages where the text layer is sparse but an embedded image
+ *   likely contains additional text (scanned signature blocks, stamps)
+ * - NOT handled: Vector graphics with embedded text, many small images,
+ *   images inside Form XObjects, images in patterns, selective cropping
+ *   of individual images from a rendered page
+ * - Extension point: For full coverage, use pdfjs page.getOperatorList()
+ *   to walk all XObject references including nested Form XObjects and
+ *   extract individual image bitmaps via obj.getData()
+ */
+async function extractEmbeddedImageText(
+  pdf: PDFDocumentProxy,
+): Promise<{ text: string; confidence: OCRConfidenceResult } | null> {
+  const MAX_PAGES_TO_CHECK = 6;
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  const candidates: Array<{ pageNum: number; imgOpCount: number }> = [];
+
+  for (let i = 1; i <= Math.min(pdf.numPages, MAX_PAGES_TO_CHECK); i++) {
+    try {
+      const page = await pdf.getPage(i);
+      // eslint-disable-next-line @typescript-eslint/no-explicit-any
+      const ops: any = await page.getOperatorList();
+      // Count image XObject paint operations on this page
+      const imgOpCount = ops.fnArray.filter(
+        (fn: number) => fn === pdfjsLib.OPS.paintImageXObject || fn === pdfjsLib.OPS.paintImageXObjectRepeat
+      ).length;
+      if (imgOpCount > 0) {
+        candidates.push({ pageNum: i, imgOpCount });
+      }
+    } catch {
+      // Best-effort per page
+    }
+  }
+
+  if (candidates.length === 0) return null;
+
+  // Sort by image op count (more images = more likely to contain text)
+  candidates.sort((a, b) => b.imgOpCount - a.imgOpCount);
+  const toProcess = candidates.slice(0, 2);
+
+  // Render and OCR the candidate pages
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  const allLines: Array<{ text: string; confidence: number }> = [];
+  let fullText = '';
+
+  try {
+    const worker = await createWorker('eng', 1);
+    try {
+      for (const candidate of toProcess) {
+        try {
+          const page = await pdf.getPage(candidate.pageNum);
+          // Render at 2x for better OCR quality
+          const viewport = page.getViewport({ scale: 2 });
+          const canvas = document.createElement('canvas');
+          const ctx = canvas.getContext('2d');
+          if (!ctx) continue;
+          canvas.width = viewport.width;
+          canvas.height = viewport.height;
+          // eslint-disable-next-line @typescript-eslint/no-explicit-any
+          await page.render({ canvasContext: ctx, viewport } as any).promise;
+
+          const { data } = await worker.recognize(canvas);
+          if (data.text && data.text.trim().length > 3) {
+            fullText += data.text + '\n\n';
+            const pageLines = extractOCRLinesFromResult(data);
+            allLines.push(...pageLines);
+          }
+          // Clean up canvas to free memory
+          canvas.width = 0;
+          canvas.height = 0;
+        } catch {
+          // Best-effort per page
+        }
+      }
+    } finally {
+      await worker.terminate();
+    }
+  } catch {
+    // Tesseract init failed — embedded OCR is best-effort
+    return null;
+  }
+
+  if (fullText.trim().length === 0) return null;
+
+  const confidence = analyzeOCRConfidence(allLines);
+  return { text: fullText, confidence };
 }
 
 async function parsePdf(
@@ -181,17 +286,43 @@ async function parsePdf(
 
   // v6: Use layout-aware text if available; fall back to flat text
   const layoutText = layoutData ? buildReadingOrderText(layoutData) : "";
-  const primaryText = layoutText.trim().length > 0 ? layoutText : totalText;
+  let primaryText = layoutText.trim().length > 0 ? layoutText : totalText;
+
+  // v8: Embedded image OCR — for PDFs that have a text layer AND contain
+  // embedded raster images (e.g. a scanned signature, a photographed stamp
+  // pasted into an otherwise-digital document).
+  // We only OCR images that are large enough to likely contain meaningful text
+  // (not small decorative icons or bullet-point graphics).
+  let embeddedOcrConfidence: OCRConfidenceResult | undefined;
+  if (!needsOcr) {
+    try {
+      const embeddedResult = await extractEmbeddedImageText(pdf);
+      if (embeddedResult) {
+        embeddedOcrConfidence = embeddedResult.confidence;
+        if (embeddedResult.confidence.highConfidenceText.trim()) {
+          primaryText += "\n\n" + embeddedResult.confidence.highConfidenceText;
+        }
+      }
+    } catch (err) {
+      // Embedded image OCR is best-effort — don't fail the whole parse
+      const msg = err instanceof Error ? err.message : String(err);
+      console.warn(`[Doclyze] Embedded image OCR skipped: ${msg}`);
+    }
+  }
+
+  // Merge OCR confidence data (embedded image OCR)
+  const ocrConfidence = embeddedOcrConfidence;
 
   // OCR fallback for scanned PDFs
   if (needsOcr && pdf.numPages > 0) {
     onProgress?.("running_ocr", 0.7);
-    const ocrText = await runOcrOnPdfPages(pdf, onProgress);
-    if (ocrText.trim().length > 0) {
+    const ocrResult = await runOcrOnPdfPagesWithConfidence(pdf, onProgress);
+    if (ocrResult.text.trim().length > 0) {
       return {
-        text: normalizeText(ocrText),
-        pages: [ocrText],
+        text: normalizeText(ocrResult.confidence.highConfidenceText),
+        pages: [ocrResult.confidence.highConfidenceText],
         ocrUsed: true,
+        ocrConfidence: ocrResult.confidence,
       };
     }
   }
@@ -202,13 +333,14 @@ async function parsePdf(
     pages,
     ocrUsed: false,
     layoutData,
+    ocrConfidence,
   };
 }
 
-async function runOcrOnPdfPages(
+async function runOcrOnPdfPagesWithConfidence(
   pdf: PDFDocumentProxy,
   onProgress?: (stage: string, pct: number) => void
-): Promise<string> {
+): Promise<{ text: string; confidence: OCRConfidenceResult }> {
   const worker = await createWorker("eng", 1, {
     logger: (m: { status: string; progress: number }) => {
       if (m.status === "recognizing text") {
@@ -216,7 +348,9 @@ async function runOcrOnPdfPages(
       }
     },
   });
-  let full = "";
+  let fullText = "";
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  const allLines: Array<{ text: string; confidence: number }> = [];
   try {
     const totalPages = Math.min(pdf.numPages, 8);
     for (let i = 1; i <= totalPages; i++) {
@@ -230,7 +364,10 @@ async function runOcrOnPdfPages(
       // eslint-disable-next-line @typescript-eslint/no-explicit-any
       await page.render({ canvasContext: ctx, viewport } as any).promise;
       const { data } = await worker.recognize(canvas);
-      full += data.text + "\n\n";
+      fullText += data.text + "\n\n";
+      // v8: Retain per-line confidence data instead of discarding it
+      const pageLines = extractOCRLinesFromResult(data);
+      allLines.push(...pageLines);
     }
   } catch (err) {
     const msg = err instanceof Error ? err.message : String(err);
@@ -238,7 +375,8 @@ async function runOcrOnPdfPages(
   } finally {
     await worker.terminate();
   }
-  return full;
+  const confidence = analyzeOCRConfidence(allLines);
+  return { text: fullText, confidence };
 }
 
 async function parseImage(
@@ -258,10 +396,15 @@ async function parseImage(
     });
     try {
       const { data } = await worker.recognize(url);
+      // v8: Retain per-line confidence data instead of discarding it.
+      // This is the same class of bug v6 fixed for PDF layout data.
+      const ocrLines = extractOCRLinesFromResult(data);
+      const ocrConfidence = analyzeOCRConfidence(ocrLines);
       return {
-        text: normalizeText(data.text || ""),
-        pages: [data.text || ""],
+        text: normalizeText(ocrConfidence.highConfidenceText),
+        pages: [ocrConfidence.highConfidenceText],
         ocrUsed: true,
+        ocrConfidence,
       };
     } finally {
       await worker.terminate();

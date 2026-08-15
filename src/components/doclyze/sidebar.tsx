@@ -11,6 +11,14 @@ import {
   Clock,
   X,
   Search,
+  Home,
+  FileText,
+  Receipt,
+  ScrollText,
+  GraduationCap,
+  Table2,
+  FileBarChart,
+  type LucideIcon,
 } from "lucide-react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
@@ -34,6 +42,21 @@ interface SidebarProps {
   onCloseMobile: () => void;
   onOpenSettings?: () => void;
 }
+
+/** Map document types to distinct, colorful icons */
+const DOC_TYPE_ICONS: Record<string, { icon: LucideIcon; color: string }> = {
+  resume: { icon: FileText, color: "text-blue-500" },
+  invoice: { icon: Receipt, color: "text-emerald-500" },
+  contract: { icon: ScrollText, color: "text-violet-500" },
+  research_paper: { icon: GraduationCap, color: "text-orange-500" },
+  spreadsheet: { icon: Table2, color: "text-cyan-500" },
+  academic_transcript: { icon: GraduationCap, color: "text-pink-500" },
+  purchase_order: { icon: Receipt, color: "text-amber-500" },
+  financial_statement: { icon: FileBarChart, color: "text-teal-500" },
+  medical_report: { icon: FileText, color: "text-red-400" },
+  correspondence: { icon: FileText, color: "text-indigo-400" },
+  general: { icon: FileBarChart, color: "text-muted-foreground" },
+};
 
 export function Sidebar({ mobileOpen, onCloseMobile, onOpenSettings }: SidebarProps) {
   const pathname = usePathname();
@@ -66,7 +89,7 @@ export function Sidebar({ mobileOpen, onCloseMobile, onOpenSettings }: SidebarPr
     []
   );
 
-  // Deduplicate recent docs by id (persist layer can produce dupes on hydration race)
+  // Deduplicate recent docs by id
   const recentDocs = React.useMemo(() => {
     const seen = new Set<string>();
     return documents.filter((d) => {
@@ -78,6 +101,15 @@ export function Sidebar({ mobileOpen, onCloseMobile, onOpenSettings }: SidebarPr
 
   const nav = (
     <nav aria-label="Main navigation" className="flex flex-col gap-1">
+      {/* FIX #5: Home link to return to landing page */}
+      <NavItem
+        collapsed={collapsed}
+        icon={<Home className="h-4 w-4" aria-hidden="true" />}
+        label="Home"
+        href="/"
+        active={pathname === "/"}
+        onClick={onCloseMobile}
+      />
       <NavItem
         collapsed={collapsed}
         icon={<LayoutDashboard className="h-4 w-4" aria-hidden="true" />}
@@ -98,7 +130,7 @@ export function Sidebar({ mobileOpen, onCloseMobile, onOpenSettings }: SidebarPr
   );
 
   const recent = (
-    <div className="flex flex-col gap-1.5">
+    <div className="flex flex-col gap-1">
       {recentDocs.length === 0 ? (
         !collapsed && (
           <p className="px-3 py-6 text-xs text-muted-foreground/70 text-center leading-relaxed">
@@ -122,44 +154,62 @@ export function Sidebar({ mobileOpen, onCloseMobile, onOpenSettings }: SidebarPr
   );
 
   const footer = (
-    <div className="flex flex-col gap-1 border-t border-sidebar-border pt-3">
-      <NavItem
-        collapsed={collapsed}
-        icon={<SettingsIcon className="h-4 w-4" aria-hidden="true" />}
-        label="Settings"
-        active={false}
-        onClick={handleOpenSettings}
-      />
-      {!collapsed && (
-        <button
-          onClick={openCommandPalette}
-          className="flex items-center gap-2 mx-2 mt-1 rounded-md border border-border/60 bg-muted/30 px-2.5 py-1.5 text-[11px] text-muted-foreground hover:bg-muted/50 transition-colors"
-          aria-label="Open command palette"
-        >
-          <Search className="h-3 w-3" />
-          <span>Search...</span>
-          <kbd className="ml-auto rounded border border-border/80 bg-background px-1 py-0.5 text-[9px] font-mono">Ctrl+K</kbd>
-        </button>
+    <div className="flex flex-col gap-1.5 border-t border-sidebar-border pt-3">
+      {/* Search + Settings side by side when collapsed */}
+      {collapsed ? (
+        <div className="flex flex-col items-center gap-1">
+          <TooltipProvider delayDuration={200}>
+            <Tooltip>
+              <TooltipTrigger asChild>
+                <button
+                  onClick={openCommandPalette}
+                  className="flex h-8 w-8 items-center justify-center rounded-md text-muted-foreground hover:text-foreground hover:bg-sidebar-accent/60 transition-colors"
+                  aria-label="Open command palette"
+                >
+                  <Search className="h-3.5 w-3.5" />
+                </button>
+              </TooltipTrigger>
+              <TooltipContent side="right">Search</TooltipContent>
+            </Tooltip>
+          </TooltipProvider>
+          <TooltipProvider delayDuration={200}>
+            <Tooltip>
+              <TooltipTrigger asChild>
+                <button
+                  onClick={handleOpenSettings}
+                  className="flex h-8 w-8 items-center justify-center rounded-md text-muted-foreground hover:text-foreground hover:bg-sidebar-accent/60 transition-colors"
+                  aria-label="Settings"
+                >
+                  <SettingsIcon className="h-3.5 w-3.5" />
+                </button>
+              </TooltipTrigger>
+              <TooltipContent side="right">Settings</TooltipContent>
+            </Tooltip>
+          </TooltipProvider>
+        </div>
+      ) : (
+        <>
+          <NavItem
+            collapsed={collapsed}
+            icon={<SettingsIcon className="h-4 w-4" aria-hidden="true" />}
+            label="Settings"
+            active={false}
+            onClick={handleOpenSettings}
+          />
+          <button
+            onClick={openCommandPalette}
+            className="flex items-center gap-2 mx-2 mt-0.5 rounded-md border border-border/60 bg-muted/30 px-2.5 py-1.5 text-[11px] text-muted-foreground hover:bg-muted/50 transition-colors"
+            aria-label="Open command palette"
+          >
+            <Search className="h-3 w-3" />
+            <span>Search...</span>
+            <kbd className="ml-auto rounded border border-border/80 bg-background px-1 py-0.5 text-[9px] font-mono">Ctrl+K</kbd>
+          </button>
+        </>
       )}
-      {collapsed && (
-        <TooltipProvider delayDuration={200}>
-          <Tooltip>
-            <TooltipTrigger asChild>
-              <button
-                onClick={openCommandPalette}
-                className="mx-auto flex h-7 w-7 items-center justify-center rounded-md text-muted-foreground hover:text-foreground hover:bg-sidebar-accent/60 transition-colors"
-                aria-label="Open command palette"
-              >
-                <Search className="h-3.5 w-3.5" />
-              </button>
-            </TooltipTrigger>
-            <TooltipContent side="right">Command Palette</TooltipContent>
-          </Tooltip>
-        </TooltipProvider>
-      )}
       {!collapsed && (
-        <div className="mt-2 px-3 text-[10px] uppercase tracking-[0.18em] text-muted-foreground/60">
-          v1.0 - Local-only
+        <div className="mt-1 px-3 text-[10px] uppercase tracking-[0.18em] text-muted-foreground/50">
+          v1.0 · Local-only
         </div>
       )}
     </div>
@@ -171,20 +221,20 @@ export function Sidebar({ mobileOpen, onCloseMobile, onOpenSettings }: SidebarPr
         aria-label="Sidebar"
         className={cn(
           "hidden md:flex shrink-0 flex-col border-r border-sidebar-border bg-sidebar transition-[width] duration-200 ease-out",
-          collapsed ? "w-[68px]" : "w-[260px]"
+          collapsed ? "w-[60px]" : "w-[256px]"
         )}
       >
         <SidebarHeader collapsed={collapsed} onToggle={toggleSidebar} />
-        <ScrollArea className="flex-1 px-3">
-          <div className="flex flex-col gap-6 py-4">
+        <ScrollArea className="flex-1 px-2">
+          <div className="flex flex-col gap-5 py-3">
             {nav}
-            <div className="flex flex-col gap-2">
+            <div className="flex flex-col gap-1.5">
               {!collapsed && (
-                <div className="flex items-center justify-between px-3">
-                  <span className="text-[10px] font-semibold uppercase tracking-[0.18em] text-muted-foreground/80">
+                <div className="flex items-center justify-between px-2.5 py-1">
+                  <span className="text-[10px] font-semibold uppercase tracking-[0.16em] text-muted-foreground/70">
                     Recent
                   </span>
-                  <Clock className="h-3 w-3 text-muted-foreground/60" aria-hidden="true" />
+                  <Clock className="h-3 w-3 text-muted-foreground/50" aria-hidden="true" />
                 </div>
               )}
               {recent}
@@ -194,7 +244,7 @@ export function Sidebar({ mobileOpen, onCloseMobile, onOpenSettings }: SidebarPr
         {footer}
       </aside>
 
-      {/* Mobile drawer with focus trap */}
+      {/* Mobile drawer */}
       <AnimatePresence>
         {mobileOpen && (
           <>
@@ -220,7 +270,9 @@ export function Sidebar({ mobileOpen, onCloseMobile, onOpenSettings }: SidebarPr
               onKeyDown={handleDrawerKeyDown}
             >
               <div className="flex items-center justify-between px-4 py-4 border-b border-sidebar-border">
-                <Logo height={24} />
+                <Link href="/" onClick={onCloseMobile} className="flex items-center gap-2">
+                  <Logo height={24} />
+                </Link>
                 <Button
                   variant="ghost"
                   size="icon"
@@ -231,15 +283,15 @@ export function Sidebar({ mobileOpen, onCloseMobile, onOpenSettings }: SidebarPr
                   <X className="h-4 w-4" />
                 </Button>
               </div>
-              <ScrollArea className="flex-1 px-3">
-                <div className="flex flex-col gap-6 py-4">
+              <ScrollArea className="flex-1 px-2">
+                <div className="flex flex-col gap-5 py-3">
                   {nav}
-                  <div className="flex flex-col gap-2">
-                    <div className="flex items-center justify-between px-3">
-                      <span className="text-[10px] font-semibold uppercase tracking-[0.18em] text-muted-foreground/80">
+                  <div className="flex flex-col gap-1.5">
+                    <div className="flex items-center justify-between px-2.5 py-1">
+                      <span className="text-[10px] font-semibold uppercase tracking-[0.16em] text-muted-foreground/70">
                         Recent
                       </span>
-                      <Clock className="h-3 w-3 text-muted-foreground/60" aria-hidden="true" />
+                      <Clock className="h-3 w-3 text-muted-foreground/50" aria-hidden="true" />
                     </div>
                     {recent}
                   </div>
@@ -250,33 +302,33 @@ export function Sidebar({ mobileOpen, onCloseMobile, onOpenSettings }: SidebarPr
           </>
         )}
       </AnimatePresence>
-
-      {/* Settings dialog is rendered by AppShell */}
     </>
   );
 }
 
 function SidebarHeader({ collapsed, onToggle }: { collapsed: boolean; onToggle: () => void }) {
   return (
-    <div className="flex items-center justify-between gap-2 border-b border-sidebar-border px-3 py-4">
+    <div className="flex items-center justify-between gap-2 border-b border-sidebar-border px-3 py-3">
       <Link
-        href="/dashboard"
+        href="/"
         className="flex items-center gap-2 text-sidebar-foreground hover:opacity-80 transition-opacity"
-        aria-label="Doclyze dashboard"
+        aria-label="Doclyze home"
       >
-        {collapsed ? <Monogram size={26} /> : <Logo height={24} />}
+        {collapsed ? <Monogram size={24} /> : <Logo height={22} />}
       </Link>
-      {!collapsed && (
-        <Button
-          variant="ghost"
-          size="icon"
-          onClick={onToggle}
-          aria-label="Collapse sidebar"
-          className="h-7 w-7 text-muted-foreground hover:text-foreground"
-        >
-          <PanelLeftClose className="h-4 w-4" />
-        </Button>
-      )}
+      {/* FIX #1: Always show toggle button — PanelLeftClose when open, PanelLeft when collapsed */}
+      <Button
+        variant="ghost"
+        size="icon"
+        onClick={onToggle}
+        aria-label={collapsed ? "Expand sidebar" : "Collapse sidebar"}
+        className={cn(
+          "h-7 w-7 text-muted-foreground hover:text-foreground transition-all",
+          collapsed && "mx-auto"
+        )}
+      >
+        {collapsed ? <PanelLeft className="h-4 w-4" /> : <PanelLeftClose className="h-4 w-4" />}
+      </Button>
     </div>
   );
 }
@@ -292,16 +344,16 @@ function NavItem({
   onClick?: () => void;
 }) {
   const sharedClass = cn(
-    "group flex w-full items-center gap-3 rounded-md px-3 py-2 text-sm font-medium transition-colors outline-none",
+    "group flex w-full items-center gap-3 rounded-lg px-3 py-2 text-sm font-medium transition-all duration-150 outline-none",
     "focus-visible:ring-2 focus-visible:ring-ring",
     active
-      ? "bg-sidebar-accent text-sidebar-accent-foreground"
+      ? "bg-sidebar-accent text-sidebar-accent-foreground shadow-sm"
       : "text-sidebar-foreground/80 hover:bg-sidebar-accent/60 hover:text-sidebar-foreground"
   );
 
   const content = (
     <>
-      <span className={cn("shrink-0", active && "text-[var(--brand)]")} aria-hidden="true">
+      <span className={cn("shrink-0 transition-colors", active && "text-[var(--brand)]")} aria-hidden="true">
         {icon}
       </span>
       {!collapsed && <span className="truncate">{label}</span>}
@@ -338,30 +390,45 @@ function RecentDocRow({ doc, collapsed, href, onClick }: {
   onClick?: () => void;
 }) {
   const ago = relativeTime(doc.extractedAt);
+  const typeInfo = DOC_TYPE_ICONS[doc.detectedType] ?? { icon: FileBarChart, color: "text-muted-foreground" };
+  const IconComponent = typeInfo.icon;
+
   const item = (
     <Link href={href} onClick={onClick} className={cn(
-      "group flex w-full flex-col gap-1 rounded-md px-3 py-2 text-left transition-colors outline-none",
+      "group flex w-full items-center gap-2.5 rounded-lg px-2.5 py-2 text-left transition-all duration-150 outline-none",
       "focus-visible:ring-2 focus-visible:ring-ring",
-      "hover:bg-sidebar-accent/60"
+      "hover:bg-sidebar-accent/60",
+      collapsed && "justify-center px-1"
     )}>
+      {/* FIX #4: Colorful type-specific icon instead of boring generic icon */}
+      <div className={cn(
+        "flex h-7 w-7 shrink-0 items-center justify-center rounded-md bg-muted/60 transition-colors group-hover:bg-muted",
+        collapsed && "h-8 w-8"
+      )}>
+        <IconComponent className={cn("h-3.5 w-3.5", typeInfo.color)} aria-hidden="true" />
+      </div>
       {!collapsed ? (
-        <>
-          <span className="truncate text-xs font-medium text-sidebar-foreground">{doc.filename}</span>
-          <div className="flex items-center gap-1.5">
-            <Badge variant="outline" className="h-4 px-1.5 text-[9px] font-semibold uppercase tracking-wide">
-              {labelForType(doc.detectedType).split(" ")[0]}
-            </Badge>
-            <span className="text-[10px] text-muted-foreground">{ago}</span>
+        <div className="flex-1 min-w-0">
+          <span className="block truncate text-xs font-medium text-sidebar-foreground group-hover:text-foreground transition-colors">
+            {doc.filename}
+          </span>
+          <div className="flex items-center gap-1.5 mt-0.5">
+            <span className={cn(
+              "text-[10px] font-semibold",
+              doc.completenessScore >= 75 ? "text-[var(--confidence-high)]" : doc.completenessScore >= 50 ? "text-[var(--confidence-medium)]" : "text-[var(--severity-warning)]"
+            )}>
+              {doc.completenessScore}%
+            </span>
+            <span className="text-[10px] text-muted-foreground/60">·</span>
+            <span className="text-[10px] text-muted-foreground/60">{ago}</span>
             {doc.ocrUsed && (
-              <span className="text-[9px] text-[var(--severity-notice)]" title="OCR was used">OCR</span>
+              <Badge variant="outline" className="h-3.5 px-1 text-[8px] border-[var(--severity-notice)]/40 text-[var(--severity-notice)] leading-none">
+                OCR
+              </Badge>
             )}
           </div>
-        </>
-      ) : (
-        <div className="flex justify-center">
-          <FileSearch className="h-4 w-4 text-muted-foreground" aria-hidden="true" />
         </div>
-      )}
+      ) : null}
     </Link>
   );
 
@@ -372,7 +439,7 @@ function RecentDocRow({ doc, collapsed, href, onClick }: {
           <TooltipTrigger asChild>{item}</TooltipTrigger>
           <TooltipContent side="right" className="max-w-[200px]">
             <p className="font-medium truncate">{doc.filename}</p>
-            <p className="text-xs text-muted-foreground">{labelForType(doc.detectedType)} - {ago}</p>
+            <p className="text-xs text-muted-foreground">{labelForType(doc.detectedType)} · {ago}</p>
           </TooltipContent>
         </Tooltip>
       </TooltipProvider>

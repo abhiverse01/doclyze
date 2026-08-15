@@ -1,6 +1,7 @@
 "use client";
 
 import * as React from "react";
+import Link from "next/link";
 import { Menu, Search } from "lucide-react";
 import { Sidebar } from "./sidebar";
 import { CommandPalette, openCommandPalette } from "./command-palette";
@@ -32,13 +33,13 @@ export function AppShell({ children }: { children: React.ReactNode }) {
           >
             <Menu className="h-4 w-4" />
           </Button>
-          <button
-            onClick={() => setMobileSidebarOpen(false)}
+          <Link
+            href="/"
             className="flex items-center"
-            aria-label="Go to dashboard"
+            aria-label="Go to homepage"
           >
             <Logo height={20} />
-          </button>
+          </Link>
           <Button
             variant="ghost"
             size="icon"

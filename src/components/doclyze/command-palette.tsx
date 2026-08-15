@@ -44,6 +44,7 @@ const TYPE_ICONS: Record<string, React.ReactNode> = {
   purchase_order: <Receipt className="h-3.5 w-3.5" />,
   financial_statement: <FileBarChart className="h-3.5 w-3.5" />,
   medical_report: <FileText className="h-3.5 w-3.5" />,
+  correspondence: <ScrollText className="h-3.5 w-3.5" />,
 };
 
 // ─── Global event-based open mechanism ────────────────────────────────────

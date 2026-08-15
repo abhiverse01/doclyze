@@ -557,8 +557,13 @@ export function analyzeLayout(
     }));
   }
 
-  // Collect all tables
-  const allTables = pageLayouts.flatMap(p => p.tables);
+  // Collect all tables — deduplicate IDs across pages (detectTables uses
+  // local indices per page, so page 1 and page 2 can both produce
+  // layout-table-0). Re-index globally to guarantee uniqueness.
+  const allTables = pageLayouts.flatMap(p => p.tables).map((t, i) => ({
+    ...t,
+    id: `layout-table-${i}`,
+  }));
 
   return {
     pages: pageLayouts,

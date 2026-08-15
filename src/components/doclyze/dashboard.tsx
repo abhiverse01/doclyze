@@ -76,6 +76,7 @@ const TYPE_ICONS: Record<DocType, React.ReactNode> = {
   purchase_order: <Receipt className="h-4 w-4" />,
   financial_statement: <FileBarChart className="h-4 w-4" />,
   medical_report: <FileText className="h-4 w-4" />,
+  correspondence: <FileText className="h-4 w-4" />,
 };
 
 const TYPE_OPTIONS: { value: DocType | "all"; label: string }[] = [
@@ -90,6 +91,7 @@ const TYPE_OPTIONS: { value: DocType | "all"; label: string }[] = [
   { value: "purchase_order", label: "Purchase Order" },
   { value: "financial_statement", label: "Financial Statement" },
   { value: "medical_report", label: "Medical Report" },
+  { value: "correspondence", label: "Correspondence / Letter" },
 ];
 
 const COMING_SOON: { label: string; tooltip: string }[] = [
@@ -248,12 +250,8 @@ export function Dashboard({ onOpenSettings }: DashboardProps) {
           transition={{ duration: 0.3, delay: 0.08 }}
           className="mt-8"
         >
-          <Card className="p-0 overflow-hidden border-border">
-            <button
-              onClick={() => router.push("/analyzer")}
-              className="group flex w-full flex-col items-center gap-3 px-6 py-10 text-left transition-colors hover:bg-muted/30 outline-none focus-visible:ring-2 focus-visible:ring-ring"
-              aria-label="Upload a document"
-            >
+          <Card className="p-0 overflow-hidden border-border cursor-pointer" onClick={() => router.push("/analyzer")} role="button" tabIndex={0} onKeyDown={(e) => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); router.push('/analyzer'); } }}>
+            <div className="group flex w-full flex-col items-center gap-3 px-6 py-10 text-left transition-colors hover:bg-muted/30 outline-none focus-visible:ring-2 focus-visible:ring-ring" aria-label="Upload a document">
               <div className="flex h-14 w-14 items-center justify-center rounded-full bg-[var(--brand-soft)] text-[var(--brand)] transition-transform group-hover:scale-105">
                 <Upload className="h-6 w-6" />
               </div>
@@ -263,11 +261,11 @@ export function Dashboard({ onOpenSettings }: DashboardProps) {
                   PDF · DOCX · TXT · MD · CSV · Images — up to 25 MB each · Batch upload supported
                 </p>
               </div>
-              <Button size="sm" className="mt-2 bg-foreground text-background hover:bg-foreground/90">
+              <Button size="sm" className="mt-2 bg-foreground text-background hover:bg-foreground/90" onClick={(e) => { e.stopPropagation(); router.push('/analyzer'); }}>
                 Open analyzer
                 <ArrowRight className="ml-1.5 h-3.5 w-3.5" />
               </Button>
-            </button>
+            </div>
           </Card>
         </motion.div>
 

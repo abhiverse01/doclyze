@@ -1,0 +1,29 @@
+Dr. Prabhat Sharma
+Flat 4B, Babar Mahal Revisited
+Kathmandu, Nepal
+prabhat.sharma@research.edu.np
++977-1-5550198
+
+March 12, 2024
+
+Prof. Richard Hawking
+Head, Department of Atmospheric Sciences
+University of Reading
+Whiteknights, Reading RG6 6AH
+United Kingdom
+
+Dear Prof. Hawking,
+
+I am writing to apply for the Postdoctoral Research Fellow position in Climate Modeling and Atmospheric Dynamics within your department, as advertised on the university's recruitment portal.
+
+I completed my PhD in Environmental Science from Tribhuvan University in 2023, with a dissertation titled "High-Resolution Regional Climate Projections for the Hindu Kush Himalayan Region Using WRF Modeling." My research employed the Weather Research and Forecasting model at 4km resolution to generate downscaled climate projections for the period 2030–2060, revealing critical acceleration in glacial melt patterns across the Nepal Himalaya.
+
+During my doctoral studies, I published four first-authored papers in peer-reviewed journals, including two in the Journal of Climate and one in Nature Geoscience. I also collaborated with researchers from the International Centre for Integrated Mountain Development (ICIMOD) on a multi-institutional project funded by the World Bank.
+
+I am proficient in Python, R, Fortran, and NCL for scientific computing, and I have extensive experience with the CMIP6 model ensemble. My proposed postdoctoral research would extend my current work to investigate monsoon variability under high-emission scenarios using coupled ocean-atmosphere models.
+
+I am deeply impressed by the Reading Atmospheric Science department's leadership in regional climate research and would be honored to contribute to your ongoing projects.
+
+Regards,
+
+Dr. Prabhat Sharma

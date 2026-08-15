@@ -15,6 +15,7 @@ import { extractAcademicTranscript } from "./extractors/academic-transcript";
 import { extractPurchaseOrder } from "./extractors/purchase-order";
 import { extractFinancialStatement } from "./extractors/financial-statement";
 import { extractMedicalReport } from "./extractors/medical-report";
+import { extractCorrespondence } from "./extractors/correspondence";
 import { detectPII, summarizePII } from "./pii-detector";
 import { detectLanguage } from "./lang-detect";
 import {
@@ -71,6 +72,7 @@ const TYPE_IMPORTANT_FIELDS: Record<string, string[]> = {
   purchase_order: ["poNumber", "vendor", "total"],
   financial_statement: ["companyName", "statementType", "revenue"],
   medical_report: ["patientName", "dateOfReport", "testResults"],
+  correspondence: ["recipient", "sender", "date", "subject"],
 };
 
 export async function runExtractionPipeline(
@@ -197,6 +199,15 @@ export async function runExtractionPipeline(
       typed = { type: "medical_report", details: r.details };
       break;
     }
+    case "correspondence": {
+      const r = extractCorrespondence(parsed.text, file.name);
+      fieldGroups = r.fieldGroups;
+      tables = r.tables;
+      insights = r.insights;
+      completeness = r.completeness;
+      typed = { type: "correspondence", details: r.details };
+      break;
+    }
     case "spreadsheet": {
       const headers = parsed.tabular?.headers ?? [];
       const rows = parsed.tabular?.rows ?? [];
@@ -225,9 +236,18 @@ export async function runExtractionPipeline(
   emit("scoring_and_generating_insights", 0.94);
 
   // ─── Confidence calibration ─────────────────────────────────────────────
-  // 1. OCR penalty: reduce confidence by 10 points
+  // 1. OCR penalty: now noise-aware — penalize based on OCR confidence ratio
   if (parsed.ocrUsed) {
-    completeness = Math.max(0, completeness - 10);
+    if (parsed.ocrConfidence) {
+      // v8: If most text is high-confidence, the OCR is good — minimal penalty.
+      // If a lot was noise, we already excluded it from extraction, so
+      // the remaining high-conf text should score well. Small penalty for
+      // inherent OCR inaccuracy vs digital text.
+      completeness = Math.max(0, completeness - 5);
+    } else {
+      // Legacy OCR path (no confidence data) — heavier penalty
+      completeness = Math.max(0, completeness - 10);
+    }
   }
 
   // 2. Low-confidence fields: count as half-missing for completeness
@@ -298,15 +318,27 @@ export async function runExtractionPipeline(
 
   // OCR notice
   if (parsed.ocrUsed) {
+    const ocrLines = parsed.ocrConfidence?.lines.length ?? 0;
+    const noiseLines = parsed.ocrConfidence?.lines.filter(l => l.isLikelyNoise).length ?? 0;
+    const highRatio = parsed.ocrConfidence?.highConfidenceRatio ?? 0;
+    const meanConf = parsed.ocrConfidence?.meanConfidence ?? 0;
+
+    let ocrBody = "The document had no native text layer (scanned PDF or image). Text was extracted via Tesseract OCR."
+    if (noiseLines > 0) {
+      ocrBody += ` ${noiseLines} of ${ocrLines} OCR line(s) were flagged as likely noise (stamp, logo, or unclear region) and excluded from structured extraction. `
+      ocrBody += `${Math.round(highRatio * 100)}% of text was high-confidence (mean confidence: ${Math.round(meanConf)}).`;
+    } else {
+      ocrBody += " Confidence in positional details may be lower than for digital-native files.";
+    }
+
     insights.push({
       id: "ocr-used",
-      title: "OCR fallback was used to extract text",
-      body: "The document had no native text layer (scanned PDF or image). Text was extracted via Tesseract OCR — confidence in positional details may be lower than for digital-native files.",
-      severity: "notice",
+      title: `OCR used${noiseLines > 0 ? ` — ${noiseLines} noise line(s) filtered` : ""}`,
+      body: ocrBody,
+      severity: noiseLines > 0 ? "notice" : "info",
       category: "Extraction method",
     });
   }
-
   const result: DoclyzeExtractionResult = {
     schemaVersion: 1,
     documentId: crypto.randomUUID(),
@@ -328,6 +360,8 @@ export async function runExtractionPipeline(
     layoutData: parsed.layoutData,
     // v6: Structure tree for general documents
     structureTree,
+    // v8: OCR confidence analysis for noise-aware scoring
+    ocrConfidence: parsed.ocrConfidence,
   };
 
   emit("complete", 1);
@@ -346,6 +380,7 @@ export function labelForType(type: string): string {
     purchase_order: "Purchase Order",
     financial_statement: "Financial Statement",
     medical_report: "Medical / Lab Report",
+    correspondence: "Correspondence / Letter",
   };
   return labels[type] ?? type;
 }

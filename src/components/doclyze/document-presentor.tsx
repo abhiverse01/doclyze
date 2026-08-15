@@ -58,7 +58,7 @@ export function DocumentPresentor({
       ))}
       {tables.map((table, tableIdx) => (
         <TableSheet
-          key={table.id}
+          key={`${table.id}-${tableIdx}`}
           table={table}
           tableIndex={tableIdx}
           filename={filename}

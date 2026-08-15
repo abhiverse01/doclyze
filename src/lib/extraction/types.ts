@@ -20,7 +20,8 @@ export type DocType =
   | "academic_transcript"
   | "purchase_order"
   | "financial_statement"
-  | "medical_report";
+  | "medical_report"
+  | "correspondence";
 
 export type Confidence = "high" | "medium" | "low";
 
@@ -268,6 +269,23 @@ export interface MedicalReportDetails {
   notes: string | null;
 }
 
+export interface CorrespondenceDetails {
+  sender: string | null;
+  senderAddress: string | null;
+  recipient: string | null;
+  recipientAddress: string | null;
+  date: string | null;
+  subject: string | null;
+  salutation: string | null;
+  bodySummary: string | null;
+  closing: string | null;
+  signatureName: string | null;
+  requests: string[];
+  ccRecipients: string[];
+  referenceNumber: string | null;
+  letterType: "business_request" | "cover_letter" | "complaint" | "reference" | "general" | null;
+}
+
 export type TypeDetails =
   | { type: "resume"; details: ResumeDetails }
   | { type: "invoice"; details: InvoiceDetails }
@@ -278,7 +296,8 @@ export type TypeDetails =
   | { type: "academic_transcript"; details: AcademicTranscriptDetails }
   | { type: "purchase_order"; details: PurchaseOrderDetails }
   | { type: "financial_statement"; details: FinancialStatementDetails }
-  | { type: "medical_report"; details: MedicalReportDetails };
+  | { type: "medical_report"; details: MedicalReportDetails }
+  | { type: "correspondence"; details: CorrespondenceDetails };
 
 export interface DoclyzeExtractionResult {
   schemaVersion: 1;
@@ -310,4 +329,7 @@ export interface DoclyzeExtractionResult {
   layoutData?: LayoutResult;
   /** v6: Structure tree for general/presentation documents. */
   structureTree?: import("./extractors/general").StructureNode[];
+  /** v8: OCR confidence analysis — separates high-confidence text from noise.
+   *  Only present when OCR was used. */
+  ocrConfidence?: import("./ocr-confidence").OCRConfidenceResult;
 }

@@ -8,6 +8,8 @@
     "start": "NODE_ENV=production bun .next/standalone/server.js 2>&1 | tee server.log",
     "lint": "eslint .",
     "test": "bun run scripts/check-file-integrity.ts && VITE_CONFIG_NATIVE_IGNORE_WARNING=true vitest run",
+    "test:gate": "bun run scripts/check-file-integrity.ts && VITE_CONFIG_NATIVE_IGNORE_WARNING=true vitest run && bunx playwright test --reporter=list",
+    "test:smoke": "bunx playwright test --reporter=list",
     "db:push": "prisma db push --accept-data-loss",
     "db:generate": "prisma generate",
     "db:migrate": "prisma migrate dev",
@@ -90,6 +92,7 @@
     "zustand": "^5.0.6"
   },
   "devDependencies": {
+    "@playwright/test": "^1.62.1",
     "@tailwindcss/postcss": "^4",
     "@types/react": "^19",
     "@types/react-dom": "^19",

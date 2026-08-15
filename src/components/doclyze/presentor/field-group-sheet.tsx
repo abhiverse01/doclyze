@@ -166,8 +166,8 @@ function EditableFieldRow({ field, documentId, rawText }: { field: FieldGroup["f
                 <TooltipProvider delayDuration={200}>
                   <Tooltip>
                     <TooltipTrigger asChild>
-                      <button onClick={() => setShowProvenance(!showProvenance)} className="ml-0.5 inline-flex items-center justify-center" aria-label="Show provenance">
-                        <Eye className="h-2.5 w-2.5 text-muted-foreground/60 hover:text-muted-foreground" />
+                      <button onClick={() => setShowProvenance(!showProvenance)} className="ml-0.5 inline-flex items-center justify-center rounded-sm transition-colors hover:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-1" aria-label="Show provenance">
+                        <Eye className="h-2.5 w-2.5 text-muted-foreground/60" />
                       </button>
                     </TooltipTrigger>
                     <TooltipContent side="top" className="max-w-[220px]">{provenance}</TooltipContent>
@@ -188,8 +188,8 @@ function EditableFieldRow({ field, documentId, rawText }: { field: FieldGroup["f
             {editing ? (
               <div className="flex items-center gap-1">
                 <input ref={editRef} value={editDraft} onChange={(e) => setEditDraft(e.target.value)} onKeyDown={(e) => { if (e.key === "Enter") saveEdit(); if (e.key === "Escape") setEditing(false); }} className="flex-1 h-6 rounded border border-border bg-background px-2 text-xs font-mono focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring" />
-                <button onClick={saveEdit} className="h-6 w-6 flex items-center justify-center rounded bg-[var(--confidence-high)] text-white hover:opacity-90"><Check className="h-3 w-3" /></button>
-                <button onClick={() => setEditing(false)} className="h-6 w-6 flex items-center justify-center rounded border border-border hover:bg-muted/60"><X className="h-3 w-3" /></button>
+                <button onClick={saveEdit} className="h-6 w-6 flex items-center justify-center rounded bg-[var(--confidence-high)] text-white hover:opacity-90 transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-1" aria-label="Save edit"><Check className="h-3 w-3" /></button>
+                <button onClick={() => setEditing(false)} className="h-6 w-6 flex items-center justify-center rounded border border-border hover:bg-muted/60 transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-1" aria-label="Cancel edit"><X className="h-3 w-3" /></button>
               </div>
             ) : (
               <span className={correction ? "italic" : ""}>{displayValue ?? <span className="text-muted-foreground/50 italic">Not found</span>}</span>
@@ -206,7 +206,7 @@ function EditableFieldRow({ field, documentId, rawText }: { field: FieldGroup["f
                   <div key={a.id} className="flex items-start gap-1 text-[10px] text-muted-foreground group/ann">
                     <StickyNote className="h-2.5 w-2.5 mt-0.5 shrink-0 text-[var(--severity-notice)]" />
                     <span className="leading-relaxed flex-1">{a.text}</span>
-                    <button onClick={() => removeAnnotation(ak, a.id)} className="opacity-0 group-hover/ann:opacity-100 shrink-0 hover:text-foreground" aria-label="Remove annotation">
+                    <button onClick={() => removeAnnotation(ak, a.id)} className="opacity-0 group-hover/ann:opacity-100 shrink-0 hover:text-foreground transition-colors rounded-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-1" aria-label="Remove annotation">
                       <X className="h-2.5 w-2.5" />
                     </button>
                   </div>
@@ -220,7 +220,7 @@ function EditableFieldRow({ field, documentId, rawText }: { field: FieldGroup["f
               <TooltipProvider delayDuration={300}>
                 <Tooltip>
                   <TooltipTrigger asChild>
-                    <button onClick={() => setShowAnnotation(!showAnnotation)} className="ml-1 text-muted-foreground/40 hover:text-muted-foreground" aria-label="Add annotation">
+                    <button onClick={() => setShowAnnotation(!showAnnotation)} className="ml-1 text-muted-foreground/40 hover:text-muted-foreground transition-colors rounded-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-1" aria-label="Add annotation">
                       <StickyNote className="h-2.5 w-2.5" />
                     </button>
                   </TooltipTrigger>
@@ -248,8 +248,8 @@ function EditableFieldRow({ field, documentId, rawText }: { field: FieldGroup["f
         <div className="col-span-3 px-3 py-2 border-b border-border/60 bg-muted/20">
           <div className="flex items-center gap-2">
             <Input value={annotationDraft} onChange={(e) => setAnnotationDraft(e.target.value)} onKeyDown={(e) => { if (e.key === "Enter") handleAddAnnotation(); if (e.key === "Escape") { setShowAnnotation(false); setAnnotationDraft(""); } }} placeholder="Add a note about this field..." className="h-7 text-[11px]" />
-            <button onClick={handleAddAnnotation} className="h-7 px-2 text-[11px] shrink-0 rounded bg-foreground text-background hover:opacity-90">Add</button>
-            <button onClick={() => { setShowAnnotation(false); setAnnotationDraft(""); }} className="h-7 w-7 flex items-center justify-center"><X className="h-3 w-3" /></button>
+            <button onClick={handleAddAnnotation} className="h-7 px-2 text-[11px] shrink-0 rounded bg-foreground text-background hover:opacity-90 transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-1">Add</button>
+            <button onClick={() => { setShowAnnotation(false); setAnnotationDraft(""); }} className="h-7 w-7 flex items-center justify-center rounded-sm hover:text-foreground transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-1" aria-label="Cancel annotation"><X className="h-3 w-3" /></button>
           </div>
         </div>
       )}

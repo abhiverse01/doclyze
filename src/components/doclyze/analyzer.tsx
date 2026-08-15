@@ -86,6 +86,86 @@ export function Analyzer() {
   // Single file progress state (for single file backwards compat)
   const [progress, setProgress] = React.useState<ProgressUpdate | null>(null);
 
+  // v9: Sample document onboarding
+  const [isTryingSample, setIsTryingSample] = React.useState(false);
+
+  const handleTrySample = React.useCallback(async () => {
+    setIsTryingSample(true);
+    setError(null);
+    try {
+      const sampleText = `JANE M. DOE
+San Francisco, CA 94105 · (555) 867-5309 · jane.doe@email.com · linkedin.com/in/janedoe
+
+PROFESSIONAL SUMMARY
+Senior Software Engineer with 8+ years of experience building scalable distributed systems and leading cross-functional teams. Specialized in cloud-native architectures, real-time data pipelines, and developer tooling. Track record of reducing system latency by 40% and improving team velocity through engineering best practices.
+
+EXPERIENCE
+
+Stripe — Senior Software Engineer
+Jan 2021 - Present · San Francisco, CA
+- Architected and shipped a real-time fraud detection pipeline processing 2M+ events/second with sub-10ms P99 latency
+- Led a team of 5 engineers building the next-generation merchant dashboard serving 3M+ businesses
+- Reduced infrastructure costs by 25% through strategic cache layer optimization and query tuning
+- Mentored 3 junior engineers, all of whom were promoted within 18 months
+
+Airbnb — Software Engineer II
+Jun 2018 - Dec 2020 · San Francisco, CA
+- Built the real-time pricing recommendation engine serving 500K+ listings, increasing host earnings by 12%
+- Designed and implemented A/B testing framework adopted by 15+ product teams across the organization
+- Migrated legacy payment processing from monolith to microservices, reducing checkout failure rate by 35%
+
+Vercel — Software Engineering Intern
+May 2017 - Aug 2017 · San Francisco, CA
+- Developed incremental static regeneration (ISR) feature for Next.js, reducing build times by 60% for large sites
+- Contributed to open-source Next.js repository with 15+ merged pull requests
+
+EDUCATION
+
+University of California, Berkeley
+B.S. Computer Science · 2013 - 2017 · GPA: 3.8/4.0
+- Dean's List: Fall 2015, Spring 2016, Fall 2016
+- Senior capstone: Distributed consensus algorithm for IoT sensor networks
+
+SKILLS
+
+Programming Languages: TypeScript, Python, Go, Rust, SQL
+Frameworks & Libraries: React, Next.js, Node.js, FastAPI, gRPC, Apache Kafka
+Cloud & Infrastructure: AWS, GCP, Terraform, Kubernetes, Docker, PostgreSQL, Redis
+Tools & Practices: Git, CI/CD, system design, technical writing, code review
+
+CERTIFICATIONS
+
+- AWS Solutions Architect Professional (2023)
+- Certified Kubernetes Administrator (2022)
+`;      const file = new File([sampleText], 'sample_resume_jane_doe.txt', { type: 'text/plain' });
+      setProgress({ stage: 'reading_file', progress: 0.05, label: 'Reading file' });
+      const result = await runExtractionPipeline(file, (update) => {
+        setProgress(update);
+      });
+      setProgress(null);
+      setFullResult(result);
+      addDocument({
+        id: result.documentId,
+        filename: result.filename,
+        detectedType: result.detectedType,
+        classificationConfidence: result.classificationConfidence,
+        fileSizeBytes: result.fileSizeBytes,
+        extractedAt: result.extractedAt,
+        completenessScore: result.completenessScore,
+        ocrUsed: result.ocrUsed,
+        result,
+      });
+      router.push(`/analyzer/${result.documentId}`);
+      toast.success(`Sample analyzed as ${labelForType(result.detectedType)}`);
+    } catch (err) {
+      const message = err instanceof Error ? err.message : 'Failed to process sample';
+      setError(message);
+      setProgress(null);
+    } finally {
+      setIsTryingSample(false);
+    }
+  }, [addDocument, router]);
+
   // Get the active document — re-load full result if missing (e.g. after refresh)
   const activeDoc = documents.find((d) => d.id === activeDocumentId);
   const [fullResult, setFullResult] = React.useState<DoclyzeExtractionResult | null>(null);
@@ -233,10 +313,12 @@ export function Analyzer() {
     if (!fullResult || isReclassifying) return;
     setIsReclassifying(true);
     try {
-      // Re-run the pipeline with a classification override
-      // We create a synthetic file-like object from the raw text
-      const blob = new Blob([fullResult.rawText], { type: fullResult.fileType });
-      const syntheticFile = new File([blob], fullResult.filename, { type: fullResult.fileType });
+      // Re-run the pipeline with a classification override.
+      // CRITICAL: Use text/plain MIME type so parseFile treats the blob as
+      // raw text rather than re-parsing it as the original format (e.g. PDF),
+      // which would fail because rawText is a string, not the original bytes.
+      const blob = new Blob([fullResult.rawText], { type: "text/plain" });
+      const syntheticFile = new File([blob], fullResult.filename.replace(/\.[^.]+$/, ".txt"), { type: "text/plain" });
 
       const result = await runExtractionPipeline(syntheticFile, (update) => {
         // Suppress progress for reclassification
@@ -284,6 +366,21 @@ export function Analyzer() {
           </p>
           <div className="mt-8">
             <Dropzone onFiles={handleFiles} />
+            <div className="mt-3 flex items-center justify-center gap-3">
+              <span className="text-xs text-muted-foreground/70">or</span>
+              <button
+                onClick={handleTrySample}
+                disabled={isTryingSample}
+                className="inline-flex items-center gap-1.5 text-xs font-medium text-[var(--brand)] hover:text-[var(--brand)]/80 disabled:opacity-50 transition-colors rounded-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-1"
+              >
+                {isTryingSample ? (
+                  <Loader2 className="h-3 w-3 animate-spin" />
+                ) : (
+                  <Sparkles className="h-3 w-3" />
+                )}
+                {isTryingSample ? "Processing sample..." : "Try a sample resume"}
+              </button>
+            </div>
           </div>
 
           {/* What happens next */}
@@ -567,7 +664,7 @@ export function Analyzer() {
         {/* Completeness bar */}
         <div className="mb-4">
           <div className="flex items-center justify-between text-[11px] mb-1.5">
-            <span className="text-muted-foreground font-medium">Extraction completeness</span>
+            <span className="text-muted-foreground font-medium">Extraction quality</span>
             <span className="font-mono text-muted-foreground">{fullResult.completenessScore}/100</span>
           </div>
           <div className="h-1.5 rounded-full bg-muted overflow-hidden">
@@ -621,19 +718,30 @@ export function Analyzer() {
           </TabsList>
 
           <TabsContent value="structure" className="mt-6 focus-visible:outline-none">
-            {fullResult.structureTree && fullResult.structureTree.length > 0 ? (
-              <StructureView tree={fullResult.structureTree} />
-            ) : (
-              <Card className="p-8 text-center">
-                <TreePine className="mx-auto h-6 w-6 text-muted-foreground/50" />
-                <p className="mt-2 text-sm text-muted-foreground">
-                  No hierarchical structure was extracted. This view is available for documents where heading detection succeeded (e.g. PDFs with varying font sizes, or documents with Markdown headings).
-                </p>
-              </Card>
-            )}
+            <motion.div
+              initial={{ opacity: 0, y: 8 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.3, ease: [0.4, 0, 0.2, 1] }}
+            >
+              {fullResult.structureTree && fullResult.structureTree.length > 0 ? (
+                <StructureView tree={fullResult.structureTree} />
+              ) : (
+                <Card className="p-8 text-center">
+                  <TreePine className="mx-auto h-6 w-6 text-muted-foreground/50" />
+                  <p className="mt-2 text-sm text-muted-foreground">
+                    No hierarchical structure was extracted. This view is available for documents where heading detection succeeded (e.g. PDFs with varying font sizes, or documents with Markdown headings).
+                  </p>
+                </Card>
+              )}
+            </motion.div>
           </TabsContent>
 
           <TabsContent value="sheet" className="mt-6 focus-visible:outline-none">
+            <motion.div
+              initial={{ opacity: 0, y: 8 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.3, ease: [0.4, 0, 0.2, 1] }}
+            >
             <DocumentPresentor
               tables={fullResult.tables}
               fieldGroups={fullResult.fieldGroups}
@@ -643,9 +751,15 @@ export function Analyzer() {
               highlightTarget={highlightTarget}
               onClearHighlight={() => setHighlightTarget(null)}
             />
+            </motion.div>
           </TabsContent>
 
           <TabsContent value="insights" className="mt-6 focus-visible:outline-none">
+            <motion.div
+              initial={{ opacity: 0, y: 8 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.3, ease: [0.4, 0, 0.2, 1] }}
+            >
             <InsightsPanel
               insights={fullResult.insights}
               extraction={fullResult}
@@ -654,10 +768,17 @@ export function Analyzer() {
                 setActiveTab("sheet");
               }}
             />
+            </motion.div>
           </TabsContent>
 
           <TabsContent value="raw" className="mt-6 focus-visible:outline-none">
-            <RawTextView result={fullResult} />
+            <motion.div
+              initial={{ opacity: 0, y: 8 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.3, ease: [0.4, 0, 0.2, 1] }}
+            >
+              <RawTextView result={fullResult} />
+            </motion.div>
           </TabsContent>
         </Tabs>
       </div>
@@ -821,9 +942,21 @@ function RawTextView({ result }: { result: DoclyzeExtractionResult }) {
       </div>
       <div className="max-h-[70vh] overflow-y-auto">
         {view === "text" || redactEnabled ? (
-          <pre className="p-4 text-xs font-mono text-foreground/80 whitespace-pre-wrap break-words leading-relaxed">
-            {displayText || "(no text extracted)"}
-          </pre>
+          <div className="flex flex-col">
+            <pre className="p-4 text-xs font-mono text-foreground/80 whitespace-pre-wrap break-words leading-relaxed">
+              {displayText || "(no text extracted)"}
+            </pre>
+            {result.ocrConfidence && result.ocrConfidence.lowConfidenceText && (
+              <details className="border-t border-border">
+                <summary className="px-4 py-2 text-[11px] text-muted-foreground cursor-pointer hover:text-foreground transition-colors select-none">
+                  Additional low-confidence content detected — may be a stamp, logo, or unclear scan region
+                </summary>
+                <pre className="px-4 pb-4 text-[11px] font-mono text-muted-foreground/50 whitespace-pre-wrap break-words leading-relaxed">
+                  {result.ocrConfidence.lowConfidenceText}
+                </pre>
+              </details>
+            )}
+          </div>
         ) : (
           <div className="flex flex-col gap-4 p-4">
             {result.pages.map((page, i) => (
@@ -859,6 +992,7 @@ const RECLASSIFY_OPTIONS: { value: DocType; label: string }[] = [
   { value: "purchase_order", label: "Purchase Order" },
   { value: "financial_statement", label: "Financial Statement" },
   { value: "medical_report", label: "Medical / Lab Report" },
+  { value: "correspondence", label: "Correspondence / Letter" },
   { value: "general", label: "General Document" },
 ];
 
@@ -895,10 +1029,10 @@ function ClassificationControl({
         <div className="flex-1 min-w-0">
           <div className="flex items-center gap-2">
             {isLow && <AlertTriangle className="h-3.5 w-3.5 text-[var(--severity-warning)] shrink-0" />}
-            <span className="font-medium">{isLow ? "Low classification confidence" : "Extraction quality"}</span>
+            <span className="font-medium">{isLow ? "Low classification confidence" : "Field coverage"}</span>
           </div>
           <p className="mt-0.5 text-muted-foreground">
-            {filledFields} of {totalFields} fields found{lowConfFields > 0 ? `, ${lowConfFields} low-confidence` : ""}
+            {filledFields} of {totalFields} extracted fields have values{lowConfFields > 0 ? `, ${lowConfFields} marked low-confidence` : ""}
             {isLow && " — consider reclassifying manually"}
           </p>
         </div>
@@ -923,7 +1057,7 @@ function ClassificationControl({
               </select>
               <button
                 onClick={() => setShowPicker(false)}
-                className="text-muted-foreground hover:text-foreground"
+                className="text-muted-foreground hover:text-foreground transition-colors rounded-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-1"
                 aria-label="Cancel reclassification"
               >
                 <XCircle className="h-3.5 w-3.5" />

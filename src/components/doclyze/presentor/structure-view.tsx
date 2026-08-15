@@ -89,7 +89,7 @@ function StructureNodeView({
       {/* Heading row */}
       <button
         onClick={() => isCollapsible && setExpanded(!expanded)}
-        className={`flex items-center gap-1.5 w-full text-left py-1 hover:bg-muted/30 rounded px-1 transition-colors ${
+        className={`flex items-center gap-1.5 w-full text-left py-1 hover:bg-muted/30 rounded px-1 transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-1 ${
           isCollapsible ? "cursor-pointer" : "cursor-default"
         }`}
       >

@@ -1,0 +1,28 @@
+Rajesh Karki
+Dillibazar, Kathmandu 44600
+Nepal
+rajesh.karki@email.com | +977-9841234567
+
+January 20, 2024
+
+Ms. Priya Gurung
+Head of Engineering
+TechVerse Solutions Pvt. Ltd.
+Jawalakhel, Lalitpur
+Nepal
+
+Dear Ms. Gurung,
+
+I am writing to express my strong interest in the React Developer position advertised on your company careers page. With over four years of professional experience building scalable web applications, I am confident that my technical skills and passion for frontend development align well with the requirements of this role.
+
+In my current role at CloudBridge Technologies, I have been the lead frontend developer responsible for migrating a legacy jQuery application to a modern React and TypeScript codebase. This project improved page load times by 40% and reduced bug reports by 60%. I architected reusable component libraries using Storybook and implemented state management with Redux Toolkit, ensuring consistent and maintainable code across a team of eight developers.
+
+My technical proficiency includes React (v16–v18), TypeScript, Next.js, Node.js, GraphQL, and RESTful API integration. I have hands-on experience with CI/CD pipelines using GitHub Actions and Docker, and I am well-versed in agile methodologies including Scrum and Kanban.
+
+I am particularly drawn to TechVerse Solutions because of your innovative work in the fintech sector. The opportunity to contribute to products that serve over two million users is exciting, and I am eager to bring my expertise in performance optimization and accessible UI design to your engineering team.
+
+Thank you for considering my application. I have attached my resume for your review and would welcome the opportunity to discuss how my background can contribute to TechVerse Solutions.
+
+Best regards,
+
+Rajesh Karki

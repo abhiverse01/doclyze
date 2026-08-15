@@ -83,6 +83,7 @@ interface AppState {
   addDocument: (doc: StoredDocument) => void;
   removeDocument: (id: string) => void;
   clearDocuments: () => void;
+  clearAllData: () => void;
   setAIInsights: (docId: string, state: AIInsightState) => void;
   updateSettings: (partial: Partial<Settings>) => void;
   toggleSidebar: () => void;
@@ -257,6 +258,9 @@ export const useDoclyzeStore = create<AppState>()(
         })),
 
       // ── Field corrections ────────────────────────────────────────────────
+  clearAllData: () =>
+        set({ documents: [], activeDocumentId: null, aiInsights: {}, fieldCorrections: {}, annotations: {} }),
+
       setFieldCorrection: (docId, fieldKey, value) =>
         set((state) => ({
           fieldCorrections: {
